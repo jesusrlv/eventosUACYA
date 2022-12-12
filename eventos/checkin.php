@@ -137,6 +137,7 @@
           
         </div>
       </div>
+      
       <div class="col-8 border-start align-self-center justify-content-center">
         <p class="mt-5"><button class="btn btn-primary"><i class="bi bi-qr-code"></i> Leer QR</button> <button class="btn btn-danger"><i class="bi bi-qr-code"></i> Cerrar QR</button></p>
         <div class="card w-100" style="height:900px">
@@ -150,9 +151,10 @@
             </blockquote>
           </div>
         </div>
+        <p><input type="text" id="lector"></p>
       </div>
+
     </div>
-    
   </div>
   
 </main>
