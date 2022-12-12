@@ -85,9 +85,16 @@
           <img src="../assets/brand/img/logo.png" width="120" height="36" role="img" alt="">        
         </a>
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-4 justify-content-center mb-md-0">
-          <li><a href="index.php" class="nav-link px-2 text-secondary">Eventos</a></li>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <!-- <li><a href="#" class="nav-link px-2 text-secondary">Inicio</a></li> -->
+          <!--<li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li> -->
         </ul>
+
+        <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+          <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+        </form> -->
 
         <div class="text-end">
           <!-- <button type="button" class="btn btn-outline-light me-2">Login</button> -->
@@ -98,35 +105,64 @@
   </header>
 
   <div class="b-example-divider">
+  <h4 class="text-secondary ms-5 mt-2 mb-4">NOMBRE DEL EVENTO:</h4>
 
   </div>
 
-  <h3 class="mt-4 ms-5 text-secondary">Eventos activos en el sistema</h3>
+  <div class="container-fluid w-100 h-100" style="width:100%">
+    <div class="row mb-0 border-bottom">
+      <div class="col-4 border-end p-5 align-self-center" style="background-color:#f8f9fa;">
+        <div class="container p-5 border rounded bg-white shadow-sm" style="font-family: 'Poppins', sans-serif;">
+          <p style="font-size:300px" class="text-center border-bottom"><i class="bi bi-person-circle"></i></p>
 
-    <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="input-group mb-3 w-100">
-                    <span class="input-group-text" id="basic-addon1">Seleccionar Evento</span>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Seleccionar ...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-0"></div>
+      <p class="pb-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Nombre:</strong>
+        Nombre 
+      </p>
+      <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Apellidos:</strong>
+        Apellidos
+      </p>
+      <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Especialidad:</strong>
+        Especialidad
+      </p>
+      <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Semestre:</strong>
+        Semestre
+      </p>
+      <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
+        <strong class="d-block text-gray-dark">Carrera:</strong>
+        Carrera
+      </p>
         </div>
+        <div class="container p-5" style="font-family: 'Poppins', sans-serif;">
+          
+        </div>
+      </div>
+      <div class="col-8 border-start">
+        <div></div>
+      </div>
     </div>
+    
+  </div>
   
 </main>
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <p class="col-md-12 mb-0 text-muted"><a href="/" class="col-md-4 d-flex mb-md-0 me-md-auto link-dark text-decoration-none">
-                <img src="../assets/brand/img/logo.png" width="140" height="45" role="img" alt="" class="p-2 rounded" style="background-color:#000e42">
-            </a></p>
-      
+      <p class="col-md-4 mb-0 text-muted">&copy; 2022 UACYA | UAZ</p>
+
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+      <img src="../assets/brand/img/logo.png" width="140" height="45" role="img" alt="" class="p-2 rounded" style="background-color:#000e42">
+      </a>
+
+      <ul class="nav col-md-4 justify-content-end">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+      </ul>
     </footer>
   </div>
 
