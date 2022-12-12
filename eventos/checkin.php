@@ -85,11 +85,8 @@
           <img src="../assets/brand/img/logo.png" width="120" height="36" role="img" alt="">        
         </a>
 
-        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <!-- <li><a href="#" class="nav-link px-2 text-secondary">Inicio</a></li> -->
-          <!--<li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">About</a></li> -->
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-4 justify-content-center mb-md-0">
+          <li><a href="index.php" class="nav-link px-2 text-light">Eventos</a></li>
         </ul>
 
         <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
@@ -140,8 +137,19 @@
           
         </div>
       </div>
-      <div class="col-8 border-start">
-        <div></div>
+      <div class="col-8 border-start align-self-center justify-content-center">
+        <p class="mt-5"><button class="btn btn-primary"><i class="bi bi-qr-code"></i> Leer QR</button> <button class="btn btn-danger"><i class="bi bi-qr-code"></i> Cerrar QR</button></p>
+        <div class="card w-100" style="height:900px">
+          <div class="card-header bg-primary text-light">
+          <i class="bi bi-camera-fill"></i> Cámara de registro de asistentes
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p></p>
+              <footer class="blockquote-footer"></footer>
+            </blockquote>
+          </div>
+        </div>
       </div>
     </div>
     
@@ -157,16 +165,10 @@
       </a>
 
       <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
+        <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Eventos</a></li>
       </ul>
     </footer>
   </div>
-
-
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
