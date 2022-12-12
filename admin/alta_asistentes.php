@@ -105,17 +105,64 @@
 
     <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
         <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="input-group mb-3 w-100">
-                    <span class="input-group-text" id="basic-addon1">Seleccionar Evento</span>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Seleccionar ...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
+            <div class="col-12 border rounded p-4">
+            <h3 class="mb-4 border-bottom">Datos de asistente</h3>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
+                <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
+                <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" aria-describedby="basic-addon1">
             </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ol"></i></span>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Semestre</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Especialidad</option>
+                    <option value="Sin especialidad">Sin especialidad</option>
+                    <option value="Especialidad 1">Especialidad 1</option>
+                    <option value="Especialidad 2">Especialidad 2</option>
+                    <option value="Especialidad 3">Especialidad 3</option>
+                    <option value="Especialidad 4">Especialidad 4</option>
+                    <option value="Especialidad 5">Especialidad 5</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Carrera</option>
+                    <option value="Licenciatura en contaduría">Licenciatura en contaduría</option>
+                    <option value="Licenciatura en administración">Licenciatura en administración</option>
+                    <option value="Maestría en administración">Maestría en administración</option>
+                    <option value="Maestría en impuestos">Maestría en impuestos</option>
+                    <option value="Doctorado en administración">Doctorado en administración</option>
+                    <option value="Doctorado en impuestos">Doctorado en impuestos</option>
+                </select>
+            </div>
+
+            <div class="input-group mb-3 w-100">
+                <span class="input-group-text" id="basic-addon1">Seleccionar Evento</span>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Seleccionar ...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+            <p class="w-100 text-end"><button class="btn btn-danger "><i class="bi bi-x-square-fill"></i> Cancelar</button> <button class="btn btn-primary"><i class="bi bi-person-plus-fill"></i> Registrar</button></p>
+        </div>
             <div class="col-0"></div>
         </div>
     </div>

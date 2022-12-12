@@ -102,8 +102,7 @@
   </header>
 
   <div class="b-example-divider">
-  <h4 class="text-secondary ms-5 mt-2 mb-4">NOMBRE DEL EVENTO:</h4>
-
+    <h4 class="text-secondary ms-5 mt-2 mb-4">NOMBRE DEL EVENTO:</h4>
   </div>
 
   <div class="container-fluid w-100 h-100" style="width:100%">
