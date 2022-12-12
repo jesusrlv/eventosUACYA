@@ -86,7 +86,7 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-4 justify-content-center mb-md-0">
-          <li><a href="index.php" class="nav-link px-2 text-secondary">Eventos</a></li>
+            <li><a href="index.php" class="nav-link px-2 text-light"><i class="bi bi-houses"></i> Inicio</a></li>
         </ul>
 
         <div class="text-end">

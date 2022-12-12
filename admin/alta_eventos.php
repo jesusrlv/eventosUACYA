@@ -86,7 +86,7 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-4 justify-content-center mb-md-0">
-          <li><a href="index.php" class="nav-link px-2 text-secondary">Eventos</a></li>
+          <li><a href="index.php" class="nav-link px-2 text-light"><i class="bi bi-houses"></i> Inicio</a></li>
         </ul>
 
         <div class="text-end">
@@ -101,7 +101,7 @@
 
   </div>
 
-  <h3 class="mt-4 ms-5 text-secondary">Alta activos en el sistema</h3>
+  <h3 class="mt-4 ms-5 text-secondary">Alta eventos activos en el sistema</h3>
 
     <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
         <div class="row justify-content-center">

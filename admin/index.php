@@ -89,7 +89,11 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-4 justify-content-center mb-md-0">
-          <li><a href="index.php" class="nav-link px-2 text-secondary">Eventos</a></li>
+          <li><a href="#" class="nav-link px-2 text-secondary"><i class="bi bi-houses"></i> Inicio</a></li>
+          <li><a href="#" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Agregar evento</a></li>
+          <li><a href="#" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Pre-registro</a></li>
+          <li><a href="#" class="nav-link px-2 text-light"><i class="bi bi-list-check"></i> Lista eventos</a></li>
+          <li><a href="#" class="nav-link px-2 text-light"><i class="bi bi-list-check"></i> Lista asistentes</a></li>
         </ul>
 
         <div class="text-end">
@@ -110,20 +114,40 @@
       <div class="container text-center">
         <div class="row">
           <div class="col-md-6">
-            <div class="card mx-auto bg-warning shadow-sm" style="width: 18rem;">
-              <div class="card-body">
+            <div class="card mx-auto bg-warning shadow-sm card-block" style="width: 36rem; height:18rem">
+              <div class="card-body align-items-center d-flex flex-column justify-content-center">
                 <h5 class="card-title">Agregar evento</h5>
                 <p class="card-text">Se agrega evento a la lista cargada en el sistema.</p>
-                <a href="#" class="card-link" style="text-decoration:none;"><i class="bi bi-plus-circle-fill"></i> Agregar evento</a>
+                <a href="alta_eventos.php" class="card-link" style="text-decoration:none;"><i class="bi bi-plus-circle-fill"></i> Agregar evento</a>
               </div>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card mx-auto bg-warning shadow-sm" style="width: 18rem;">
-              <div class="card-body">
+            <div class="card mx-auto bg-warning shadow-sm align-items-center" style="width: 36rem; height:18rem">
+              <div class="card-body align-items-center d-flex flex-column justify-content-center">
                   <h5 class="card-title">Pre-Registro de asistentes</h5>
                   <p class="card-text">Se pre-cargan los asistentes al evento.</p>
-                  <a href="#" class="card-link" style="text-decoration:none;"><i class="bi bi-plus-circle-fill"></i> Pre-registro</a>
+                  <a href="alta_asistentes.php" class="card-link" style="text-decoration:none;"><i class="bi bi-plus-circle-fill"></i> Pre-registro</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-6">
+            <div class="card mx-auto bg-warning shadow-sm" style="width: 36rem; height:18rem">
+              <div class="card-body align-items-center d-flex flex-column justify-content-center">
+                <h5 class="card-title">Ver eventos cargados</h5>
+                <p class="card-text">Listado de eventos cargados en el sistema.</p>
+                <a href="#" class="card-link" style="text-decoration:none;"><i class="bi bi-list-check"></i> Listado</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card mx-auto bg-warning shadow-sm" style="width: 36rem; height:18rem">
+              <div class="card-body align-items-center d-flex flex-column justify-content-center">
+                  <h5 class="card-title">Listado de asistentes</h5>
+                  <p class="card-text">Listado de los asistentes al evento.</p>
+                  <a href="#" class="card-link" style="text-decoration:none;"><i class="bi bi-list-check"></i> Listado</a>
               </div>
             </div>
           </div>
