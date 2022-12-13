@@ -101,22 +101,29 @@
 
   </div>
 
-  <h3 class="mt-4 ms-5 text-secondary">Alta eventos activos en el sistema</h3>
-
     <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="input-group mb-3 w-100">
-                    <span class="input-group-text" id="basic-addon1">Seleccionar Evento</span>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Seleccionar ...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
+    <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-calendar-event-fill"></i> Alta de eventos</h3>
+
+    <div class="row justify-content-center">
+            <div class="col-12 border rounded p-4">
+            <h3 class="mb-4 border-bottom">Datos del evento</h3>
+            <div class="input-group mb-3 w-50">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-plus-fill"></i></span>
+                <input type="date" class="form-control" placeholder="Fecha del evento" aria-label="Fecha del evento" aria-describedby="basic-addon1">
             </div>
-            <div class="col-0"></div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-event"></i></span>
+                <input type="text" class="form-control" placeholder="Nombre del evento" aria-label="Nombre del evento" aria-describedby="basic-addon1">
+            </div>
+            
+            <div class="input-group mb-3">
+                
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-geo-alt-fill"></i></span>
+                <input type="text" class="form-control" placeholder="Lugar" aria-label="Lugar" aria-describedby="basic-addon1">
+            </div>
+
+            
+            <p class="w-100 text-end"><button class="btn btn-danger "><i class="bi bi-x-square-fill"></i> Cancelar</button> <button class="btn btn-primary"><i class="bi bi-calendar2-plus-fill"></i> Registrar</button></p>
         </div>
     </div>
   

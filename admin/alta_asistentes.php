@@ -101,9 +101,10 @@
 
   </div>
 
-  <h3 class="mt-4 ms-5 text-secondary">Alta activos en el sistema</h3>
+
 
     <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
+    <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-people-fill"></i> Pre-carga de asistentes</h3>
         <div class="row justify-content-center">
             <div class="col-12 border rounded p-4">
             <h3 class="mb-4 border-bottom">Datos de asistente</h3>
