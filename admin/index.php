@@ -27,6 +27,16 @@
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+       #transition {
+        background-color:#ffc107;
+        border: none;
+        padding: 16px 32px;
+        transition: 0.3s;
+      }
+      #transition:hover {
+        background-color:#000e42;
+        color: white;
+      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -94,10 +104,10 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-4 justify-content-center mb-md-0">
           <li><a href="#" class="nav-link px-2 text-secondary"><i class="bi bi-houses"></i> Inicio</a></li>
-          <li><a href="#" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Agregar evento</a></li>
-          <li><a href="#" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Pre-registro</a></li>
-          <li><a href="#" class="nav-link px-2 text-light"><i class="bi bi-list-check"></i> Lista eventos</a></li>
-          <li><a href="#" class="nav-link px-2 text-light"><i class="bi bi-list-check"></i> Lista asistentes</a></li>
+          <li><a href="alta_eventos.php" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Agregar evento</a></li>
+          <li><a href="alta_asistentes.php" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Pre-registro</a></li>
+          <li><a href="lista_eventos.php" class="nav-link px-2 text-light"><i class="bi bi-list-check"></i> Lista eventos</a></li>
+          <li><a href="lista_asistentes.php" class="nav-link px-2 text-light"><i class="bi bi-list-check"></i> Lista asistentes</a></li>
         </ul>
 
         <div class="text-end">
@@ -115,10 +125,11 @@
       <div class="container text-center">
       <img src="../assets/brand/img/logo.png" width="180" height="54" role="img" alt="" class="p-2 rounded" style="background-color:#000e42">
       <h1 class="mt-2 display-1 text-bold" style="font-family: 'Titillium Web', sans-serif;">Sistema de eventos<br>UACYA</h1>
+      <p class="h3 text-bold text-secondary">Universidad Autónoma de Zacatecas</p>
       <hr>
         <div class="row mt-5">
           <div class="col-md-6">
-            <div class="card mx-auto bg-warning shadow-sm card-block" style="width: 36rem; height:18rem">
+            <div class="card mx-auto shadow-sm card-block" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                 <h5 style="font-size:63px"><i class="bi bi-calendar-event-fill"></i></h5>
                 <h5 class="card-title">Agregar evento</h5>
@@ -128,7 +139,7 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card mx-auto bg-warning shadow-sm align-items-center" style="width: 36rem; height:18rem">
+            <div class="card mx-auto shadow-sm align-items-center" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                   <h5 style="font-size:63px"><i class="bi bi-people-fill"></i></h5>
                   <h5 class="card-title">Pre-Registro de asistentes</h5>
@@ -140,22 +151,22 @@
         </div>
         <div class="row mt-5">
           <div class="col-md-6">
-            <div class="card mx-auto bg-warning shadow-sm" style="width: 36rem; height:18rem">
+            <div class="card mx-auto shadow-sm" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                 <h5 style="font-size:63px"><i class="bi bi-list-check"></i></h5>
                 <h5 class="card-title">Ver eventos cargados</h5>
                 <p class="card-text">Listado de eventos cargados en el sistema.</p>
-                <a href="#" class="card-link" style="text-decoration:none;"><i class="bi bi-list-check"></i> Listado</a>
+                <a href="lista_eventos.php" class="card-link" style="text-decoration:none;"><i class="bi bi-list-check"></i> Listado</a>
               </div>
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card mx-auto bg-warning shadow-sm" style="width: 36rem; height:18rem">
+            <div class="card mx-auto shadow-sm" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                 <h5 style="font-size:63px"><i class="bi bi-list-check"></i></h5>
                   <h5 class="card-title">Listado de asistentes</h5>
                   <p class="card-text">Listado de los asistentes al evento.</p>
-                  <a href="#" class="card-link" style="text-decoration:none;"><i class="bi bi-list-check"></i> Listado</a>
+                  <a href="lista_asistentes.php" class="card-link" style="text-decoration:none;"><i class="bi bi-list-check"></i> Listado</a>
               </div>
             </div>
           </div>

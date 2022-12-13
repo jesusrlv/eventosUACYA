@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
     <style>
      
       .bd-placeholder-img {
@@ -88,10 +90,10 @@
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-4 justify-content-center mb-md-0">
           <li><a href="index.php" class="nav-link px-2 text-light"><i class="bi bi-houses"></i> Inicio</a></li>
-          <li><a href="#" class="nav-link px-2 text-secondary"><i class="bi bi-plus-circle-fill"></i> Agregar evento</a></li>
+          <li><a href="alta_eventos.php" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Agregar evento</a></li>
           <li><a href="alta_asistentes.php" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Pre-registro</a></li>
           <li><a href="lista_eventos.php" class="nav-link px-2 text-light"><i class="bi bi-list-check"></i> Lista eventos</a></li>
-          <li><a href="lista_asistentes.php" class="nav-link px-2 text-light"><i class="bi bi-list-check"></i> Lista asistentes</a></li>
+          <li><a href="#" class="nav-link px-2 text-secondary"><i class="bi bi-list-check"></i> Lista asistentes</a></li>
         </ul>
 
         <div class="text-end">
@@ -103,34 +105,67 @@
   </header>
 
   <div class="b-example-divider">
-
   </div>
 
     <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
-    <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-calendar-event-fill"></i> Alta de eventos</h3>
-
-    <div class="row justify-content-center">
-            <div class="col-12 border rounded p-4">
-            <h3 class="mb-4 border-bottom">Datos del evento</h3>
-            <div class="input-group mb-3 w-50">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-plus-fill"></i></span>
-                <input type="date" class="form-control" placeholder="Fecha del evento" aria-label="Fecha del evento" aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-event"></i></span>
-                <input type="text" class="form-control" placeholder="Nombre del evento" aria-label="Nombre del evento" aria-describedby="basic-addon1">
-            </div>
-            
-            <div class="input-group mb-3">
-                
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-geo-alt-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Lugar" aria-label="Lugar" aria-describedby="basic-addon1">
-            </div>
-
-            
-            <p class="w-100 text-end"><button class="btn btn-danger "><i class="bi bi-x-square-fill"></i> Cancelar</button> <button class="btn btn-primary"><i class="bi bi-calendar2-plus-fill"></i> Registrar</button></p>
+    <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-people-fill"></i> Lista de asistentes</h3>
+        <div class="input-group mb-3 w-50">
+            <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Nombre del evento</option>
+                <option value="Licenciatura en contaduría">Licenciatura en contaduría</option>
+                <option value="Licenciatura en administración">Licenciatura en administración</option>
+                <option value="Maestría en administración">Maestría en administración</option>
+                <option value="Maestría en impuestos">Maestría en impuestos</option>
+                <option value="Doctorado en administración">Doctorado en administración</option>
+                <option value="Doctorado en impuestos">Doctorado en impuestos</option>
+            </select>
         </div>
-    </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-4 w-100">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+                    <input type="text" class="form-control" placeholder="Filter" aria-label="Filter" aria-describedby="basic-addon1" id="myInput">
+                </div>
+            </div>
+            <div class="col text-end">
+                <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a>
+            </div>
+        </div>
+
+    <table class="table table-hover">
+        <thead class="table-dark">
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Semestre</th>
+            <th scope="col">Especialidad</th>
+            <th scope="col">Carrera</th>
+            <th scope="col">Constancia (PDF)</th>
+            </tr>
+        </thead>
+        <tbody id="myTable">
+            <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            </tr>
+            <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+            </tr>
+            <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+            </tr>
+        </tbody>
+    </table>
   
 </main>
 <div class="container">
@@ -149,3 +184,14 @@
       
   </body>
 </html>
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+  </script>
