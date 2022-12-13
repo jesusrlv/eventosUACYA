@@ -130,7 +130,8 @@
                 </div>
             </div>
             <div class="col text-end">
-                <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a>
+                <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-success"><i class="bi bi-file-earmark-excel-fill"></i> Cargar listado</a>
+                <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-danger"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a>
             </div>
         </div>
 

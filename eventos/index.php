@@ -10,6 +10,10 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap" rel="stylesheet">
+
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,12 +105,14 @@
 
   </div>
 
-  <h3 class="mt-4 ms-5 text-secondary">Eventos activos en el sistema</h3>
-
-    <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
+    <div class="container-fluid w-75 h-100 mt-5 mb-4 p-5 text-center">
+    <img src="../assets/brand/img/logo.png" width="180" height="54" role="img" alt="" class="p-2 rounded" style="background-color:#000e42">
+      <h1 class="mt-2 display-1 text-bold" style="font-family: 'Titillium Web', sans-serif;">Sistema de eventos<br>UACYA</h1>
+      <p class="h3 text-bold text-secondary">Universidad Autónoma de Zacatecas</p>
+      <hr>
         <div class="row justify-content-center">
             <div class="col-12">
-                <div class="input-group mb-3 w-100">
+                <div class="input-group mb-3 w-100 mt-5">
                     <span class="input-group-text" id="basic-addon1">Seleccionar Evento</span>
                     <select class="form-select" aria-label="Default select example">
                         <option selected>Seleccionar ...</option>
@@ -114,6 +120,7 @@
                         <option value="2">Two</option>
                         <option value="3">Three</option>
                     </select>
+                    <button class="btn btn-primary">Acceder <i class="bi bi-arrow-right-circle-fill"></i></button>
                 </div>
             </div>
             <div class="col-0"></div>
