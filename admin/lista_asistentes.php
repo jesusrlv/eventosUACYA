@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
     <style>
@@ -111,7 +112,7 @@
     <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-people-fill"></i> Lista de asistentes</h3>
         <div class="input-group mb-3 w-50">
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
-            <select class="form-select" aria-label="Default select example">
+            <select class="form-select" aria-label="Default select example" onchange="cambioEvento()" id="evento">
                 <option selected>Nombre del evento</option>
                 <?php
                 include('query/query_eventos.php');
@@ -139,7 +140,7 @@
         </div>
 
     <table class="table table-hover">
-        <thead class="table-dark">
+        <thead class="table-dark text-center">
             <tr>
             <th scope="col">#</th>
             <th scope="col">Apellido</th>
@@ -198,4 +199,20 @@
             });
         });
     });
+
+    function cambioEvento(){
+      var evento = document.getElementById('evento').value;
+      $.ajax({
+      type:"POST",
+      url:"query/query_asistentes.php",
+      data:{
+        evento:evento
+      },
+      cache: false,
+        success: function(data) {
+          $("#myTable").html(data);
+
+      }               
+    });
+    }
   </script>
