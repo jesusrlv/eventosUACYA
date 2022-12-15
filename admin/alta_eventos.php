@@ -110,25 +110,27 @@
     <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-calendar-event-fill"></i> Alta de eventos</h3>
 
     <div class="row justify-content-center">
-            <div class="col-12 border rounded p-4">
+      <form action="prcd/proceso_alta_evento.php" method="POST">
+        <div class="col-12 border rounded p-4">
             <h3 class="mb-4 border-bottom">Datos del evento</h3>
             <div class="input-group mb-3 w-50">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-plus-fill"></i></span>
-                <input type="date" class="form-control" placeholder="Fecha del evento" aria-label="Fecha del evento" aria-describedby="basic-addon1">
+                <input type="date" class="form-control" placeholder="Fecha del evento" aria-label="Fecha del evento" aria-describedby="basic-addon1" name="fecha_evento">
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-event"></i></span>
-                <input type="text" class="form-control" placeholder="Nombre del evento" aria-label="Nombre del evento" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Nombre del evento" aria-label="Nombre del evento" aria-describedby="basic-addon1" name="nombre_evento">
             </div>
-            
             <div class="input-group mb-3">
-                
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-geo-alt-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Lugar" aria-label="Lugar" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Lugar" aria-label="Lugar" aria-describedby="basic-addon1" name="lugar_evento">
             </div>
-
-            
-            <p class="w-100 text-end"><button class="btn btn-danger "><i class="bi bi-x-square-fill"></i> Cancelar</button> <button class="btn btn-primary"><i class="bi bi-calendar2-plus-fill"></i> Registrar</button></p>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
+                <input type="text" class="form-control" placeholder="Capacidad" aria-label="Capacidad" aria-describedby="basic-addon1" name="capacidad">
+            </div>
+            <p class="w-100 text-end"><button class="btn btn-danger "><i class="bi bi-x-square-fill"></i> Cancelar</button> <button class="btn btn-primary" type="submit"><i class="bi bi-calendar2-plus-fill"></i> Registrar</button></p>
+        </form>
         </div>
     </div>
   
