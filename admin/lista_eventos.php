@@ -124,35 +124,39 @@
             </div>
         </div>
 
-    <table class="table table-hover">
+    <table class="table table-hover text-center">
         <thead class="table-dark">
             <tr>
             <th scope="col">#</th>
+            <th scope="col">Estatus</th>
             <th scope="col">Nombre del evento</th>
             <th scope="col">Cantidad</th>
-            <th scope="col">Cantidad registrada</th>
+            <!-- <th scope="col">Cantidad registrada</th> -->
             <th scope="col">Lugar</th>
+            <th scope="col">Fecha</th>
             <th scope="col">Acción</th>
             </tr>
         </thead>
         <tbody id="myTable">
-            <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-            </tr>
+          
+        <?
+        include ('query/query_eventos.php');
+        $x = 0;
+        while($rowEvento = $resultadoEvento->fetch_assoc()){
+          $x++;
+          echo'
+          <tr>
+            <td>'.$x.'</td>
+            <td class="text-success"><i class="bi bi-caret-up-fill"></i></td>
+            <td>'.$rowEvento['nombre'].'</td>
+            <td>'.$rowEvento['capacidad'].'</td>
+            <td>'.$rowEvento['lugar'].'</td>
+            <td>'.$rowEvento['fecha'].'</td>
+            <td class="text-danger"><i class="bi bi-caret-down-fill"></i></td>
+          </tr>
+          ';
+        }
+        ?>
         </tbody>
     </table>
   

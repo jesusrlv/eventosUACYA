@@ -113,12 +113,15 @@
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
             <select class="form-select" aria-label="Default select example">
                 <option selected>Nombre del evento</option>
-                <option value="Licenciatura en contaduría">Licenciatura en contaduría</option>
-                <option value="Licenciatura en administración">Licenciatura en administración</option>
-                <option value="Maestría en administración">Maestría en administración</option>
-                <option value="Maestría en impuestos">Maestría en impuestos</option>
-                <option value="Doctorado en administración">Doctorado en administración</option>
-                <option value="Doctorado en impuestos">Doctorado en impuestos</option>
+                <?php
+                include('query/query_eventos.php');
+                
+                while($rowEvento = $resultadoEvento->fetch_assoc()){
+                  echo'
+                  <option value="'.$rowEvento['id'].'">'.$rowEvento['nombre'].'</option>
+                  ';
+                }
+                ?>
             </select>
         </div>
         <hr>

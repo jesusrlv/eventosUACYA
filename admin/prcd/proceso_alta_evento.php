@@ -19,8 +19,9 @@ $fecha_evento = $_POST['fecha_evento'];
 $nombre_evento = $_POST['nombre_evento'];
 $lugar_evento = $_POST['lugar_evento'];
 $capacidad = $_POST['capacidad'];
+$activo = 1;
 
-$queryEvento = "INSERT INTO eventos(fecha,nombre,lugar,capacidad) VALUES('$fecha_evento','$nombre_evento','$lugar_evento','$capacidad')";
+$queryEvento = "INSERT INTO eventos(fecha,nombre,lugar,capacidad,activo) VALUES('$fecha_evento','$nombre_evento','$lugar_evento','$capacidad','$activo')";
 $resultadoEvento = $conn->query($queryEvento);
 
 if($resultadoEvento){

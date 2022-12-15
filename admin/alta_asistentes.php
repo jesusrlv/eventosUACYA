@@ -161,9 +161,15 @@
                 <span class="input-group-text" id="basic-addon1">Seleccionar Evento</span>
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Seleccionar ...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <?php
+                include('query/query_eventos.php');
+                
+                while($rowEvento = $resultadoEvento->fetch_assoc()){
+                  echo'
+                  <option value="'.$rowEvento['id'].'">'.$rowEvento['nombre'].'</option>
+                  ';
+                }
+                ?>
                 </select>
             </div>
             <p class="w-100 text-end"><button class="btn btn-danger "><i class="bi bi-x-square-fill"></i> Cancelar</button> <button class="btn btn-primary"><i class="bi bi-person-plus-fill"></i> Registrar</button></p>
