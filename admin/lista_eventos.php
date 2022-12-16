@@ -19,6 +19,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <style>
      
       .bd-placeholder-img {
@@ -109,14 +113,14 @@
     <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-calendar-event-fill"></i> Lista de eventos</h3>
         <div class="input-group mb-3 w-50">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-event-fill"></i></span>
-          <input type="date" class="form-control" aria-describedby="basic-addon1" id="myInput">
+          <input type="date" class="form-control" aria-describedby="basic-addon1">
         </div>
         <hr>
         <div class="row">
             <div class="col">
                 <div class="input-group mb-4 w-100">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Filter" aria-label="Filter" aria-describedby="basic-addon1" id="myInput">
+                    <input type="text" class="form-control" placeholder="Filtro" aria-label="Filtro" aria-describedby="basic-addon1" id="myInput">
                 </div>
             </div>
             <div class="col text-end">
@@ -177,3 +181,14 @@
       
   </body>
 </html>
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

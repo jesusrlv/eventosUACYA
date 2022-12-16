@@ -16,7 +16,7 @@ while($rowEventos = $resultadoEvento->fetch_assoc()){
         <td>'.$rowEventos['semestre'].'</td>
         <td>'.$rowEventos['especialidad'].'</td>
         <td>'.$rowEventos['carrera'].'</td>
-        <td><a href="prcd/constancia_pdf.php?id='.$rowEventos['id'].'"</a></td>
+        <td><a href="prcd/constancia_pdf.php?id='.$rowEventos['id'].'"><i class="bi bi-filetype-pdf"></i></a></td>
     </tr>
     ';
 }
