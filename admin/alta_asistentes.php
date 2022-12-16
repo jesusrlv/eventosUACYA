@@ -135,13 +135,10 @@
                 </select>
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
                 <select class="form-select" aria-label="Default select example" name="especialidad">
-                    <option selected>Especialidad</option>
-                    <option value="Sin especialidad">Sin especialidad</option>
-                    <option value="1">Especialidad 1</option>
-                    <option value="2">Especialidad 2</option>
-                    <option value="3">Especialidad 3</option>
-                    <option value="4">Especialidad 4</option>
-                    <option value="5">Especialidad 5</option>
+                    <option selected>Unidad Académica</option>
+                    <option value="Sin especialidad">Sin Unidad Académica</option>
+                    <option value="0">Otra</option>
+                    <option value="1">Unidad Académica de Contaduría y Adminisitración</option>
                 </select>
             </div>
             <div class="input-group mb-3">
@@ -151,7 +148,7 @@
                 
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
                 <select class="form-select" aria-label="Default select example" name="carrera">
-                    <option selected>Carrera</option>
+                    <option selected>Programa</option>
                     <option value="1">Licenciatura en contaduría</option>
                     <option value="2">Licenciatura en administración</option>
                     <option value="3">Maestría en administración</option>
@@ -193,10 +190,7 @@
     </footer>
   </div>
 
-
-
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-      
   </body>
 </html>
