@@ -109,7 +109,7 @@
   </header>
 
   <div class="b-example-divider">
-    <h4 class="text-secondary ms-5 mt-2 mb-4">NOMBRE DEL EVENTO: <?php $rowEventos['nombre'] ?></h4>
+    <h4 class="text-secondary ms-5 mt-2 mb-4">NOMBRE DEL EVENTO: <span class="text-dark"><strong><?php echo $rowEventos['nombre'] ?></strong></span></h4>
   </div>
 
   <div class="container-fluid w-100 h-100" style="width:100%">

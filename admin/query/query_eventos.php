@@ -5,7 +5,7 @@ include('prcd/qc.php');
     $resultadoEvento = $conn->query($queryEventos);
 
     // query eventos cámara qr
-    $sqlEventosQR = "SELECT * FROM evento WHERE id = '$idEventos'";
+    $sqlEventosQR = "SELECT * FROM eventos WHERE id = '$idEventos'";
     $resultadoEventoQR = $conn->query($sqlEventosQR);
 
 ?>
