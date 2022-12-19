@@ -19,6 +19,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <?php
+      
+      $idEventos = $_POST['evento'];
+      include('../admin/query/query_eventos.php');
+      $rowEventos = $resultadoEventoQR->fetch_assoc();
+    ?>
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -102,7 +109,7 @@
   </header>
 
   <div class="b-example-divider">
-    <h4 class="text-secondary ms-5 mt-2 mb-4">NOMBRE DEL EVENTO:</h4>
+    <h4 class="text-secondary ms-5 mt-2 mb-4">NOMBRE DEL EVENTO: <?php $rowEventos['nombre'] ?></h4>
   </div>
 
   <div class="container-fluid w-100 h-100" style="width:100%">

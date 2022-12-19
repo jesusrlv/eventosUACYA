@@ -112,17 +112,24 @@
       <hr>
         <div class="row justify-content-center">
             <div class="col-12">
+            <form action="checkin.php" method="POST">
                 <div class="input-group mb-3 w-100 mt-5">
                     <span class="input-group-text" id="basic-addon1">Seleccionar Evento</span>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" name="evento">
                         <option selected>Seleccionar ...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <?php
+                          include('../admin/query/query_eventos.php');
+                          while($rowEventos = $resultadoEvento->fetch_assoc()){
+                            echo'
+                            <option value="'.$rowEventos['id'].'">'.$rowEventos['nombre'].'</option>
+                            ';
+                          }
+                        ?>
                     </select>
-                    <button class="btn btn-primary">Acceder <i class="bi bi-arrow-right-circle-fill"></i></button>
-                </div>
+                    <button class="btn btn-primary" type="submit">Acceder <i class="bi bi-arrow-right-circle-fill"></i></button>
+            </form>
             </div>
+          </div>
             <div class="col-0"></div>
         </div>
     </div>
