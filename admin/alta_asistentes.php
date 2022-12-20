@@ -144,7 +144,7 @@
             <div class="input-group mb-3">
 
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
-                <input type="text" class="form-control" placeholder="Número de control" aria-label="Número de control" aria-describedby="basic-addon1" name="num_control">
+                <input type="text" class="form-control" placeholder="Número de matrícula" aria-label="Número de matrícula" aria-describedby="basic-addon1" name="num_control">
                 
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
                 <select class="form-select" aria-label="Default select example" name="carrera">

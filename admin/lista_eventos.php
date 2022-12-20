@@ -109,12 +109,27 @@
   <div class="b-example-divider">
   </div>
 
-  <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
-    <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-calendar-event-fill"></i> Lista de eventos</h3>
+  <div class="container mt-5">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-calendar2-check-fill"></i> <strong>Eventos activos</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="eventos_baja.php"><i class="bi bi-calendar-x-fill"></i> Eventos inactivos</a>
+      </li>
+      
+    </ul>
+  </div>
+
+  <div class="container-fluid w-75 h-100 mt-1 mb-5 p-5">
+    <h3 class="mt-4 mb-3 text-dark"><i class="bi bi-calendar2-check-fill text-success"></i> Lista de eventos activos</h3>
+        <form action="lista_eventos.php" method="POST">
         <div class="input-group mb-3 w-50">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-event-fill"></i></span>
-          <input type="date" class="form-control" aria-describedby="basic-addon1">
+          <input type="date" class="form-control" aria-describedby="basic-addon1" name="fecha">
+          <button class="btn btn-primary" type="sumbit">Buscar</button>
         </div>
+        </form>
         <hr>
         <div class="row">
             <div class="col">
@@ -124,7 +139,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a>
+                <!-- <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a> -->
             </div>
         </div>
 
@@ -144,6 +159,7 @@
         <tbody id="myTable">
           
         <?
+        
         include ('query/query_eventos.php');
         $x = 0;
         while($rowEvento = $resultadoEvento->fetch_assoc()){
@@ -151,19 +167,19 @@
           echo'
           <tr>
             <td>'.$x.'</td>
-            <td class="text-success"><i class="bi bi-caret-up-fill"></i></td>
+            <td class=""><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></td>
             <td>'.$rowEvento['nombre'].'</td>
             <td>'.$rowEvento['capacidad'].'</td>
-            <td>'.$rowEvento['lugar'].'</td>
-            <td>'.$rowEvento['fecha'].'</td>
-            <td class="text-danger"><i class="bi bi-caret-down-fill"></i></td>
+            <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
+            <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
+            <td class=""><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></i></span></td>
           </tr>
           ';
         }
         ?>
         </tbody>
     </table>
-  
+   
 </main>
 <div class="container">
   <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
