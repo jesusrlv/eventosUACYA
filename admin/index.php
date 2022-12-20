@@ -127,7 +127,7 @@
       <h1 class="mt-2 display-1 text-bold" style="font-family: 'Titillium Web', sans-serif;">Sistema de eventos<br>UACYA</h1>
       <p class="h3 text-bold text-secondary">Universidad Autónoma de Zacatecas</p>
       <hr>
-        <div class="row mt-5">
+        <div class="row mt-5 g-4">
           <div class="col-md-6">
             <div class="card mx-auto shadow-sm card-block" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
@@ -149,7 +149,7 @@
             </div>
           </div>
         </div>
-        <div class="row mt-5">
+        <div class="row mt-5 g-4">
           <div class="col-md-6">
             <div class="card mx-auto shadow-sm" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">

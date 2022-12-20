@@ -72,6 +72,10 @@
       }
     </style>
 
+    <?php
+      include ('query/query_catalogos.php');  
+    ?>
+
     
     <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
@@ -102,10 +106,7 @@
   </header>
 
   <div class="b-example-divider">
-
   </div>
-
-
 
     <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
     <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-people-fill"></i> Pre-carga de asistentes</h3>
@@ -113,66 +114,116 @@
             <div class="col-12 border rounded p-4">
             <h3 class="mb-4 border-bottom">Datos de asistente</h3>
       <form action="prcd/proceso_alta_asistentes.php" method="POST">
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" name="nombre">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" aria-describedby="basic-addon1" name="apellidos">
-            </div>
-            <div class="input-group mb-3">
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ol"></i></span>
-                <select class="form-select" aria-label="Default select example" name="semestre">
-                    <option selected>Semestre</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                </select>
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
-                <select class="form-select" aria-label="Default select example" name="especialidad">
-                    <option selected>Unidad Académica</option>
-                    <option value="Sin especialidad">Sin Unidad Académica</option>
-                    <option value="0">Otra</option>
-                    <option value="1">Unidad Académica de Contaduría y Adminisitración</option>
-                </select>
-            </div>
-            <div class="input-group mb-3">
 
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
-                <input type="text" class="form-control" placeholder="Número de matrícula" aria-label="Número de matrícula" aria-describedby="basic-addon1" name="num_control">
-                
-                <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
-                <select class="form-select" aria-label="Default select example" name="carrera">
-                    <option selected>Programa</option>
-                    <option value="1">Licenciatura en contaduría</option>
-                    <option value="2">Licenciatura en administración</option>
-                    <option value="3">Maestría en administración</option>
-                    <option value="4">Maestría en impuestos</option>
-                    <option value="5">Doctorado en administración</option>
-                    <option value="6">Doctorado en impuestos</option>
-                </select>
+          <div class="row">
+
+              <div class="col-6">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
+                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" name="nombre" required>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
+                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" aria-describedby="basic-addon1" name="apellidos" required>
+                </div>
+              </div>
+            
+            <div class="col-6">
+              <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><i class="bi bi-bandaid-fill"></i></span>
+                  <select class="form-select" aria-label="Default select example" name="tipo_sangre" required>
+                      <option value="" selected>Tipo de sangre</option>
+                      <?php
+                      while ($rowSangre = $resultadosqlSangre->fetch_assoc()){
+                        echo'
+                          <option value="'.$rowSangre['id'].'">'.$rowSangre['tipo_sangre'].'</option>
+                        ';
+                      }
+                      ?>
+                  </select>
+              </div>
+            </div>
+            
+            <div class="col-6">
+              <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ol"></i></span>
+                  <select class="form-select" aria-label="Default select example" name="semestre" required>
+                      <option value="" selected>Semestre</option>
+                      <?php
+                      while ($rowSemestre = $resultadosqlSemestre->fetch_assoc()){
+                        echo'
+                          <option value="'.$rowSemestre['id'].'">'.$rowSemestre['semestre'].'</option>
+                        ';
+                      }
+                      ?>
+                  </select>
+              </div>
             </div>
 
-            <div class="input-group mb-3 w-100">
-                <span class="input-group-text" id="basic-addon1">Seleccionar Evento</span>
-                <select class="form-select" aria-label="Default select example" name="evento">
-                    <option selected>Seleccionar ...</option>
-                    <?php
-                include('query/query_eventos.php');
-                
-                while($rowEvento = $resultadoEvento->fetch_assoc()){
-                  echo'
-                  <option value="'.$rowEvento['id'].'">'.$rowEvento['nombre'].'</option>
-                  ';
-                }
-                ?>
-                </select>
+              <div class="col-6">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
+                  <select class="form-select" aria-label="Default select example" name="unidad_academica" required>
+                      <option value="" selected>Unidad Académica</option>
+                      <option value="0">Sin Unidad Académica</option>
+                      <?php
+                      while ($rowUAcademica = $resultadoUAcademica->fetch_assoc()){
+                        echo'
+                          <option value="'.$rowUAcademica['id'].'">'.$rowUAcademica['unidad_academica'].'</option>
+                        ';
+                      }
+                      ?>
+                  </select>
+                </div>
+              </div>
+           
+            <div class="col-6">
+              <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
+                  <input type="text" class="form-control" placeholder="Número de matrícula" aria-label="Número de matrícula" aria-describedby="basic-addon1" name="num_control">
+              </div>
             </div>
+
+            <div class="col-6">
+              <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
+                  <select class="form-select" aria-label="Default select example" name="carrera" required>
+                      <option value="" selected>Programa</option>
+                      <?php
+                      while ($rowPrograma = $resultadoPrograma->fetch_assoc()){
+                        echo'
+                          <option value="'.$rowPrograma['id'].'">'.$rowPrograma['programa'].'</option>
+                        ';
+                      }
+                      ?>
+                  </select>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="input-group mb-3 w-100">
+                  <span class="input-group-text" id="basic-addon1">Evento</span>
+                  <select class="form-select" aria-label="Default select example" name="evento" required>
+                      <option value="" selected>Seleccionar ...</option>
+                      <?php
+                  include('query/query_eventos.php');
+                  
+                  while($rowEvento = $resultadoEvento->fetch_assoc()){
+                    echo'
+                    <option value="'.$rowEvento['id'].'">'.$rowEvento['nombre'].'</option>
+                    ';
+                  }
+                  ?>
+                  </select>
+              </div>
+            </div>
+
+          </div><!-- row -->
+          <hr>
+
             <p class="w-100 text-end"><button class="btn btn-danger "><i class="bi bi-x-square-fill"></i> Cancelar</button> <button class="btn btn-primary" type="submit"><i class="bi bi-person-plus-fill"></i> Registrar</button></p>
         </div>
       </form>

@@ -17,13 +17,14 @@ include('qc.php');
 
 $nombre = $_POST['nombre'];
 $apellidos = $_POST['apellidos'];
+$tipo_sangre = $_POST['tipo_sangre'];
 $semestre = $_POST['semestre'];
-$especialidad = $_POST['especialidad'];
+$unidad_academica = $_POST['unidad_academica'];
 $num_control = $_POST['num_control'];
 $carrera = $_POST['carrera'];
 $evento = $_POST['evento'];
 
-$queryAsistentes = "INSERT INTO asistentes(nombre,apellidos,semestre,especialidad,carrera,numero_control,evento) VALUES('$nombre','$apellidos','$semestre','$especialidad','$carrera','$num_control','$evento')";
+$queryAsistentes = "INSERT INTO asistentes(nombre,apellidos,tipo_sangre,semestre,unidad_academica,carrera,numero_control,evento) VALUES('$nombre','$apellidos','$tipo_sangre','$semestre','$unidad_academica','$carrera','$num_control','$evento')";
 $resultadoAsistentes = $conn->query($queryAsistentes);
 
 if($resultadoAsistentes){
