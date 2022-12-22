@@ -10,19 +10,13 @@ $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
         $annio = substr($fechaBusqueda, 0, 4);
         $mes = substr($fechaBusqueda, 5, 2); 
         $sqlBusqueda = "SELECT * FROM eventos WHERE YEAR(fecha) = $annio 
-        AND MONTH(fecha)  = $mes AND activo = 1 ORDER BY fecha ASC";
+        AND MONTH(fecha)  = $mes AND activo = 0 ORDER BY fecha ASC";
         $resultadoEvento = $conn->query($sqlBusqueda);
     }
     else{ //mes y año actual Activo
         $queryEventos = "SELECT * FROM eventos WHERE YEAR(fecha) = YEAR(CURRENT_DATE()) 
-        AND MONTH(fecha) = MONTH(CURRENT_DATE()) AND activo = 1 ORDER BY fecha ASC";
+        AND MONTH(fecha) = MONTH(CURRENT_DATE()) AND activo = 0 ORDER BY fecha ASC";
         $resultadoEvento = $conn->query($queryEventos);
     }
-
-    // query eventos cámara qr
-    if(isset($idEventos)){
-        $sqlEventosQR = "SELECT * FROM eventos WHERE id = '$idEventos'";
-        $resultadoEventoQR = $conn->query($sqlEventosQR);
-    }       
 
 ?>

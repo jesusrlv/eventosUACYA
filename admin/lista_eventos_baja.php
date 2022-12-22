@@ -112,10 +112,10 @@
   <div class="container mt-5">
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-calendar2-check-fill"></i> <strong>Eventos activos</strong></a>
+        <a class="nav-link" aria-current="page" href="lista_eventos.php"><i class="bi bi-calendar2-check-fill"></i> <strong>Eventos activos</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="lista_eventos_baja.php"><i class="bi bi-calendar-x-fill"></i> Eventos inactivos</a>
+        <a class="nav-link active" href="#"><i class="bi bi-calendar-x-fill"></i> Eventos inactivos</a>
       </li>
       
     </ul>
@@ -160,19 +160,19 @@
           
         <?
         
-        include ('query/query_eventos.php');
+        include ('query/query_eventos_baja.php');
         $x = 0;
         while($rowEvento = $resultadoEvento->fetch_assoc()){
           $x++;
           echo'
           <tr>
             <td>'.$x.'</td>
-            <td class=""><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></td>
+            <td class=""><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></span></td>
             <td>'.$rowEvento['nombre'].'</td>
             <td>'.$rowEvento['capacidad'].'</td>
             <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
             <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
-            <td class=""><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></i></span></td>
+            <td class=""><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></td>
           </tr>
           ';
         }
