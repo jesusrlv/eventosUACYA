@@ -145,30 +145,16 @@
             <th scope="col">#</th>
             <th scope="col">Apellido</th>
             <th scope="col">Nombre</th>
+            <th scope="col">Tipo sangre</th>
             <th scope="col">Semestre</th>
-            <th scope="col">Especialidad</th>
-            <th scope="col">Carrera</th>
+            <th scope="col">Unidad académica</th>
+            <th scope="col">Matrícula</th>
+            <th scope="col">Programa</th>
             <th scope="col">Constancia (PDF)</th>
             </tr>
         </thead>
         <tbody id="myTable">
-            <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            </tr>
-            <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            </tr>
-            <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-            </tr>
+            
         </tbody>
     </table>
   
