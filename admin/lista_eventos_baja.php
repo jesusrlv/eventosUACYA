@@ -9,6 +9,9 @@
     <title>Headers · Bootstrap v5.2</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -153,7 +156,8 @@
             <!-- <th scope="col">Cantidad registrada</th> -->
             <th scope="col">Lugar</th>
             <th scope="col">Fecha</th>
-            <th scope="col">Acción</th>
+            <th scope="col">Alta</th>
+            <th scope="col">Eliminar</th>
             </tr>
         </thead>
         <tbody id="myTable">
@@ -173,9 +177,30 @@
             <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
             <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
             <td class=""><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></td>
+            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarEvento'.$rowEvento['id'].'"><span class="badge text-bg-danger"><i class="bi bi-trash-fill"></i></span></a></td>
           </tr>
           ';
         }
+
+        echo'
+        <div class="modal fade" id="eliminarEvento'.$rowEvento['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        ';
         ?>
         </tbody>
     </table>
