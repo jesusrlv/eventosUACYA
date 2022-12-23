@@ -184,11 +184,11 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                <p class="text-center">¿Deseas eliminar la categoría<strong> '.$rowSangre['tipo_sangre'].'?</strong></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-danger">Eliminar</button>
                 </div>
               </div>
             </div>
@@ -226,7 +226,7 @@
           
         <?
         
-        include ('query/query_eventos.php');
+       
         $x = 0;
         while($rowSemestre = $resultadosqlSemestre->fetch_assoc()){
           $x++;
@@ -247,11 +247,11 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                <p class="text-center">¿Deseas eliminar la categoría<strong> '.$rowSemestre['semestre'].'?</strong></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-danger">Eliminar</button>
                 </div>
               </div>
             </div>
@@ -289,7 +289,7 @@
           
         <?
         
-        include ('query/query_eventos.php');
+       
         $x = 0;
         while($rowUAcademica = $resultadoUAcademica->fetch_assoc()){
           $x++;
@@ -311,11 +311,11 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                  <p class="text-center">¿Deseas eliminar la categoría<strong> '.$rowUAcademica['unidad_academica'].'?</strong></p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-danger">Eliminar</button>
                 </div>
               </div>
             </div>
@@ -353,7 +353,7 @@
           
         <?
         
-        include ('query/query_eventos.php');
+        
         $x = 0;
         while($rowPrograma = $resultadoPrograma->fetch_assoc()){
           $x++;
@@ -361,13 +361,13 @@
           <tr>
             <td>'.$x.'</td>
             <td>'.$rowPrograma['programa'].'</td>
-            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarUAc'.$rowPrograma['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
+            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarPrograma'.$rowPrograma['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
           </tr>
           ';
 
           echo'
           <!-- Eliminar Programa -->
-          <div class="modal fade bg-danger" id="eliminarUAc'.$rowPrograma['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade bg-danger" id="eliminarPrograma'.$rowPrograma['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                 <div class="modal-header">
@@ -375,11 +375,11 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  ...
+                  <p class="text-center">¿Deseas eliminar la categoría<strong> '.$rowPrograma['programa'].'</strong>?</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-danger">Eliminar</button>
                 </div>
               </div>
             </div>
@@ -392,17 +392,14 @@
     </table>
    
 </main>
-<div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <p class="col-md-12 mb-0 text-muted"><a href="/" class="col-md-4 d-flex mb-md-0 me-md-auto link-dark text-decoration-none">
-                <img src="../assets/brand/img/logo.png" width="140" height="45" role="img" alt="" class="p-2 rounded" style="background-color:#000e42">
-            </a></p>
-      
-    </footer>
-  </div>
-    
-
-      
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-12 mb-0 text-muted"><a href="/" class="col-md-4 d-flex mb-md-0 me-md-auto link-dark text-decoration-none">
+                  <img src="../assets/brand/img/logo.png" width="140" height="45" role="img" alt="" class="p-2 rounded" style="background-color:#000e42">
+              </a></p>
+        
+      </footer>
+    </div>
   </body>
 </html>
 
