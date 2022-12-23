@@ -171,13 +171,13 @@
             </div>
           </div>
         <div class="row mt-5 g-4">
-          <div class="col-md-6">
+          <div class="col-md-12">
             <div class="card mx-auto shadow-sm" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
-                <h5 style="font-size:63px"><i class="bi bi-list-check"></i></h5>
-                  <h5 class="card-title">Listado de asistentes</h5>
-                  <p class="card-text">Listado de los asistentes al evento.</p>
-                  <a href="lista_asistentes.php" class="card-link" style="text-decoration:none;"><i class="bi bi-list-check"></i> Listado</a>
+                <h5 style="font-size:63px"><i class="bi bi-list-columns-reverse"></i></h5>
+                  <h5 class="card-title">Catálogos</h5>
+                  <p class="card-text">Base de datos de catálogos.</p>
+                  <a href="lista_catalogos.php" class="card-link" style="text-decoration:none;"><i class="bi bi-list-columns-reverse"></i> Catálogos</a>
               </div>
             </div>
           </div>

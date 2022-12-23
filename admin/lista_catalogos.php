@@ -9,6 +9,9 @@
     <title>Headers · Bootstrap v5.2</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +25,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     
     <style>
      
@@ -132,7 +136,7 @@
         </div>
         </form> -->
         <hr>
-        <p class="display-6 mb-3 mt-3 text-secondary"><i class="bi bi-droplet-fill"></i> Tipo de sangre</p>
+        <p class="display-6 mb-3 mt-5 text-secondary"><i class="bi bi-droplet-fill"></i> Tipo de Sangre</p>
         <div class="row">
             <div class="col">
                 <div class="input-group mb-4 w-100">
@@ -141,7 +145,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                <!-- <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a> -->
+                <a class="btn btn-primary"><i class="bi bi-plus-circle-dotted" data-bs-toggle="modal" data-bs-target="#modalSangre"></i> Agregar Tipo de sangre</a>
             </div>
         </div>
 
@@ -149,12 +153,7 @@
         <thead class="table-dark">
             <tr>
             <th scope="col">#</th>
-            <th scope="col">Estatus</th>
-            <th scope="col">Nombre del evento</th>
-            <th scope="col">Cantidad</th>
-            <!-- <th scope="col">Cantidad registrada</th> -->
-            <th scope="col">Lugar</th>
-            <th scope="col">Fecha</th>
+            <th scope="col">Tipo sangre</th>
             <th scope="col">Acción</th>
             </tr>
         </thead>
@@ -162,19 +161,15 @@
           
         <?
         
-        include ('query/query_eventos.php');
+        include ('query/query_catalogos.php');
         $x = 0;
-        while($rowEvento = $resultadoEvento->fetch_assoc()){
+        while($rowSangre = $resultadosqlSangre->fetch_assoc()){
           $x++;
           echo'
           <tr>
             <td>'.$x.'</td>
-            <td class=""><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></td>
-            <td>'.$rowEvento['nombre'].'</td>
-            <td>'.$rowEvento['capacidad'].'</td>
-            <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
-            <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
-            <td class=""><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></i></span></td>
+            <td>'.$rowSangre['tipo_sangre'].'</td>
+            <td class=""><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></td>
           </tr>
           ';
         }
@@ -183,7 +178,7 @@
     </table>
     
         <hr>
-        <p class="display-6 mb-3 mt-3 text-secondary"><i class="bi bi-123"></i> Semestre</p>
+        <p class="display-6 mb-3 mt-5 text-secondary"><i class="bi bi-123"></i> Semestre</p>
         <div class="row">
             <div class="col">
                 <div class="input-group mb-4 w-100">
@@ -192,7 +187,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                <!-- <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a> -->
+                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSemestre"><i class="bi bi-plus-circle-dotted"></i> Agregar Semestre</a>
             </div>
         </div>
 
@@ -200,12 +195,7 @@
         <thead class="table-dark">
             <tr>
             <th scope="col">#</th>
-            <th scope="col">Estatus</th>
-            <th scope="col">Nombre del evento</th>
-            <th scope="col">Cantidad</th>
-            <!-- <th scope="col">Cantidad registrada</th> -->
-            <th scope="col">Lugar</th>
-            <th scope="col">Fecha</th>
+            <th scope="col">Semestre</th>
             <th scope="col">Acción</th>
             </tr>
         </thead>
@@ -215,17 +205,13 @@
         
         include ('query/query_eventos.php');
         $x = 0;
-        while($rowEvento = $resultadoEvento->fetch_assoc()){
+        while($rowSemestre = $resultadosqlSemestre->fetch_assoc()){
           $x++;
           echo'
           <tr>
             <td>'.$x.'</td>
-            <td class=""><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></td>
-            <td>'.$rowEvento['nombre'].'</td>
-            <td>'.$rowEvento['capacidad'].'</td>
-            <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
-            <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
-            <td class=""><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></i></span></td>
+            <td>'.$rowSemestre['semestre'].'</td>
+            <td class=""><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></td>
           </tr>
           ';
         }
@@ -234,7 +220,7 @@
     </table>
 
         <hr>
-        <p class="display-6 mb-3 mt-3 text-secondary"><i class="bi bi-buildings-fill"></i> Unidad académica</p>
+        <p class="display-6 mb-3 mt-5 text-secondary"><i class="bi bi-buildings-fill"></i> Unidad académica</p>
         <div class="row">
             <div class="col">
                 <div class="input-group mb-4 w-100">
@@ -243,7 +229,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                <!-- <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a> -->
+                  <a class="btn btn-primary"><i class="bi bi-plus-circle-dotted"  data-bs-toggle="modal" data-bs-target="#modalUAcademica"></i> Agregar Unidad Académica</a>
             </div>
         </div>
 
@@ -252,11 +238,6 @@
             <tr>
             <th scope="col">#</th>
             <th scope="col">Estatus</th>
-            <th scope="col">Nombre del evento</th>
-            <th scope="col">Cantidad</th>
-            <!-- <th scope="col">Cantidad registrada</th> -->
-            <th scope="col">Lugar</th>
-            <th scope="col">Fecha</th>
             <th scope="col">Acción</th>
             </tr>
         </thead>
@@ -266,17 +247,13 @@
         
         include ('query/query_eventos.php');
         $x = 0;
-        while($rowEvento = $resultadoEvento->fetch_assoc()){
+        while($rowUAcademica = $resultadoUAcademica->fetch_assoc()){
           $x++;
           echo'
           <tr>
             <td>'.$x.'</td>
-            <td class=""><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></td>
-            <td>'.$rowEvento['nombre'].'</td>
-            <td>'.$rowEvento['capacidad'].'</td>
-            <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
-            <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
-            <td class=""><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></i></span></td>
+            <td>'.$rowUAcademica['unidad_academica'].'</td>
+            <td class=""><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></td>
           </tr>
           ';
         }
@@ -285,7 +262,7 @@
     </table>
 
         <hr>
-        <p class="display-6 mb-3 mt-3 text-secondary"><i class="bi bi-bank"></i> Programa</p>
+        <p class="display-6 mb-3 mt-5 text-secondary"><i class="bi bi-bank"></i> Programa</p>
         <div class="row">
             <div class="col">
                 <div class="input-group mb-4 w-100">
@@ -294,7 +271,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                <!-- <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a> -->
+                  <a class="btn btn-primary"><i class="bi bi-plus-circle-dotted"  data-bs-toggle="modal" data-bs-target="#modalPrograma"></i> Agregar Programa</a>
             </div>
         </div>
 
@@ -303,11 +280,6 @@
             <tr>
             <th scope="col">#</th>
             <th scope="col">Estatus</th>
-            <th scope="col">Nombre del evento</th>
-            <th scope="col">Cantidad</th>
-            <!-- <th scope="col">Cantidad registrada</th> -->
-            <th scope="col">Lugar</th>
-            <th scope="col">Fecha</th>
             <th scope="col">Acción</th>
             </tr>
         </thead>
@@ -317,17 +289,13 @@
         
         include ('query/query_eventos.php');
         $x = 0;
-        while($rowEvento = $resultadoEvento->fetch_assoc()){
+        while($rowPrograma = $resultadoPrograma->fetch_assoc()){
           $x++;
           echo'
           <tr>
             <td>'.$x.'</td>
-            <td class=""><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></td>
-            <td>'.$rowEvento['nombre'].'</td>
-            <td>'.$rowEvento['capacidad'].'</td>
-            <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
-            <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
-            <td class=""><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></i></span></td>
+            <td>'.$rowPrograma['programa'].'</td>
+            <td class=""><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></td>
           </tr>
           ';
         }
@@ -344,10 +312,7 @@
       
     </footer>
   </div>
-
-
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    
 
       
   </body>
@@ -363,3 +328,78 @@
         });
     });
 </script>
+
+<!-- Modal's de catálogos -->
+<!-- Sangre -->
+<div class="modal fade" id="modalSangre" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Semestre -->
+<div class="modal fade" id="modalSemestre" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Unidad académica -->
+<div class="modal fade" id="modalUAcademica" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Programa -->
+<div class="modal fade" id="modalPrograma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal's de catálogos -->
