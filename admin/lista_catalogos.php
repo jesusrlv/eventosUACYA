@@ -9,9 +9,10 @@
     <title>Headers · Bootstrap v5.2</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
+    
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -145,7 +146,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                <a class="btn btn-primary"><i class="bi bi-plus-circle-dotted" data-bs-toggle="modal" data-bs-target="#modalSangre"></i> Agregar Tipo de sangre</a>
+                <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSangre"><i class="bi bi-plus-circle-dotted"></i> Agregar Tipo de sangre</a>
             </div>
         </div>
 
@@ -169,8 +170,30 @@
           <tr>
             <td>'.$x.'</td>
             <td>'.$rowSangre['tipo_sangre'].'</td>
-            <td class=""><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></td>
+            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarSangre'.$rowSangre['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span><a></td>
           </tr>
+          ';
+
+          echo'
+          <!-- Eliminar sangre -->
+          <div class="modal fade bg-danger" id="eliminarSangre'.$rowSangre['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           ';
         }
         ?>
@@ -211,8 +234,29 @@
           <tr>
             <td>'.$x.'</td>
             <td>'.$rowSemestre['semestre'].'</td>
-            <td class=""><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></td>
+            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarSemestre'.$rowSemestre['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
           </tr>
+          ';
+          echo'
+          <!-- Eliminar semestre -->
+          <div class="modal fade bg-danger" id="eliminarSemestre'.$rowSemestre['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           ';
         }
         ?>
@@ -229,7 +273,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                  <a class="btn btn-primary"><i class="bi bi-plus-circle-dotted"  data-bs-toggle="modal" data-bs-target="#modalUAcademica"></i> Agregar Unidad Académica</a>
+                  <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUAcademica"><i class="bi bi-plus-circle-dotted"></i> Agregar Unidad Académica</a>
             </div>
         </div>
 
@@ -253,8 +297,30 @@
           <tr>
             <td>'.$x.'</td>
             <td>'.$rowUAcademica['unidad_academica'].'</td>
-            <td class=""><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></td>
+            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarUAc'.$rowUAcademica['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
           </tr>
+          ';
+
+          echo'
+          <!-- Eliminar Unidad Académica -->
+          <div class="modal fade bg-danger" id="eliminarUAc'.$rowUAcademica['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           ';
         }
         ?>
@@ -271,7 +337,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                  <a class="btn btn-primary"><i class="bi bi-plus-circle-dotted"  data-bs-toggle="modal" data-bs-target="#modalPrograma"></i> Agregar Programa</a>
+                  <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPrograma"><i class="bi bi-plus-circle-dotted"></i> Agregar Programa</a>
             </div>
         </div>
 
@@ -295,8 +361,30 @@
           <tr>
             <td>'.$x.'</td>
             <td>'.$rowPrograma['programa'].'</td>
-            <td class=""><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></td>
+            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarUAc'.$rowPrograma['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
           </tr>
+          ';
+
+          echo'
+          <!-- Eliminar Programa -->
+          <div class="modal fade bg-danger" id="eliminarUAc'.$rowPrograma['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  ...
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           ';
         }
         ?>
@@ -335,15 +423,18 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-plus-circle-dotted"></i> Agregar Tipo de Sangre</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-droplet-fill"></i></span>
+          <input type="text" class="form-control" placeholder="Tipo de Sangre" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
       </div>
     </div>
   </div>
@@ -353,15 +444,18 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-plus-circle-dotted"></i> Agregar Semestre</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
+          <input type="text" class="form-control" placeholder="Semestre" aria-label="Semestre" aria-describedby="basic-addon1">
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
       </div>
     </div>
   </div>
@@ -371,15 +465,18 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-plus-circle-dotted"></i> Agregar Unidad Académica</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-buildings-fill"></i></span>
+          <input type="text" class="form-control" placeholder="Unidad académica" aria-label="Unidad académica" aria-describedby="basic-addon1">
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
       </div>
     </div>
   </div>
@@ -389,15 +486,18 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-plus-circle-dotted"></i> Agregar Programa</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-bank"></i></span>
+          <input type="text" class="form-control" placeholder="Programa" aria-label="Programa" aria-describedby="basic-addon1">
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
       </div>
     </div>
   </div>
