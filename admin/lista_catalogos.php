@@ -170,10 +170,40 @@
           <tr>
             <td>'.$x.'</td>
             <td>'.$rowSangre['tipo_sangre'].'</td>
-            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarSangre'.$rowSangre['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span><a></td>
+            <td class="">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#editarSangre'.$rowSangre['id'].'"><span class="badge text-bg-light">Editar <i class="bi bi-pencil-square"></i></span><a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#eliminarSangre'.$rowSangre['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span><a>
+            </td>
           </tr>
           ';
 
+          echo'
+          <!-- editar sangre -->
+          <div class="modal fade bg-info" id="editarSangre'.$rowSangre['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Sangre</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="text-center">¿Deseas editar la categoría<strong> '.$rowSangre['tipo_sangre'].'?</strong></p>
+                  <p class="text-center">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-droplet-fill"></i></span>
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowSangre['tipo_sangre'].'">
+                    </div>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Editar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          ';
           echo'
           <!-- Eliminar sangre -->
           <div class="modal fade bg-danger" id="eliminarSangre'.$rowSangre['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -234,8 +264,38 @@
           <tr>
             <td>'.$x.'</td>
             <td>'.$rowSemestre['semestre'].'</td>
-            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarSemestre'.$rowSemestre['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
+            <td class="">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#editarSemestre'.$rowSemestre['id'].'"><span class="badge text-bg-light">Editar <i class="bi bi-pencil-square"></i></span></a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#eliminarSemestre'.$rowSemestre['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a>
+            </td>
           </tr>
+          ';
+          echo'
+          <!-- Editar semestre -->
+          <div class="modal fade bg-info" id="editarSemestre'.$rowSemestre['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Semestre</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <p class="text-center">¿Deseas editar la categoría<strong> '.$rowSemestre['semestre'].'?</strong></p>
+                <p class="text-center">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowSemestre['semestre'].'">
+                    </div>
+                </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Editar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           ';
           echo'
           <!-- Eliminar semestre -->
@@ -297,10 +357,41 @@
           <tr>
             <td>'.$x.'</td>
             <td>'.$rowUAcademica['unidad_academica'].'</td>
-            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarUAc'.$rowUAcademica['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
+            <td class="">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#editarUAc'.$rowUAcademica['id'].'"><span class="badge text-bg-light">Editar <i class="bi bi-pencil-square"></i></span></a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#eliminarUAc'.$rowUAcademica['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a>
+            </td>
           </tr>
           ';
 
+          echo'
+          <!-- Editar Unidad Académica -->
+          <div class="modal fade bg-info" id="editarUAc'.$rowUAcademica['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Unidad Académica</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="text-center">¿Deseas editar la categoría<strong> '.$rowUAcademica['unidad_academica'].'?</strong></p>
+                  <p class="text-center">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-buildings-fill"></i></span>
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowUAcademica['unidad_academica'].'">
+                    </div>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Editar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          ';
+      
           echo'
           <!-- Eliminar Unidad Académica -->
           <div class="modal fade bg-danger" id="eliminarUAc'.$rowUAcademica['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -361,10 +452,40 @@
           <tr>
             <td>'.$x.'</td>
             <td>'.$rowPrograma['programa'].'</td>
-            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarPrograma'.$rowPrograma['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
+            <td class="">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#editarPrograma'.$rowPrograma['id'].'"><span class="badge text-bg-light">Editar <i class="bi bi-pencil-square"></i></span></a>
+            <a href="#" data-bs-toggle="modal" data-bs-target="#eliminarPrograma'.$rowPrograma['id'].'"><span class="badge text-bg-light">Eliminar <i class="bi bi-caret-down-fill text-danger"></i></span></a>
+            </td>
           </tr>
           ';
 
+          echo'
+          <!-- Editar Programa -->
+          <div class="modal fade bg-info" id="editarPrograma'.$rowPrograma['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Programa</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="text-center">¿Deseas editar la categoría<strong> '.$rowPrograma['programa'].'</strong>?</p>
+                  <p class="text-center">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text" id="basic-addon1"><i class="bi bi-bank"></i></span>
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowPrograma['programa'].'">
+                    </div>
+                  </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-primary">Editar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          ';
           echo'
           <!-- Eliminar Programa -->
           <div class="modal fade bg-danger" id="eliminarPrograma'.$rowPrograma['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
