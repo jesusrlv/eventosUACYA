@@ -161,6 +161,8 @@
         <?
         
         include ('query/query_eventos.php');
+        $filas_resultado = $resultadoEvento->num_rows;
+        if($filas_resultado >= 1 ){
         $x = 0;
         while($rowEvento = $resultadoEvento->fetch_assoc()){
           $x++;
@@ -176,6 +178,14 @@
           </tr>
           ';
         }
+      }
+      else{
+        echo'
+      <script>
+      alert("No hay eventos registrados en las fechas solicitadas");
+      </script>
+      ';
+      }
         ?>
         </tbody>
     </table>

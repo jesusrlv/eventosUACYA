@@ -126,7 +126,7 @@
 
   <div class="container-fluid w-75 h-100 mt-1 mb-5 p-5">
     <h3 class="mt-4 mb-3 text-dark"><i class="bi bi-calendar2-check-fill text-success"></i> Lista de eventos activos</h3>
-        <form action="lista_eventos.php" method="POST">
+        <form action="lista_eventos_baja.php" method="POST">
         <div class="input-group mb-3 w-50">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-event-fill"></i></span>
           <input type="date" class="form-control" aria-describedby="basic-addon1" name="fecha">
@@ -163,8 +163,9 @@
         <tbody id="myTable">
           
         <?
-        
         include ('query/query_eventos_baja.php');
+        $filas_resultado = $resultadoEvento->num_rows;
+        if($filas_resultado >= 1 ){
         $x = 0;
         while($rowEvento = $resultadoEvento->fetch_assoc()){
           $x++;
@@ -180,7 +181,6 @@
             <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarEvento'.$rowEvento['id'].'"><span class="badge text-bg-danger"><i class="bi bi-trash-fill"></i></span></a></td>
           </tr>
           ';
-        }
 
         echo'
         <div class="modal fade" id="eliminarEvento'.$rowEvento['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -201,6 +201,16 @@
             </div>
         </div>
         ';
+      }
+    }
+    else{
+      echo'
+      <script>
+      alert("No hay eventos registrados en las fechas solicitadas");
+      </script>
+      ';
+
+    }
         ?>
         </tbody>
     </table>
