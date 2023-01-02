@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-12-2022 a las 08:15:20
+-- Tiempo de generación: 03-01-2023 a las 00:26:15
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.5.38
 
@@ -81,7 +81,8 @@ INSERT INTO `eventos` (`id`, `nombre`, `capacidad`, `fecha`, `lugar`, `activo`) 
 (13, 'Evento NOV', 21, '2022-11-01', 'Anfeca', 1),
 (14, 'Evento OCT', 9, '2022-10-01', 'FECA', 1),
 (15, 'Evento SEPT', 81, '2022-09-01', 'Anfeca', 1),
-(16, 'Evento DIC', 90, '2022-12-19', 'FECA', 1);
+(16, 'Evento DIC', 90, '2022-12-19', 'FECA', 1),
+(17, 'Evento ENE 2023', 9, '2023-01-02', 'FECA', 1);
 
 -- --------------------------------------------------------
 
@@ -105,6 +106,20 @@ INSERT INTO `programa` (`id`, `programa`) VALUES
 (4, 'Maestría en impuestos'),
 (5, 'Doctorado en administración'),
 (6, 'Doctorado en impuestos');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `registro`
+--
+
+CREATE TABLE `registro` (
+  `id` int(11) NOT NULL,
+  `asistente` int(11) NOT NULL,
+  `evento` int(11) NOT NULL,
+  `asistencia` int(11) NOT NULL,
+  `fecha_registro` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -211,6 +226,12 @@ ALTER TABLE `programa`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `registro`
+--
+ALTER TABLE `registro`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `sangre`
 --
 ALTER TABLE `sangre`
@@ -247,12 +268,17 @@ ALTER TABLE `asistentes`
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `programa`
 --
 ALTER TABLE `programa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT de la tabla `registro`
+--
+ALTER TABLE `registro`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `sangre`
 --

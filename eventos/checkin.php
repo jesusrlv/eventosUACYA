@@ -156,18 +156,18 @@
           <div class="card-header bg-primary text-light">
           <i class="bi bi-camera-fill"></i> Cámara de registro de asistentes
           </div>
-          <div class="card-body text-center">
-            <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" width="80%"  height="auto" alt="" id="imagenFCA">
-          <video id="preview" class="w-100 h-100"></video>  
-            <!-- <blockquote class="blockquote mb-0">
-              <p>
-                
-              </p>
-              <footer class="blockquote-footer"></footer>
-            </blockquote> -->
+            <div class="card-body text-center">
+              <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" style="max-width: 800px;"  alt="" id="imagenFCA">
+              <video id="preview" class="w-100 h-100"></video>  
+              <!-- <blockquote class="blockquote mb-0">
+                <p>
+                  
+                </p>
+                <footer class="blockquote-footer"></footer>
+              </blockquote> -->
+            </div>
           </div>
-        </div>
-        <p><input type="text" id="lector"></p>
+          <p><input type="text" id="lector"></p>
       </div>
 
     </div>

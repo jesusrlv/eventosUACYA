@@ -130,6 +130,13 @@
                     <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" aria-describedby="basic-addon1" name="apellidos" required>
                 </div>
               </div>
+
+              <div class="col-6">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
+                    <input type="text" class="form-control" placeholder="CURP" aria-label="CURP" aria-describedby="basic-addon1" name="curp" required>
+                </div>
+              </div>
             
             <div class="col-6">
               <div class="input-group mb-3">
