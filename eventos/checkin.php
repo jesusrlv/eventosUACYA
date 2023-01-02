@@ -19,6 +19,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="instascan.min.js"></script>
+
     <?php
       
       $idEventos = $_POST['evento'];
@@ -83,7 +88,7 @@
     <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
   </head>
-  <body>
+  <body onunload="myFunction()">
 <main class="mb-0">
   <header class="p-3" style="background-color:#000e42;">
     <div class="container">
@@ -146,14 +151,16 @@
       </div>
       
       <div class="col-8 border-start align-self-center justify-content-center">
-        <p class="mt-5"><button class="btn btn-primary"><i class="bi bi-qr-code"></i> Leer QR</button> <button class="btn btn-danger"><i class="bi bi-qr-code"></i> Cerrar QR</button></p>
+        <p class="mt-5"><button class="btn btn-primary" onclick="abrirCamara()"><i class="bi bi-qr-code"></i> Leer QR</button> <button class="btn btn-danger" onclick="cerrarCamara()" id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button></p>
         <div class="card w-100" style="height:900px">
           <div class="card-header bg-primary text-light">
           <i class="bi bi-camera-fill"></i> Cámara de registro de asistentes
           </div>
           <div class="card-body">
             <blockquote class="blockquote mb-0">
-              <p></p>
+              <p>
+                <video id="preview" class="w-100"></video>
+              </p>
               <footer class="blockquote-footer"></footer>
             </blockquote>
           </div>
@@ -165,22 +172,18 @@
   </div>
   
 </main>
-<div class="container">
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <p class="col-md-4 mb-0 text-muted">&copy; 2022 UACYA | UAZ</p>
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">&copy; 2022 UACYA | UAZ</p>
 
-      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-      <img src="../assets/brand/img/logo.png" width="140" height="45" role="img" alt="" class="p-2 rounded" style="background-color:#000e42">
-      </a>
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <img src="../assets/brand/img/logo.png" width="140" height="45" role="img" alt="" class="p-2 rounded" style="background-color:#000e42">
+        </a>
 
-      <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Eventos</a></li>
-      </ul>
-    </footer>
-  </div>
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
+        <ul class="nav col-md-4 justify-content-end">
+          <li class="nav-item"><a href="index.php" class="nav-link px-2 text-muted">Eventos</a></li>
+        </ul>
+      </footer>
+    </div> 
   </body>
 </html>
