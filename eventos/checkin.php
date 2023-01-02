@@ -88,7 +88,7 @@
     <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
   </head>
-  <body onunload="myFunction()">
+  <body onunload="cerrarPagina()">
 <main class="mb-0">
   <header class="p-3" style="background-color:#000e42;">
     <div class="container">
@@ -156,13 +156,15 @@
           <div class="card-header bg-primary text-light">
           <i class="bi bi-camera-fill"></i> Cámara de registro de asistentes
           </div>
-          <div class="card-body">
-            <blockquote class="blockquote mb-0">
+          <div class="card-body text-center">
+            <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" width="80%"  height="auto" alt="" id="imagenFCA">
+          <video id="preview" class="w-100 h-100"></video>  
+            <!-- <blockquote class="blockquote mb-0">
               <p>
-                <video id="preview" class="w-100"></video>
+                
               </p>
               <footer class="blockquote-footer"></footer>
-            </blockquote>
+            </blockquote> -->
           </div>
         </div>
         <p><input type="text" id="lector"></p>

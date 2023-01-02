@@ -2,6 +2,9 @@
             //   abrir la cámara
               function abrirCamara(){
 
+              document.getElementById("imagenFCA").hidden = true;  
+            //   document.getElementById("marcaH").hidden = false;
+
               let scanner = new Instascan.Scanner({video:document.getElementById('preview') });
               scanner.addListener('scan', function (content) {
                 console.log(content);
@@ -25,6 +28,7 @@
 
                 $('#botonCerrar').click(function () { 
                   scanner.stop();
+                  document.getElementById("imagenFCA").hidden = false; 
                 });
                 $('body').unload(function () { 
                   scanner.stop();
