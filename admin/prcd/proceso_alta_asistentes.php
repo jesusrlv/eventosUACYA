@@ -36,7 +36,6 @@ $contatena = $num_control.'_'.$curp;
     <div id="div_print" style=/"background-image: url(../../assets/brand/img/somos_fca_halcon_azul_15.png");/">
         <p><strong>UACYA 2023</strong></p>
         <p><strong>Nombre completo:</strong> ' . $_POST['nombre'] . ' ' . $_POST['apellidos'] . '</p>
-        <p><strong>Tipo de sangre:</strong> ' . $_POST['tipo_sangre'] . '</p>
         <p class="text-center"><img class="img-thumbnail" src="'.$codesDir.$codeFile.'" /></p>
     </div>'
     ;
@@ -51,7 +50,6 @@ if($resultadoAsistentes){
     Swal.fire({
         icon: 'success',
         imageUrl: '../../assets/brand/img/somos_fca_halcon_azul_15.png',
-        imageUrl: '".$DirFisico."',
         imageHeight: 200,
         imageAlt: 'UACYA UAZ',
         title: 'Asistente agregado',
