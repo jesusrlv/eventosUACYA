@@ -210,7 +210,7 @@
               </div>
             </div>
 
-            <div class="col-6">
+            <!-- <div class="col-6">
               <div class="input-group mb-3 w-100">
                   <span class="input-group-text" id="basic-addon1">Evento</span>
                   <select class="form-select" aria-label="Default select example" name="evento" required>
@@ -226,7 +226,7 @@
                   ?>
                   </select>
               </div>
-            </div>
+            </div> -->
 
           </div><!-- row -->
           <hr>

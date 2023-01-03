@@ -24,24 +24,24 @@ $semestre = $_POST['semestre'];
 $unidad_academica = $_POST['unidad_academica'];
 $num_control = $_POST['num_control'];
 $carrera = $_POST['carrera'];
-$evento = $_POST['evento'];
+// $evento = $_POST['evento'];
 
 $codesDir = "QR/codes/";
 $contatena = $num_control.'_'.$curp;   
     $codeFile = $num_control.'_'.$curp.'.png';
+    $DirFisico = $codesDir.'/'.$codeFile;
     QRcode::png($contatena, $codesDir.$codeFile, 'H', 10); 
 
     echo '
-    <div id="div_print">
-        <p><strong>UACYA<br>2023</strong></p>
+    <div id="div_print" style=/"background-image: url(../../assets/brand/img/somos_fca_halcon_azul_15.png");/">
+        <p><strong>UACYA 2023</strong></p>
         <p><strong>Nombre completo:</strong> ' . $_POST['nombre'] . ' ' . $_POST['apellidos'] . '</p>
         <p><strong>Tipo de sangre:</strong> ' . $_POST['tipo_sangre'] . '</p>
-        <p><strong>Pólvora solicitada:</strong> ' . $_POST['cantidad_polvora'] . '</p>
         <p class="text-center"><img class="img-thumbnail" src="'.$codesDir.$codeFile.'" /></p>
     </div>'
     ;
 
-$queryAsistentes = "INSERT INTO asistentes(nombre,apellidos,tipo_sangre,semestre,unidad_academica,carrera,numero_control,evento) VALUES('$nombre','$apellidos','$tipo_sangre','$semestre','$unidad_academica','$carrera','$num_control','$evento')";
+$queryAsistentes = "INSERT INTO asistentes(nombre,apellidos,tipo_sangre,semestre,unidad_academica,carrera,numero_control) VALUES('$nombre','$apellidos','$tipo_sangre','$semestre','$unidad_academica','$carrera','$num_control')";
 $resultadoAsistentes = $conn->query($queryAsistentes);
 
 if($resultadoAsistentes){
@@ -50,7 +50,8 @@ if($resultadoAsistentes){
     echo "<script type=\"text/javascript\">
     Swal.fire({
         icon: 'success',
-        imageUrl: '../assets/brand/img/logo.png',
+        imageUrl: '../../assets/brand/img/somos_fca_halcon_azul_15.png',
+        imageUrl: '".$DirFisico."',
         imageHeight: 200,
         imageAlt: 'UACYA UAZ',
         title: 'Asistente agregado',
