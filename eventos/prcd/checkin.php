@@ -2,6 +2,7 @@
     include('qc.php');
 
     if (isset($_POST['evento']) && isset($_POST['c'])) {
+
         date_default_timezone_set('America/Mexico_City');
         setlocale(LC_TIME, 'es_MX.UTF-8');
         $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
@@ -11,8 +12,9 @@
 
         $sql = "SELECT * FROM registro WHERE idQr = '$cadena'";
         $resultadoSql = $conn->query($sql);
+        $numRows = $resultadoSql->num_rows;
 
-        if($resultadoSql){
+        if($numRows == 1){
             echo json_encode(array('success' => 0));
         }
         else{
