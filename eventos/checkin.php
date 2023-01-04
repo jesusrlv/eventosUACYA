@@ -158,7 +158,7 @@
       </div>
       
       <div class="col-8 border-start align-self-center justify-content-center">
-        <p class="mt-5"><button class="btn btn-primary" onclick="abrirCamara()"><i class="bi bi-qr-code"></i> Leer QR</button> <button class="btn btn-danger" onclick="cerrarCamara()" id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button></p>
+        <p class="mt-5"><button class="btn btn-primary" onclick="abrirCamara()"><i class="bi bi-qr-code"></i> Leer QR</button> <button class="btn btn-danger"  id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button></p>
         <div class="card w-100" style="height:900px">
           <div class="card-header bg-primary text-light">
           <i class="bi bi-camera-fill"></i> Cámara de registro de asistentes
@@ -167,8 +167,8 @@
               <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" style="max-width: 800px;"  alt="" id="imagenFCA">
               <video id="preview" class="w-100 h-100" style="max-height:810px" hidden></video>  
           </div>
-          <p><input type="text" id="textQR" onchange="checkIn()"></p>
-          <p><input type="text" id="evento" value="<? echo $idEventos ?>"></p>
+          <p hidden><input type="text" id="textQR" onchange="checkIn()"></p>
+          <p hidden><input type="text" id="evento" value="<? echo $idEventos ?>"></p>
 
       </div>
 

@@ -42,32 +42,86 @@
                         // let's redirect
                         if (jsonData.success == "0")
                         {
+                          let timerInterval
                           Swal.fire({
                             icon: 'error',
                             title: 'Usuario registrado previamente',
                             text: 'Ya tenía acceso registrado',
-                            footer: 'UACYA | UAZ'
+                            footer: 'UACYA | UAZ',
+                            timer: 2000,
+                            timerProgressBar: true,
+                            didOpen: () => {
+                              Swal.showLoading()
+                              const b = Swal.getHtmlContainer().querySelector('b')
+                              timerInterval = setInterval(() => {
+                                b.textContent = Swal.getTimerLeft()
+                              }, 100)
+                            },
+                            willClose: () => {
+                              clearInterval(timerInterval)
+                            }
+                          }).then((result) => {
+                            /* Read more about handling dismissals below */
+                            if (result.dismiss === Swal.DismissReason.timer) {
+                              console.log('I was closed by the timer')
+                            }
                           // }).then(function(){window.location='../index.php';});
                           });
                         }
                         else if (jsonData.success == "1")
                         {
                             // location.href = 'my_profile.php';
+                            let timerInterval
                             Swal.fire({
                                 icon: 'success',
                                 title: 'Usuario correcto',
                                 text: 'Credenciales correctas',
-                                footer: 'INJUVENTUD</a>'
+                                footer: 'INJUVENTUD</a>',
+                                timer: 2000,
+                              timerProgressBar: true,
+                              didOpen: () => {
+                                Swal.showLoading()
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                  b.textContent = Swal.getTimerLeft()
+                                }, 100)
+                              },
+                              willClose: () => {
+                                clearInterval(timerInterval)
+                              }
+                            }).then((result) => {
+                              /* Read more about handling dismissals below */
+                              if (result.dismiss === Swal.DismissReason.timer) {
+                                console.log('I was closed by the timer')
+                              }
                             });
                         }
                         else if (jsonData.success == "3")
                         {
                             // location.href = 'my_profile.php';
+                            let timerInterval
                             Swal.fire({
                                 icon: 'error',
                                 title: 'NO EXISTE REGISTRO',
                                 text: 'Credenciales incorrectas',
-                                footer: 'UACYA | UAZ'
+                                footer: 'UACYA | UAZ',
+                                timer: 2000,
+                                timerProgressBar: true,
+                                didOpen: () => {
+                                  Swal.showLoading()
+                                  const b = Swal.getHtmlContainer().querySelector('b')
+                                  timerInterval = setInterval(() => {
+                                    b.textContent = Swal.getTimerLeft()
+                                  }, 100)
+                                },
+                                willClose: () => {
+                                  clearInterval(timerInterval)
+                                }
+                              }).then((result) => {
+                                /* Read more about handling dismissals below */
+                                if (result.dismiss === Swal.DismissReason.timer) {
+                                  console.log('I was closed by the timer')
+                                }
                             });
                         }
                         

@@ -26,7 +26,7 @@
             $id = $rowsqlQuery['id'];
             $flag = 1;
 
-            $sqlInsert = "INSERT INTO registro (id,evento,asistencia,fecha_registro,idQr) VALUES ('$id','$evento','$flag','$fecha_sistema','$qr')";
+            $sqlInsert = "INSERT INTO registro (asistente,evento,asistencia,fecha_registro,idQr) VALUES ('$id','$evento','$flag','$fecha_sistema','$qr')";
             $resultadoSqlInsert = $conn->query($sqlInsert);
 
             if($resultadoSqlInsert){
