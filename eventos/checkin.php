@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- swal -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -30,6 +33,10 @@
       include('../admin/query/query_eventos.php');
       $rowEventos = $resultadoEventoQR->fetch_assoc();
     ?>
+
+    <audio id="myAudio">
+      <source src="beep.mp3" type="audio/mpeg">
+    </audio>
 
     <style>
       .bd-placeholder-img {
@@ -158,16 +165,11 @@
           </div>
             <div class="card-body text-center">
               <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" style="max-width: 800px;"  alt="" id="imagenFCA">
-              <video id="preview" class="w-100 h-100"></video>  
-              <!-- <blockquote class="blockquote mb-0">
-                <p>
-                  
-                </p>
-                <footer class="blockquote-footer"></footer>
-              </blockquote> -->
-            </div>
+              <video id="preview" class="w-100 h-100" style="max-height:810px" hidden></video>  
           </div>
-          <p><input type="text" id="lector"></p>
+          <p><input type="text" id="textQR" onchange="checkIn()"></p>
+          <p><input type="text" id="evento" value="<? echo $idEventos ?>"></p>
+
       </div>
 
     </div>

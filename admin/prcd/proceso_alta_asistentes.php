@@ -40,7 +40,7 @@ $contatena = $num_control.'_'.$curp;
     </div>'
     ;
 
-$queryAsistentes = "INSERT INTO asistentes(nombre,apellidos,tipo_sangre,semestre,unidad_academica,carrera,numero_control) VALUES('$nombre','$apellidos','$tipo_sangre','$semestre','$unidad_academica','$carrera','$num_control')";
+$queryAsistentes = "INSERT INTO asistentes(nombre,apellidos,curp,tipo_sangre,semestre,unidad_academica,carrera,numero_control,idQr) VALUES('$nombre','$apellidos','$curp','$tipo_sangre','$semestre','$unidad_academica','$carrera','$num_control','$contatena')";
 $resultadoAsistentes = $conn->query($queryAsistentes);
 
 if($resultadoAsistentes){
