@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 03-01-2023 a las 03:30:48
+-- Tiempo de generación: 04-01-2023 a las 09:36:52
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.5.38
 
@@ -30,47 +30,52 @@ CREATE TABLE `asistentes` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `apellidos` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `curp` varchar(18) COLLATE utf8_unicode_ci NOT NULL,
   `tipo_sangre` int(11) NOT NULL,
   `semestre` int(11) NOT NULL,
   `unidad_academica` int(11) NOT NULL,
   `carrera` int(11) NOT NULL COMMENT 'Programa',
   `numero_control` int(11) NOT NULL COMMENT 'Matrícula',
-  `evento` int(11) DEFAULT NULL
+  `evento` int(11) DEFAULT NULL,
+  `idQr` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `asistentes`
 --
 
-INSERT INTO `asistentes` (`id`, `nombre`, `apellidos`, `tipo_sangre`, `semestre`, `unidad_academica`, `carrera`, `numero_control`, `evento`) VALUES
-(1, 'rodolfo', 'leaños', 0, 9, 3, 5, 450489, 10),
-(2, 'JesusRLV', 'Leaños Villegas', 7, 9, 1, 5, 450489, 12),
-(3, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, 0),
-(4, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, 0),
-(5, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(6, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(7, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(8, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(9, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(10, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(11, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(12, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(13, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(14, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(15, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(16, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(17, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(18, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(19, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(20, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(21, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(22, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(23, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(24, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(25, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(26, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(27, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL),
-(28, 'Ana Elisa', 'Barba Pinedo', 1, 2, 1, 3, 450487, NULL);
+INSERT INTO `asistentes` (`id`, `nombre`, `apellidos`, `curp`, `tipo_sangre`, `semestre`, `unidad_academica`, `carrera`, `numero_control`, `evento`, `idQr`) VALUES
+(1, 'rodolfo', 'leaños', '', 0, 9, 3, 5, 450489, 10, ''),
+(2, 'JesusRLV', 'Leaños Villegas', '', 7, 9, 1, 5, 450489, 12, ''),
+(3, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, 0, ''),
+(4, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, 0, ''),
+(5, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(6, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(7, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(8, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(9, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(10, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(11, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(12, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(13, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(14, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(15, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(16, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(17, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(18, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(19, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(20, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(21, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(22, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(23, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(24, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(25, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(26, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(27, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(28, 'Ana Elisa', 'Barba Pinedo', '', 1, 2, 1, 3, 450487, NULL, ''),
+(29, 'Jesús Rodolfo', 'Leaños Villegas', '', 7, 9, 1, 5, 450489, NULL, ''),
+(30, 'Jesús Rodolfo', 'Leaños Villegas', '', 7, 9, 1, 5, 450489, NULL, '00450489_LEVJ810924HZSXLS03'),
+(31, 'JesusRLV', 'Leaños Villegas', 'LEVJ810924HZSXLS04', 7, 9, 1, 5, 450489, NULL, '00450489_LEVJ810924HZSXLS04');
 
 -- --------------------------------------------------------
 
@@ -144,15 +149,17 @@ CREATE TABLE `registro` (
   `asistente` int(11) NOT NULL,
   `evento` int(11) NOT NULL,
   `asistencia` int(11) NOT NULL,
-  `fecha_registro` datetime NOT NULL
+  `fecha_registro` datetime NOT NULL,
+  `idQr` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `registro`
 --
 
-INSERT INTO `registro` (`id`, `asistente`, `evento`, `asistencia`, `fecha_registro`) VALUES
-(1, 27, 17, 1, '2023-01-02 00:00:00');
+INSERT INTO `registro` (`id`, `asistente`, `evento`, `asistencia`, `fecha_registro`, `idQr`) VALUES
+(1, 27, 17, 1, '2023-01-02 00:00:00', '1'),
+(34, 31, 17, 1, '2023-01-04 02:35:36', '00450489_LEVJ810924HZSXLS04');
 
 -- --------------------------------------------------------
 
@@ -296,7 +303,7 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `asistentes`
 --
 ALTER TABLE `asistentes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT de la tabla `eventos`
 --
@@ -311,7 +318,7 @@ ALTER TABLE `programa`
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
 -- AUTO_INCREMENT de la tabla `sangre`
 --
