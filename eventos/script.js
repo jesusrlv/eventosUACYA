@@ -44,10 +44,8 @@
                         {
                           let timerInterval
                           Swal.fire({
-                            icon: 'error',
-                            title: 'Usuario registrado previamente',
-                            text: 'Ya tenía acceso registrado',
-                            footer: 'UACYA | UAZ',
+                            title: 'Asistente ya estaba registrado',
+                            html: 'Este asistente ya estaba registrado previamente',
                             timer: 2000,
                             timerProgressBar: true,
                             didOpen: () => {
@@ -65,8 +63,7 @@
                             if (result.dismiss === Swal.DismissReason.timer) {
                               console.log('I was closed by the timer')
                             }
-                          // }).then(function(){window.location='../index.php';});
-                          });
+                          })
                         }
                         else if (jsonData.success == "1")
                         {
