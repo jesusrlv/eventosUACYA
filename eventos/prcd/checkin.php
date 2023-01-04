@@ -10,7 +10,7 @@
         $evento = $_POST['evento'];
         $cadena = $_POST['c'];
 
-        $sql = "SELECT * FROM registro WHERE idQr = '$cadena'";
+        $sql = "SELECT * FROM registro WHERE idQr = '$cadena' AND evento = '$evento'";
         $resultadoSql = $conn->query($sql);
         $numRows = $resultadoSql->num_rows;
 

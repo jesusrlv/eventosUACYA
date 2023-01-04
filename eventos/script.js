@@ -45,7 +45,7 @@
                           let timerInterval
                           Swal.fire({
                             title: 'Asistente ya estaba registrado',
-                            html: 'Este asistente ya estaba registrado previamente',
+                            html: 'Este asistente ya estaba registrado previamente<br>TEXTO ADICIONAL',
                             timer: 2000,
                             timerProgressBar: true,
                             didOpen: () => {
