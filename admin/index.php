@@ -105,6 +105,7 @@
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 ms-4 justify-content-center mb-md-0">
           <li><a href="#" class="nav-link px-2 text-secondary"><i class="bi bi-houses"></i> Inicio</a></li>
           <li><a href="alta_eventos.php" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Agregar evento</a></li>
+          <li><a href="alta_sitio.php" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Agregar sitio</a></li>
           <li><a href="alta_asistentes.php" class="nav-link px-2 text-light"><i class="bi bi-plus-circle-fill"></i> Pre-registro</a></li>
           <li><a href="lista_eventos.php" class="nav-link px-2 text-light"><i class="bi bi-list-check"></i> Lista eventos</a></li>
           <li><a href="lista_asistentes.php" class="nav-link px-2 text-light"><i class="bi bi-list-check"></i> Lista asistentes</a></li>
@@ -139,6 +140,19 @@
             </div>
           </div>
           <div class="col-md-6">
+            <div class="card mx-auto shadow-sm card-block" style="width: 36rem; height:18rem" id="transition">
+              <div class="card-body align-items-center d-flex flex-column justify-content-center">
+                <h5 style="font-size:63px"><i class="bi bi-buildings-fill"></i></h5>
+                <h5 class="card-title">Agregar sitio de visita</h5>
+                <p class="card-text">Se agrega sitio de visita como la biblioteca o el centro de cómputo.</p>
+                <a href="alta_sitio.php" class="card-link" style="text-decoration:none;"><i class="bi bi-plus-circle-fill"></i> Agregar sitio</a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+        <div class="row mt-5 g-4">
+          <div class="col-md-6">
             <div class="card mx-auto shadow-sm align-items-center" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                   <h5 style="font-size:63px"><i class="bi bi-people-fill"></i></h5>
@@ -148,8 +162,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="row mt-5 g-4">
           <div class="col-md-6">
             <div class="card mx-auto shadow-sm" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
@@ -160,6 +172,8 @@
               </div>
             </div>
           </div>
+        </div>
+        <div class="row mt-5 g-4">
           <div class="col-md-6">
             <div class="card mx-auto shadow-sm" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
@@ -170,8 +184,7 @@
               </div>
             </div>
           </div>
-        <div class="row mt-5 g-4">
-          <div class="col-md-12">
+          <div class="col-md-6">
             <div class="card mx-auto shadow-sm" style="width: 36rem; height:18rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                 <h5 style="font-size:63px"><i class="bi bi-list-columns-reverse"></i></h5>

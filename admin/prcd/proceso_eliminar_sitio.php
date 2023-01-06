@@ -15,17 +15,11 @@
 <?php
 include('qc.php');
 
-$fecha_evento = $_POST['fecha_evento'];
-$nombre_evento = $_POST['nombre_evento'];
-$lugar_evento = $_POST['lugar_evento'];
-$capacidad = $_POST['capacidad'];
-$activo = 1;
+$id = $_POST['id'];
+$sqlDelete = "DELETE FROM sitio WHERE id='$id'";
+$resultadoSitio = $conn->query($sqlDelete);
 
-$queryEvento = "INSERT INTO eventos(fecha,nombre,lugar,capacidad,activo) VALUES('$fecha_evento','$nombre_evento','$lugar_evento','$capacidad','$activo')";
-$resultadoEvento = $conn->query($queryEvento);
-
-if($resultadoEvento){
-
+if($resultadoSitio){
 
     echo "<script type=\"text/javascript\">
     Swal.fire({
@@ -33,11 +27,11 @@ if($resultadoEvento){
         imageUrl: '../../assets/brand/img/somos_fca_halcon_azul_15.png',
         imageHeight: 200,
         imageAlt: 'UACYA UAZ',
-        title: 'Evento agregado',
-        text: 'Se dio de alta el evento para generar QRs',
+        title: 'Sitio eliminado',
+        text: 'Se eliminó el sitio',
         confirmButtonColor: '#3085d6',
         footer: 'UACYA  UAZ'
-    }).then(function(){window.location='../lista_eventos.php';});</script>";
+    }).then(function(){window.location='../alta_sitio.php';});</script>";
         }
 else{
     echo 'No se registró ningún cambio';
