@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-01-2023 a las 09:36:52
+-- Tiempo de generación: 06-01-2023 a las 09:20:30
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.5.38
 
@@ -113,7 +113,11 @@ INSERT INTO `eventos` (`id`, `nombre`, `capacidad`, `fecha`, `lugar`, `activo`) 
 (14, 'Evento OCT', 9, '2022-10-01', 'FECA', 1),
 (15, 'Evento SEPT', 81, '2022-09-01', 'Anfeca', 1),
 (16, 'Evento DIC', 90, '2022-12-19', 'FECA', 1),
-(17, 'Evento ENE 2023', 9, '2023-01-02', 'FECA', 1);
+(17, 'Evento ENE 2023', 9, '2023-01-02', 'FECA', 1),
+(18, 'Evento ENE 2023 2', 81, '2023-01-04', 'FECA', 1),
+(19, 'Evento ENE 2023 3', 21, '2023-01-04', 'Anfeca', 1),
+(20, '', 0, '0000-00-00', '', 1),
+(21, '', 0, '0000-00-00', '', 1);
 
 -- --------------------------------------------------------
 
@@ -159,7 +163,9 @@ CREATE TABLE `registro` (
 
 INSERT INTO `registro` (`id`, `asistente`, `evento`, `asistencia`, `fecha_registro`, `idQr`) VALUES
 (1, 27, 17, 1, '2023-01-02 00:00:00', '1'),
-(34, 31, 17, 1, '2023-01-04 02:35:36', '00450489_LEVJ810924HZSXLS04');
+(34, 31, 17, 1, '2023-01-04 02:35:36', '00450489_LEVJ810924HZSXLS04'),
+(35, 31, 18, 1, '2023-01-04 14:24:52', '00450489_LEVJ810924HZSXLS04'),
+(36, 31, 19, 1, '2023-01-04 14:27:28', '00450489_LEVJ810924HZSXLS04');
 
 -- --------------------------------------------------------
 
@@ -211,6 +217,29 @@ INSERT INTO `semestre` (`id`, `semestre`) VALUES
 (7, 'Séptimo semestre'),
 (8, 'Octavo semestre'),
 (9, 'Noveno semestre');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sitio`
+--
+
+CREATE TABLE `sitio` (
+  `id` int(11) NOT NULL,
+  `sitio` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `activo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `sitio`
+--
+
+INSERT INTO `sitio` (`id`, `sitio`, `activo`) VALUES
+(1, 'Biblioteca', 0),
+(2, 'Centro de Cómputo', 1),
+(4, 'Sitio 2', 0),
+(5, 'sitio 3', 1),
+(6, 'sitio 4', 1);
 
 -- --------------------------------------------------------
 
@@ -284,6 +313,12 @@ ALTER TABLE `semestre`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `sitio`
+--
+ALTER TABLE `sitio`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `unidad_academica`
 --
 ALTER TABLE `unidad_academica`
@@ -308,7 +343,7 @@ ALTER TABLE `asistentes`
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT de la tabla `programa`
 --
@@ -318,7 +353,7 @@ ALTER TABLE `programa`
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT de la tabla `sangre`
 --
@@ -329,6 +364,11 @@ ALTER TABLE `sangre`
 --
 ALTER TABLE `semestre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
+-- AUTO_INCREMENT de la tabla `sitio`
+--
+ALTER TABLE `sitio`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `unidad_academica`
 --
