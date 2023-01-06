@@ -150,15 +150,15 @@
                     <td>';
                     if($rowSitio['activo'] == 1){
                         echo'
-                        <a href="#" id="cambioEst" onclick="cambioEstatus('.$rowSitio['id'].',0)">
-                            <h5><i class="bi bi-arrow-up-circle-fill text-success"></i></h5>
+                        <a href="#" onclick="cambioEstatus('.$rowSitio['id'].',0)" id="rem'.$rowSitio['id'].'">
+                            <h5><i id="cambioEst'.$rowSitio['id'].'" class="bi bi-arrow-up-circle-fill text-success"></i></h5>
                         </a>
                         ';
                     }
                     else if($rowSitio['activo'] == 0){
                         echo'
-                        <a href="#" id="cambioEst" onclick="cambioEstatus('.$rowSitio['id'].',1)">
-                            <h5><i class="bi bi-arrow-down-circle-fill text-danger"></i></h5>
+                        <a href="#" onclick="cambioEstatus('.$rowSitio['id'].',1)" id="rem'.$rowSitio['id'].'">
+                            <h5><i id="cambioEst'.$rowSitio['id'].'" class="bi bi-arrow-down-circle-fill text-danger"></i></h5>
                         </a>
                         ';
                     }
@@ -241,19 +241,31 @@
     function cambioEstatus(id,est){
         var idEst = id;
         var estatus = est;
+
+        if(estatus == 0){
+            document.getElementById('cambioEst'+idEst).setAttribute("class", "bi bi-arrow-down-circle-fill text-danger");
+            document.getElementById('rem'+idEst).setAttribute("onclick", "cambioEstatus("+idEst+",1)");
+        }
+        else if(estatus == 1){
+            document.getElementById('cambioEst'+idEst).setAttribute("class", "bi bi-arrow-up-circle-fill text-success");
+            document.getElementById('rem'+idEst).setAttribute("onclick", "cambioEstatus("+idEst+",0)");
+        }
+        
         $.ajax({    
             type:"POST",
             url:"prcd/proceso_editar_estatus_sitio.php",
             data:{
                 idEst:idEst,
-                estatus:estatus,
+                estatus:estatus
             },
             dataType: "html",
-            async:true,
+            async:false,
             cache: false,
             success: function(response)
             {
-               location.reload();
+           
+            // alert("Estatus actualizado")
+            
             }           
         });
     }
