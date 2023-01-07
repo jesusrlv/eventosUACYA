@@ -139,7 +139,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                <!-- <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-primary"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a> -->
+                <a href="alta_eventos.php" class="btn btn-outline-primary"><i class="bi bi-clipboard-plus-fill"></i> Crear evento</a>
             </div>
         </div>
 
@@ -150,7 +150,6 @@
             <th scope="col">Editar</th>
             <th scope="col">Nombre del evento</th>
             <th scope="col">Cantidad</th>
-            <!-- <th scope="col">Cantidad registrada</th> -->
             <th scope="col">Lugar</th>
             <th scope="col">Fecha</th>
             <th scope="col">Lista asistentes</th>

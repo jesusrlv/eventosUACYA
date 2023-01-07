@@ -150,13 +150,11 @@
         <thead class="table-dark">
             <tr>
             <th scope="col">#</th>
-            <th scope="col">Estatus</th>
             <th scope="col">Nombre del evento</th>
             <th scope="col">Cantidad</th>
-            <!-- <th scope="col">Cantidad registrada</th> -->
             <th scope="col">Lugar</th>
             <th scope="col">Fecha</th>
-            <th scope="col">Alta</th>
+            <th scope="col">Acción</th>
             <th scope="col">Eliminar</th>
             </tr>
         </thead>
@@ -172,30 +170,65 @@
           echo'
           <tr>
             <td>'.$x.'</td>
-            <td class=""><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></span></td>
             <td>'.$rowEvento['nombre'].'</td>
             <td>'.$rowEvento['capacidad'].'</td>
             <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
             <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
-            <td class=""><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></td>
+            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#editarEstatus'.$rowEvento['id'].'"><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></a></td>
             <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#eliminarEvento'.$rowEvento['id'].'"><span class="badge text-bg-danger"><i class="bi bi-trash-fill"></i></span></a></td>
           </tr>
           ';
 
+          echo '
+          <!-- Modal editar estatus-->
+          <div class="modal fade bg-info" id="editarEstatus'.$rowEvento['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Editar estatus del evento</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="text-center mt-3">Editar estatus del evento <strong>'.$rowEvento['nombre'].'</strong></p>
+                  <div class="input-group mb-3">
+                  <form action="prcd/proceso_editar_estatus_evento.php" method="POST">
+                  <input value="'.$rowEvento['id'].'" name="id" hidden>
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-check-fill"></i></span>
+                    <select class="form-select" aria-label="Default select example" name="estatus" required>
+                      <option value="" selected>Cambiar estatus</option>
+                      <option value="1">Evento Activo</option>
+                      <option value="0">Evento Inactivo</option>
+                    </select> 
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="submit" class="btn btn-primary">Editar estatus</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          ';
+
         echo'
-        <div class="modal fade" id="eliminarEvento'.$rowEvento['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
+        <div class="modal fade bg-danger" id="eliminarEvento'.$rowEvento['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    ...
+                  <form action="prcd/proceso_eliminar_evento.php" method="POST">
+                    <input value="'.$rowEvento['id'].'" name="id" hidden>
+                    <p class="text-center">¿Desea eliminar el evento <strong>'.$rowEvento['nombre'].'</strong>?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-danger">Eliminar  </button>
+                  </form>
                 </div>
                 </div>
             </div>
