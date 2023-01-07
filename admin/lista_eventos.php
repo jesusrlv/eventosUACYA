@@ -147,12 +147,13 @@
         <thead class="table-dark">
             <tr>
             <th scope="col">#</th>
-            <th scope="col">Estatus</th>
+            <th scope="col">Editar</th>
             <th scope="col">Nombre del evento</th>
             <th scope="col">Cantidad</th>
             <!-- <th scope="col">Cantidad registrada</th> -->
             <th scope="col">Lugar</th>
             <th scope="col">Fecha</th>
+            <th scope="col">Lista asistentes</th>
             <th scope="col">Acción</th>
             </tr>
         </thead>
@@ -169,13 +170,88 @@
           echo'
           <tr>
             <td>'.$x.'</td>
-            <td class=""><span class="badge text-bg-light">Alta <i class="bi bi-caret-up-fill text-success"></i></span></td>
+            <td><a href="#" data-bs-toggle="modal" data-bs-target="#editarEvento'.$rowEvento['id'].'"><span class="badge text-bg-light"><i class="bi bi-pencil-square"></i></span></a></td>
             <td>'.$rowEvento['nombre'].'</td>
             <td>'.$rowEvento['capacidad'].'</td>
             <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
             <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
-            <td class=""><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></i></span></td>
+            <td class=""><a href=""><span class="badge text-bg-light">Lista <i class="bi bi-list-check"></i></span></a></td>
+            <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#editarEstatus'.$rowEvento['id'].'"><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
           </tr>
+          ';
+
+          echo '
+          <!-- Modal editar estatus-->
+          <div class="modal fade bg-info" id="editarEstatus'.$rowEvento['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel">Editar estatus del evento</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="text-center mt-3">Editar estatus del evento <strong>'.$rowEvento['nombre'].'</strong></p>
+                  <div class="input-group mb-3">
+                  <form action="prcd/proceso_editar_estatus_evento.php" method="POST">
+                  <input value="'.$rowEvento['id'].'" name="id" hidden>
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-check-fill"></i></span>
+                    <select class="form-select" aria-label="Default select example" name="estatus" required>
+                      <option value="" selected>Cambiar estatus</option>
+                      <option value="1">Evento Activo</option>
+                      <option value="0">Evento Inactivo</option>
+                    </select> 
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="submit" class="btn btn-primary">Editar estatus</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          ';
+
+          echo '
+          <!-- Modal editar evento-->
+          <div class="modal fade bg-info" id="editarEvento'.$rowEvento['id'].'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-pencil-square"></i> Editar datos del evento</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p class="text-center mt-3">Editar datos del evento<br><strong>'.$rowEvento['nombre'].'</strong></p>
+                  <form action="prcd/proceso_editar_evento.php" method="POST">
+                  <div class="input-group mb-3">
+                  <input value="'.$rowEvento['id'].'" name="id" hidden>
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-type"></i></span>
+                    <input type="text" class="form-control" placeholder="Nombre del evento" aria-label="Nombre del evento" aria-describedby="basic-addon1" value="'.$rowEvento['nombre'].'" required name="nombre">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
+                    <input type="text" class="form-control" placeholder="Capacidad de asistentes" aria-label="Capacidad de asistentes" aria-describedby="basic-addon1" value="'.$rowEvento['capacidad'].'" required name="capacidad">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-geo-fill"></i></span>
+                    <input type="text" class="form-control" placeholder="Lugar" aria-label="Lugar" aria-describedby="basic-addon1" value="'.$rowEvento['lugar'].'" required name="lugar">
+                  </div>
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-check"></i></span>
+                    <input type="date" class="form-control" placeholder="Fecha" aria-label="Fecha" aria-describedby="basic-addon1" value="'.$rowEvento['fecha'].'" required name="fecha">
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                  <button type="submit" class="btn btn-primary">Editar evento</button>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
           ';
         }
       }
