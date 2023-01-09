@@ -139,7 +139,7 @@
             </div>
         </div>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-sm">
         <thead class="table-dark text-center">
             <tr>
             <th scope="col">#</th>

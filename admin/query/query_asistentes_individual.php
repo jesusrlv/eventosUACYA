@@ -16,12 +16,39 @@ $x = 0;
         <tr class="text-center">
             <td>'.$x.'</td>
             <td>'.$rowEventos['apellidos'].'</td>
-            <td>'.$rowEventos['nombre'].'</td>
-            <td>'.$rowEventos['tipo_sangre'].'</td>
-            <td>'.$rowEventos['semestre'].'</td>
-            <td>'.$rowEventos['unidad_academica'].'</td>
-            <td>'.$rowEventos['numero_control'].'</td>
-            <td>'.$rowEventos['carrera'].'</td>
+            <td>'.$rowEventos['nombre'].'</td>';
+            $sangre = $rowEventos['tipo_sangre'];
+            $sqlSangre = "SELECT * FROM sangre WHERE id = $sangre";
+            $resultadoSangre = $conn->query($sqlSangre);
+            $rowSangre = $resultadoSangre->fetch_assoc();
+            echo'
+            <td>'.$rowSangre['tipo_sangre'].'</td>';
+
+            $semestre = $rowEventos['semestre'];
+            $sqlSemestre = "SELECT * FROM semestre WHERE id = $semestre";
+            $resultadoSemestre = $conn->query($sqlSemestre);
+            $rowSemestre = $resultadoSemestre->fetch_assoc();
+            echo'
+            <td>'.$rowSemestre['semestre'].'</td>';
+
+            $unidad_academica = $rowEventos['unidad_academica'];
+            $sqlUnidad_academica = "SELECT * FROM unidad_academica WHERE id = $unidad_academica";
+            $resultadoUnidad_academica = $conn->query($sqlUnidad_academica);
+            $rowUnidad_academica = $resultadoUnidad_academica->fetch_assoc();
+            echo'
+            <td>'.$rowUnidad_academica['unidad_academica'].'</td>';
+
+            echo'<td>'.$rowEventos['numero_control'].'</td>';
+
+            $carrera = $rowEventos['carrera'];
+            $sqlPrograma = "SELECT * FROM programa WHERE id = $carrera";
+            $resultadoPrograma = $conn->query($sqlPrograma);
+            $rowPrograma = $resultadoPrograma->fetch_assoc();
+            echo'
+            <td>'.$rowPrograma['programa'].'</td>';
+
+            echo'
+            
             <td><a href="prcd/constancia_pdf.php?id='.$rowEventos['id'].'"><i class="bi bi-filetype-pdf"></i></a></td>
         </tr>
         ';
