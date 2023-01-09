@@ -140,7 +140,7 @@
             </div>
         </div>
 
-    <table class="table table-hover">
+    <table class="table table-hover table-sm">
         <thead class="table-dark text-center">
             <tr>
             <th scope="col">#</th>
@@ -148,9 +148,11 @@
             <th scope="col">Nombre</th>
             <th scope="col">Tipo sangre</th>
             <th scope="col">Semestre</th>
+            <th scope="col">Grupo</th>
             <th scope="col">Unidad académica</th>
             <th scope="col">Matrícula</th>
             <th scope="col">Programa</th>
+            <th scope="col">Fecha/Hora</th>
             <th scope="col">Constancia (PDF)</th>
             </tr>
         </thead>
