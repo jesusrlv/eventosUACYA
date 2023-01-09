@@ -115,21 +115,21 @@
             <h3 class="mb-4 border-bottom">Datos del evento</h3>
             <div class="input-group mb-3 w-50">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-plus-fill"></i></span>
-                <input type="date" class="form-control" placeholder="Fecha del evento" aria-label="Fecha del evento" aria-describedby="basic-addon1" name="fecha_evento">
+                <input type="date" class="form-control" placeholder="Fecha del evento" aria-label="Fecha del evento" aria-describedby="basic-addon1" name="fecha_evento" required>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-event"></i></span>
-                <input type="text" class="form-control" placeholder="Nombre del evento" aria-label="Nombre del evento" aria-describedby="basic-addon1" name="nombre_evento">
+                <input type="text" class="form-control" placeholder="Nombre del evento" aria-label="Nombre del evento" aria-describedby="basic-addon1" name="nombre_evento" required>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-geo-alt-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Lugar" aria-label="Lugar" aria-describedby="basic-addon1" name="lugar_evento">
+                <input type="text" class="form-control" placeholder="Lugar" aria-label="Lugar" aria-describedby="basic-addon1" name="lugar_evento" required>
             </div>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
-                <input type="text" class="form-control" placeholder="Capacidad" aria-label="Capacidad" aria-describedby="basic-addon1" name="capacidad">
+                <input type="text" class="form-control" placeholder="Capacidad" aria-label="Capacidad" aria-describedby="basic-addon1" name="capacidad" required>
             </div>
-            <p class="w-100 text-end"><button class="btn btn-danger "><i class="bi bi-x-square-fill"></i> Cancelar</button> <button class="btn btn-primary" type="submit"><i class="bi bi-calendar2-plus-fill"></i> Registrar</button></p>
+            <p class="w-100 text-end"><button class="btn btn-primary" type="submit"><i class="bi bi-calendar2-plus-fill"></i> Registrar</button></p>
         </form>
         </div>
     </div>
