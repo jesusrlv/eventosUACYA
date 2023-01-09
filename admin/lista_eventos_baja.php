@@ -125,7 +125,7 @@
   </div>
 
   <div class="container-fluid w-75 h-100 mt-1 mb-5 p-5">
-    <h3 class="mt-4 mb-3 text-dark"><i class="bi bi-calendar2-check-fill text-success"></i> Lista de eventos activos</h3>
+    <h3 class="mt-4 mb-3 text-dark"><i class="bi bi-calendar2-x-fill text-danger"></i> Lista de eventos inactivos</h3>
         <form action="lista_eventos_baja.php" method="POST">
         <div class="input-group mb-3 w-50">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-event-fill"></i></span>

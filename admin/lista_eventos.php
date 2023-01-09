@@ -174,7 +174,7 @@
             <td>'.$rowEvento['capacidad'].'</td>
             <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
             <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
-            <td class=""><a href=""><span class="badge text-bg-light">Lista <i class="bi bi-list-check"></i></span></a></td>
+            <td class=""><a href="lista_individual_asistentes.php?evento='.$rowEvento['id'].'"><span class="badge text-bg-light">Lista <i class="bi bi-list-check"></i></span></a></td>
             <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#editarEstatus'.$rowEvento['id'].'"><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
           </tr>
           ';

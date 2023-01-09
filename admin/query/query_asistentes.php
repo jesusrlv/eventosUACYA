@@ -1,7 +1,7 @@
 <?php
 include('../prcd/qc.php');
 
-$evento = $_POST['evento'];
+// $evento = $_POST['evento'];
 
 // $sqlContar = "SELECT tenis.marca AS marcaP,tenis.modelo AS modeloP,talla.inventario AS talla ,producto.cantidad AS cantidadP,talla.cantidad AS cantidadV FROM producto INNER JOIN talla ON producto.id = talla.id_ext";
 
