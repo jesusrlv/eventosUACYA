@@ -21,6 +21,7 @@ $apellidos = $_POST['apellidos'];
 $curp = $_POST['curp'];
 $tipo_sangre = $_POST['tipo_sangre'];
 $semestre = $_POST['semestre'];
+$grupo = $_POST['grupo'];
 $unidad_academica = $_POST['unidad_academica'];
 $num_control = $_POST['num_control'];
 $carrera = $_POST['carrera'];
@@ -40,7 +41,7 @@ $contatena = $num_control.'_'.$curp;
     </div>'
     ;
 
-$queryAsistentes = "INSERT INTO asistentes(nombre,apellidos,curp,tipo_sangre,semestre,unidad_academica,carrera,numero_control,idQr) VALUES('$nombre','$apellidos','$curp','$tipo_sangre','$semestre','$unidad_academica','$carrera','$num_control','$contatena')";
+$queryAsistentes = "INSERT INTO asistentes(nombre,apellidos,curp,tipo_sangre,semestre,grupo,unidad_academica,carrera,numero_control,idQr) VALUES('$nombre','$apellidos','$curp','$tipo_sangre','$semestre','$grupo','$unidad_academica','$carrera','$num_control','$contatena')";
 $resultadoAsistentes = $conn->query($queryAsistentes);
 
 if($resultadoAsistentes){

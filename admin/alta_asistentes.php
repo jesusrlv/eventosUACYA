@@ -167,6 +167,8 @@
                       }
                       ?>
                   </select>
+                  <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
+                  <input type="text" class="form-control" placeholder="Grupo" aria-label="Grupo" aria-describedby="basic-addon1" name="grupo">
               </div>
             </div>
 
@@ -231,7 +233,7 @@
           </div><!-- row -->
           <hr>
 
-            <p class="w-100 text-end"><button class="btn btn-danger "><i class="bi bi-x-square-fill"></i> Cancelar</button> <button class="btn btn-primary" type="submit"><i class="bi bi-person-plus-fill"></i> Registrar</button></p>
+            <p class="w-100 text-end"> <button class="btn btn-primary" type="submit"><i class="bi bi-person-plus-fill"></i> Registrar</button></p>
         </div>
       </form>
             <div class="col-0"></div>
