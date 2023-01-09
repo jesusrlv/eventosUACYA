@@ -26,8 +26,8 @@
     include('prcd/qc.php');
         $evento = $_REQUEST['evento'];
         $nombreEvento = "SELECT * FROM eventos WHERE id = $evento";
-        $resultadoEvento = $conn ->query($nombreEvento);
-        $rowEvento = $resultadoEvento ->fetch_assoc();
+        $resultadoEventoSQL = $conn ->query($nombreEvento);
+        $rowEventoSQL = $resultadoEventoSQL->fetch_assoc();
     ?>
 
     <style>
@@ -117,19 +117,12 @@
   </div>
 
     <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
-    <h3 class="mt-4 mb-3 text-secondary">Nombre del evento: <span class="text-dark"><? echo $rowEvento['nombre']; ?></span></h3>
+    <h3 class="mt-4 mb-3 text-secondary">Nombre del evento: <span class="text-dark"><? echo $rowEventoSQL['nombre']; ?></span></h3>
         <!-- <div class="input-group mb-3 w-50">
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
             <select class="form-select" aria-label="Default select example" onchange="cambioEvento()" id="evento">
                 <option selected>Nombre del evento</option>
-                <?php
-                // include('query/query_eventos.php');
                 
-                while($rowEvento = $resultadoEvento->fetch_assoc()){
-                  echo'
-                  <option value="'.$rowEvento['id'].'">'.$rowEvento['nombre'].'</option>
-                  ';
-                }
                 ?>
             </select>
         </div> -->
@@ -162,6 +155,9 @@
             </tr>
         </thead>
         <tbody id="myTable">
+        <?php
+        include('query/query_asistentes_individual.php');
+        ?>
             
         </tbody>
     </table>
