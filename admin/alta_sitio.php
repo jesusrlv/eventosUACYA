@@ -6,7 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Headers · Bootstrap v5.2</title>
+    <title>Alta sitio</title>
+    <link rel="icon" type="image/png" href="../assets/brand/img/ico.ico"/>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

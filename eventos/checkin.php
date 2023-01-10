@@ -6,7 +6,8 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.104.2">
-    <title>Headers · Bootstrap v5.2</title>
+    <title>Check-in</title>
+    <link rel="icon" type="image/png" href="../assets/brand/img/ico.ico"/>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
 
