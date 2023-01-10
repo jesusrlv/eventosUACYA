@@ -187,18 +187,21 @@
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Sangre</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="prcd/proceso_editar_sangre.php" method="POST">
+                <input value="'.$rowSangre['id'].'" name="id" hidden>
                 <div class="modal-body">
                   <p class="text-center">¿Deseas editar la categoría<strong> '.$rowSangre['tipo_sangre'].'?</strong></p>
                   <p class="text-center">
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="basic-addon1"><i class="bi bi-droplet-fill"></i></span>
-                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowSangre['tipo_sangre'].'">
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowSangre['tipo_sangre'].'" name="tipo_sangre" required>
                     </div>
                   </p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary">Editar</button>
+                  <button type="submit" class="btn btn-primary">Editar</button>
+                </form>
                 </div>
               </div>
             </div>
@@ -280,18 +283,21 @@
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Semestre</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="prcd/proceso_editar_semestre.php" method="POST">
+                <input value="'.$rowSemestre['id'].'" name="id" hidden>
                 <div class="modal-body">
                 <p class="text-center">¿Deseas editar la categoría<strong> '.$rowSemestre['semestre'].'?</strong></p>
                 <p class="text-center">
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
-                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowSemestre['semestre'].'">
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowSemestre['semestre'].'" name="semestre" required>
                     </div>
                 </p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary">Editar</button>
+                  <button type="submit" class="btn btn-primary">Editar</button>
+                </form>
                 </div>
               </div>
             </div>
@@ -374,18 +380,21 @@
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Unidad Académica</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="prcd/proceso_editar_unidad_academica.php" method="POST">
+                <input value="'.$rowUAcademica['id'].'" name="id" hidden>
                 <div class="modal-body">
                   <p class="text-center">¿Deseas editar la categoría<strong> '.$rowUAcademica['unidad_academica'].'?</strong></p>
                   <p class="text-center">
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="basic-addon1"><i class="bi bi-buildings-fill"></i></span>
-                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowUAcademica['unidad_academica'].'">
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowUAcademica['unidad_academica'].'" name="unidad_academica" required>
                     </div>
                   </p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary">Editar</button>
+                  <button type="submit" class="btn btn-primary">Editar</button>
+                </form>
                 </div>
               </div>
             </div>
@@ -469,18 +478,21 @@
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Programa</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="prcd/proceso_editar_programa.php" method="POST">
+                <input value="'.$rowPrograma['id'].'" name="id" hidden>
                 <div class="modal-body">
                   <p class="text-center">¿Deseas editar la categoría<strong> '.$rowPrograma['programa'].'</strong>?</p>
                   <p class="text-center">
                     <div class="input-group mb-3">
                       <span class="input-group-text" id="basic-addon1"><i class="bi bi-bank"></i></span>
-                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowPrograma['programa'].'">
+                      <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="'.$rowPrograma['programa'].'" name="programa" required>
                     </div>
                   </p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-primary">Editar</button>
+                  <button type="submit" class="btn btn-primary">Editar</button>
+                </form>
                 </div>
               </div>
             </div>
