@@ -217,12 +217,15 @@
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="prcd/proceso_eliminar_sangre.php" method="POST">
+                <input value="'.$rowSangre['id'].'" name="id" hidden>
                 <div class="modal-body">
                 <p class="text-center">¿Deseas eliminar la categoría<strong> '.$rowSangre['tipo_sangre'].'?</strong></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-danger">Eliminar</button>
+                  <button type="submit" class="btn btn-danger">Eliminar</button>
+                </form>
                 </div>
               </div>
             </div>
@@ -313,13 +316,16 @@
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="prcd/proceso_eliminar_semestre.php" method="POST">
+                <input value="'.$rowSemestre['id'].'" name="id" hidden>
                 <div class="modal-body">
                 <p class="text-center">¿Deseas eliminar la categoría<strong> '.$rowSemestre['semestre'].'?</strong></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-danger">Eliminar</button>
+                  <button type="submit" class="btn btn-danger">Eliminar</button>
                 </div>
+                </form>
               </div>
             </div>
           </div>
@@ -411,13 +417,16 @@
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="prcd/proceso_eliminar_unidad_academica.php" method="POST">
+                <input value="'.$rowUAcademica['id'].'" name="id" hidden>
                 <div class="modal-body">
                   <p class="text-center">¿Deseas eliminar la categoría<strong> '.$rowUAcademica['unidad_academica'].'?</strong></p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-danger">Eliminar</button>
+                  <button type="submit" class="btn btn-danger">Eliminar</button>
                 </div>
+                </form>
               </div>
             </div>
           </div>
@@ -508,13 +517,16 @@
                   <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form action="prcd/proceso_eliminar_programa.php" method="POST">
+                <input value="'.$rowPrograma['id'].'" name="id" hidden>
                 <div class="modal-body">
                   <p class="text-center">¿Deseas eliminar la categoría<strong> '.$rowPrograma['programa'].'</strong>?</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                  <button type="button" class="btn btn-danger">Eliminar</button>
+                  <button type="submit" class="btn btn-danger">Eliminar</button>
                 </div>
+                </form>
               </div>
             </div>
           </div>
@@ -546,16 +558,18 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-plus-circle-dotted"></i> Agregar Tipo de Sangre</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form action="prcd/proceso_alta_sangre.php" method="POST">
       <div class="modal-body">
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-droplet-fill"></i></span>
-          <input type="text" class="form-control" placeholder="Tipo de Sangre" aria-label="Username" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" placeholder="Tipo de Sangre" aria-label="Tipo de Sangre" aria-describedby="basic-addon1" name="sangre" required>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -567,16 +581,18 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-plus-circle-dotted"></i> Agregar Semestre</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form action="prcd/proceso_alta_semestre.php" method="POST">
       <div class="modal-body">
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
-          <input type="text" class="form-control" placeholder="Semestre" aria-label="Semestre" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" placeholder="Semestre" aria-label="Semestre" aria-describedby="basic-addon1" name="semestre" required>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -588,16 +604,18 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-plus-circle-dotted"></i> Agregar Unidad Académica</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form action="prcd/proceso_alta_unidad_academica.php" method="POST">
       <div class="modal-body">
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-buildings-fill"></i></span>
-          <input type="text" class="form-control" placeholder="Unidad académica" aria-label="Unidad académica" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" placeholder="Unidad académica" aria-label="Unidad académica" aria-describedby="basic-addon1" name="unidad_academica" required>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
@@ -609,16 +627,18 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-plus-circle-dotted"></i> Agregar Programa</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form action="prcd/proceso_alta_programa.php" method="POST">
       <div class="modal-body">
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-bank"></i></span>
-          <input type="text" class="form-control" placeholder="Programa" aria-label="Programa" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" placeholder="Programa" aria-label="Programa" aria-describedby="basic-addon1" name="programa" required>
         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
