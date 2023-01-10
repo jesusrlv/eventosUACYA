@@ -27,6 +27,7 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="catalogos.js"></script>
     
     <style>
      
@@ -142,7 +143,7 @@
             <div class="col">
                 <div class="input-group mb-4 w-100">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Filtro" aria-label="Filtro" aria-describedby="basic-addon1" id="myInput">
+                    <input type="text" class="form-control" placeholder="Filtro" aria-label="Filtro" aria-describedby="basic-addon1" id="myInput1">
                 </div>
             </div>
             <div class="col text-end">
@@ -158,7 +159,7 @@
             <th scope="col">Acción</th>
             </tr>
         </thead>
-        <tbody id="myTable">
+        <tbody id="myTable1">
           
         <?
         
@@ -236,7 +237,7 @@
             <div class="col">
                 <div class="input-group mb-4 w-100">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Filtro" aria-label="Filtro" aria-describedby="basic-addon1" id="myInput">
+                    <input type="text" class="form-control" placeholder="Filtro" aria-label="Filtro" aria-describedby="basic-addon1" id="myInput2">
                 </div>
             </div>
             <div class="col text-end">
@@ -252,7 +253,7 @@
             <th scope="col">Acción</th>
             </tr>
         </thead>
-        <tbody id="myTable">
+        <tbody id="myTable2">
           
         <?
         
@@ -329,7 +330,7 @@
             <div class="col">
                 <div class="input-group mb-4 w-100">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Filtro" aria-label="Filtro" aria-describedby="basic-addon1" id="myInput">
+                    <input type="text" class="form-control" placeholder="Filtro" aria-label="Filtro" aria-describedby="basic-addon1" id="myInput3">
                 </div>
             </div>
             <div class="col text-end">
@@ -345,7 +346,7 @@
             <th scope="col">Acción</th>
             </tr>
         </thead>
-        <tbody id="myTable">
+        <tbody id="myTable3">
           
         <?
         
@@ -424,7 +425,7 @@
             <div class="col">
                 <div class="input-group mb-4 w-100">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Filtro" aria-label="Filtro" aria-describedby="basic-addon1" id="myInput">
+                    <input type="text" class="form-control" placeholder="Filtro" aria-label="Filtro" aria-describedby="basic-addon1" id="myInput4">
                 </div>
             </div>
             <div class="col text-end">
@@ -440,7 +441,7 @@
             <th scope="col">Acción</th>
             </tr>
         </thead>
-        <tbody id="myTable">
+        <tbody id="myTable4">
           
         <?
         
@@ -523,17 +524,6 @@
     </div>
   </body>
 </html>
-
-<script>
-    $(document).ready(function () {
-        $("#myInput").on("keyup", function () {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function () {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-            });
-        });
-    });
-</script>
 
 <!-- Modal's de catálogos -->
 <!-- Sangre -->
