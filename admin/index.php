@@ -1,3 +1,7 @@
+<?php
+session_start();
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -122,6 +126,8 @@
 
   <div class="b-example-divider">
   </div>
+
+  <h3 class="ms-5 mt-5 text-secondary">Bienvenido <strong class="text-dark"></strong></h3>
 
     <div class="container-fluid w-100 h-100 mt-5 mb-5 p-5">
       <div class="container text-center">
