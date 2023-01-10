@@ -107,7 +107,7 @@
   </div>
 
     <div class="container-fluid w-75 h-100 mt-5 mb-4 p-5 text-center">
-    <img src="../assets/brand/img/logo.png" width="180" height="54" role="img" alt="" class="p-2 rounded" style="background-color:#000e42">
+    <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" width="270" height="" role="img" alt="" class="p-2" style="">
       <h1 class="mt-2 display-1 text-bold" style="font-family: 'Titillium Web', sans-serif;">Sistema de eventos<br>UACYA</h1>
       <p class="h3 text-bold text-secondary">Universidad Autónoma de Zacatecas</p>
       <hr>
