@@ -12,6 +12,10 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/headers/">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+
 
 
     <!-- font -->
@@ -24,6 +28,7 @@
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
+      .pointer {cursor: pointer;}
      
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -121,6 +126,15 @@
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-buildings-fill"></i></span>
                 <input type="text" class="form-control" placeholder="Nombre del sitio" aria-label="Nombre del sitio" aria-describedby="basic-addon1" name="sitio" required>
             </div>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-buildings-fill"></i></span>
+                  <select class="form-select" aria-label="Default select example" name="tipo_sitio" required>
+                    <option value="" selected>Selecciona el tipo de sitio</option>
+                    <option value="1">Biblioteca</option>
+                    <option value="2">Centro de cómputo</option>
+                    <option value="3">Otro</option>
+                  </select>
+            </div>
             <p class="w-100 text-end"><button class="btn btn-primary" type="submit"><i class="bi bi-buildings-fill"></i> Registrar</button></p>
         </form>
         </div>
@@ -132,6 +146,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Sitio</th>
+                <th scope="col">Tipo</th>
                 <th scope="col">Acción</th>
                 <th scope="col">Estatus</th>
                 </tr>
@@ -145,20 +160,52 @@
                 echo'
                 <tr>
                     <td>'.$x.'</td>
-                    <td>'.$rowSitio['sitio'].'</td>
-                    <td><a href="#" data-bs-toggle="modal" data-bs-target="#editar'.$rowSitio['id'].'"><i class="bi bi-pencil-square"></i></a> | <a href="#" data-bs-toggle="modal" data-bs-target="#eliminar'.$rowSitio['id'].'"><i class="bi bi-trash-fill"></i></a></td>
+                    <td>'.$rowSitio['sitio'].'</td>';
 
+                    if($rowSitio['tipo_sitio'] == 1){
+                      echo'
+                      <td>
+                          <a class="pointer" title="Tipo sitio" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Biblioteca" data-bs-trigger="hover focus">
+                            <i class="bi bi-book h4"></i>
+                          </a>
+                      </td>
+                      ';
+                    }
+                    else if($rowSitio['tipo_sitio'] == 2){
+                        echo'
+                        <td>
+                        <a class="pointer" title="Tipo sitio" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Centro de cómputo" data-bs-trigger="hover focus">
+                          <i class="bi bi-pc-display-horizontal h4"></i>
+                        </a>
+                        </td>
+                        ';
+                    }
+                    else if($rowSitio['tipo_sitio'] == 3){
+                        echo'
+                        <td>
+                        <a class="pointer" title="Tipo sitio" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Otro sitio" data-bs-trigger="hover focus">
+                          <i class="bi bi-buildings-fill h4"></i>
+                        </a>
+                        </td>
+                        ';
+                    }
+
+                    echo'
+                    <td><a href="#" data-bs-toggle="modal" data-bs-target="#editar'.$rowSitio['id'].'"><i class="bi bi-pencil-square"></i></a> | <a href="#" data-bs-toggle="modal" data-bs-target="#eliminar'.$rowSitio['id'].'"><i class="bi bi-trash-fill"></i></a></td>
+                   ';
+
+                    echo'
                     <td>';
                     if($rowSitio['activo'] == 1){
                         echo'
-                        <a href="#" onclick="cambioEstatus('.$rowSitio['id'].',0)" id="rem'.$rowSitio['id'].'">
+                        <a onclick="cambioEstatus('.$rowSitio['id'].',0)" id="rem'.$rowSitio['id'].'" class="pointer">
                             <h5><i id="cambioEst'.$rowSitio['id'].'" class="bi bi-arrow-up-circle-fill text-success"></i></h5>
                         </a>
                         ';
                     }
                     else if($rowSitio['activo'] == 0){
                         echo'
-                        <a href="#" onclick="cambioEstatus('.$rowSitio['id'].',1)" id="rem'.$rowSitio['id'].'">
+                        <a onclick="cambioEstatus('.$rowSitio['id'].',1)" id="rem'.$rowSitio['id'].'" class="pointer">
                             <h5><i id="cambioEst'.$rowSitio['id'].'" class="bi bi-arrow-down-circle-fill text-danger"></i></h5>
                         </a>
                         ';
@@ -175,7 +222,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Editar sitio</h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -270,5 +317,11 @@
             }           
         });
     }
+</script>
+<script>
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
 </script>
 
