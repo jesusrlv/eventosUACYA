@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <script src="lista_asistentes.js"></script>
+
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -117,32 +119,61 @@
       <form action="prcd/proceso_alta_asistentes.php" method="POST">
 
           <div class="row">
+            <div class="col-12 mb-3">
+              <p class="h5">Tipo de asistente</p>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo_asistente" id="radio1" value="1" onchange="valorTipoAsistente()">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Alumno UAZ
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo_asistente" id="radio2" value="2" onchange="valorTipoAsistente()">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Docente UAZ
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo_asistente" id="radio3" value="3" onchange="valorTipoAsistente()">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Trabajador UAZ
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="tipo_asistente" id="radio4" value="4" onchange="valorTipoAsistente()">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Externo
+                </label>
+              </div>
+            </div>
 
               <div class="col-6">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
-                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" name="nombre" required>
+                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" name="nombre" id="nombre" required disabled>
                 </div>
               </div>
 
               <div class="col-6">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
-                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" aria-describedby="basic-addon1" name="apellidos" required>
+                    <input type="text" class="form-control" placeholder="Apellidos" aria-label="Apellidos" aria-describedby="basic-addon1" name="apellidos" id="apellidos" required disabled>
                 </div>
               </div>
 
               <div class="col-6">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
-                    <input type="text" class="form-control" placeholder="CURP" aria-label="CURP" aria-describedby="basic-addon1" name="curp" required>
+                    <input type="text" class="form-control" placeholder="CURP" aria-label="CURP" aria-describedby="basic-addon1" name="curp" id="curp" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="validarInput(this);" required disabled>
                 </div>
+                <div style="margin-top:-12px" class="form-text" id="CURPvalida" hidden>CURP válida.</div>
+                <div style="margin-top:-12px" class="form-text text-danger" id="CURPNovalida" hidden>CURP no válida.</div>
               </div>
             
             <div class="col-6">
               <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="bi bi-bandaid-fill"></i></span>
-                  <select class="form-select" aria-label="Default select example" name="tipo_sangre" required>
+                  <select class="form-select" aria-label="Default select example" name="tipo_sangre" id="tipo_sangre" required disabled>
                       <option value="" selected>Tipo de sangre</option>
                       <?php
                       while ($rowSangre = $resultadosqlSangre->fetch_assoc()){
@@ -158,7 +189,7 @@
             <div class="col-6">
               <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ol"></i></span>
-                  <select class="form-select" aria-label="Default select example" name="semestre" required>
+                  <select class="form-select" aria-label="Default select example" name="semestre" id="semestre" required disabled>
                       <option value="" selected>Semestre</option>
                       <?php
                       while ($rowSemestre = $resultadosqlSemestre->fetch_assoc()){
@@ -169,14 +200,14 @@
                       ?>
                   </select>
                   <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
-                  <input type="text" class="form-control" placeholder="Grupo" aria-label="Grupo" aria-describedby="basic-addon1" name="grupo">
+                  <input type="text" class="form-control" placeholder="Grupo" aria-label="Grupo" aria-describedby="basic-addon1" name="grupo" id="grupo" required disabled>
               </div>
             </div>
 
               <div class="col-6">
                 <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
-                  <select class="form-select" aria-label="Default select example" name="unidad_academica" required>
+                  <select class="form-select" aria-label="Default select example" name="unidad_academica" id="unidad_academica" required disabled>
                       <option value="" selected>Unidad Académica</option>
                       <option value="0">Sin Unidad Académica</option>
                       <?php
@@ -193,14 +224,14 @@
             <div class="col-6">
               <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
-                  <input type="text" class="form-control" placeholder="Número de matrícula" aria-label="Número de matrícula" aria-describedby="basic-addon1" name="num_control">
+                  <input type="text" class="form-control" placeholder="Número de matrícula" aria-label="Número de matrícula" aria-describedby="basic-addon1" name="num_control" id="num_control" required disabled>
               </div>
             </div>
 
             <div class="col-6">
               <div class="input-group mb-3">
                   <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
-                  <select class="form-select" aria-label="Default select example" name="carrera" required>
+                  <select class="form-select" aria-label="Default select example" name="carrera" id="carrera" required disabled>
                       <option value="" selected>Programa</option>
                       <?php
                       while ($rowPrograma = $resultadoPrograma->fetch_assoc()){
@@ -234,7 +265,9 @@
           </div><!-- row -->
           <hr>
 
-            <p class="w-100 text-end"> <button class="btn btn-primary" type="submit"><i class="bi bi-person-plus-fill"></i> Registrar</button></p>
+            <p class="w-100 text-end"> 
+              <button class="btn btn-primary" type="submit" id="botonRegistro" disabled><i class="bi bi-person-plus-fill"></i> Registrar</button>
+            </p>
         </div>
       </form>
             <div class="col-0"></div>
