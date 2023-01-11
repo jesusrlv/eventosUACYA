@@ -61,12 +61,31 @@
                           }).then((result) => {
                             /* Read more about handling dismissals below */
                             if (result.dismiss === Swal.DismissReason.timer) {
-                              console.log('I was closed by the timer')
+                              console.log('Cerrara el contador de tiempo')
                             }
                           })
                         }
                         else if (jsonData.success == "1")
                         {
+                            // html
+                            document.getElementById('checkDiv').innerHTML="";
+                            $.ajax({
+                              type:"POST",
+                              url:"prcd/datos_checkin.php",
+                              data:{
+                                c:c,
+                                evento:evento
+                              },
+                              dataType: "html",
+                              async:true,
+                              cache: false,
+                                success: function(response)
+                                {
+                                  $("#checkDiv").html(response);
+                                }
+                              });  
+                            // html
+
                             // location.href = 'my_profile.php';
                             let timerInterval
                             Swal.fire({
@@ -89,7 +108,7 @@
                             }).then((result) => {
                               /* Read more about handling dismissals below */
                               if (result.dismiss === Swal.DismissReason.timer) {
-                                console.log('I was closed by the timer')
+                                console.log('Cerrara el contador de tiempo')
                               }
                             });
                         }

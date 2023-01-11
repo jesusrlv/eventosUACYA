@@ -132,26 +132,29 @@
           <!-- <p style="font-size:300px" class="text-center border-bottom"><i class="bi bi-person-circle"></i></p> -->
           <p style="font-size:300px" class="text-center border-bottom"><img src="../assets/brand/img/somos_fca_halcon_azul_15.png" alt="" width="300px"></p>
 
-      <p class="pb-3 mb-0 small lh-sm border-bottom">
-        <strong class="d-block text-gray-dark">Nombre:</strong>
-        Nombre 
-      </p>
-      <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
-        <strong class="d-block text-gray-dark">Apellidos:</strong>
-        Apellidos
-      </p>
-      <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
-        <strong class="d-block text-gray-dark">Especialidad:</strong>
-        Especialidad
-      </p>
-      <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
-        <strong class="d-block text-gray-dark">Semestre:</strong>
-        Semestre
-      </p>
-      <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
-        <strong class="d-block text-gray-dark">Carrera:</strong>
-        Carrera
-      </p>
+          <div id="checkDiv">
+            <p class="pb-3 mb-0 small lh-sm border-bottom">
+              <strong class="d-block text-gray-dark">Nombre:</strong>
+              Nombre 
+            </p>
+            <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
+              <strong class="d-block text-gray-dark">Apellidos:</strong>
+              Apellidos
+            </p>
+            <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
+              <strong class="d-block text-gray-dark">Especialidad:</strong>
+              Especialidad
+            </p>
+            <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
+              <strong class="d-block text-gray-dark">Semestre:</strong>
+              Semestre
+            </p>
+            <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
+              <strong class="d-block text-gray-dark">Carrera:</strong>
+              Carrera
+            </p>
+          </div>
+
         </div>
         <div class="container p-5" style="font-family: 'Poppins', sans-serif;">
           
