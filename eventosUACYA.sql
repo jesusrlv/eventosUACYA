@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-01-2023 a las 06:19:14
+-- Tiempo de generación: 11-01-2023 a las 07:59:26
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.5.38
 
@@ -29,10 +29,11 @@ SET time_zone = "+00:00";
 CREATE TABLE `asistentes` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `tipo_asistente` int(11) NOT NULL,
   `apellidos` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `curp` varchar(18) COLLATE utf8_unicode_ci NOT NULL,
   `tipo_sangre` int(11) NOT NULL,
-  `semestre` int(11) NOT NULL,
+  `semestre` int(11) DEFAULT NULL,
   `grupo` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `unidad_academica` int(11) NOT NULL,
   `carrera` int(11) NOT NULL COMMENT 'Programa',
@@ -45,17 +46,17 @@ CREATE TABLE `asistentes` (
 -- Volcado de datos para la tabla `asistentes`
 --
 
-INSERT INTO `asistentes` (`id`, `nombre`, `apellidos`, `curp`, `tipo_sangre`, `semestre`, `grupo`, `unidad_academica`, `carrera`, `numero_control`, `evento`, `idQr`) VALUES
-(1, 'rodolfo', 'leaños', '', 0, 9, 'A', 3, 5, 450489, 10, ''),
-(2, 'JesusRLV', 'Leaños Villegas', '', 7, 9, 'B', 1, 5, 450489, 12, ''),
-(29, 'Jesús Rodolfo', 'Leaños Villegas', '', 7, 9, 'C', 1, 5, 450489, NULL, ''),
-(30, 'Jesús Rodolfo', 'Leaños Villegas', '', 7, 9, 'A', 1, 5, 450489, NULL, '00450489_LEVJ810924HZSXLS03'),
-(31, 'JesusRLV', 'Leaños Villegas', 'LEVJ810924HZSXLS04', 7, 9, 'A', 1, 5, 450489, NULL, '00450489_LEVJ810924HZSXLS04'),
-(32, 'Pedro', 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'B', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
-(33, 'Pedro', 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'C', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
-(34, 'Pedro', 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'C', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
-(35, 'Pedro', 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'A', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
-(36, 'Pedro', 'Bermúdez 2', 'LEVJ810924HZSXLS04', 7, 9, 'B', 1, 1, 10, NULL, '00010_LEVJ810924HZSXLS04');
+INSERT INTO `asistentes` (`id`, `nombre`, `tipo_asistente`, `apellidos`, `curp`, `tipo_sangre`, `semestre`, `grupo`, `unidad_academica`, `carrera`, `numero_control`, `evento`, `idQr`) VALUES
+(1, 'rodolfo', 0, 'leaños', '', 0, 9, 'A', 3, 5, 450489, 10, ''),
+(2, 'JesusRLV', 0, 'Leaños Villegas', '', 7, 9, 'B', 1, 5, 450489, 12, ''),
+(29, 'Jesús Rodolfo', 0, 'Leaños Villegas', '', 7, 9, 'C', 1, 5, 450489, NULL, ''),
+(30, 'Jesús Rodolfo', 0, 'Leaños Villegas', '', 7, 9, 'A', 1, 5, 450489, NULL, '00450489_LEVJ810924HZSXLS03'),
+(31, 'JesusRLV', 0, 'Leaños Villegas', 'LEVJ810924HZSXLS04', 7, 9, 'A', 1, 5, 450489, NULL, '00450489_LEVJ810924HZSXLS04'),
+(32, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'B', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
+(33, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'C', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
+(34, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'C', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
+(35, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'A', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
+(36, 'Pedro', 0, 'Bermúdez 2', 'LEVJ810924HZSXLS04', 7, 9, 'B', 1, 1, 10, NULL, '00010_LEVJ810924HZSXLS04');
 
 -- --------------------------------------------------------
 
