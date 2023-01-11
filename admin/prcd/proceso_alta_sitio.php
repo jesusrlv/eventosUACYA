@@ -16,9 +16,10 @@
 include('qc.php');
 
 $sitio = $_POST['sitio'];
+$tipo_sitio = $_POST['tipo_sitio'];
 $activo = 1;
 
-$querySitio = "INSERT INTO sitio(sitio,activo) VALUES('$sitio','$activo')";
+$querySitio = "INSERT INTO sitio(sitio,tipo_sitio,activo) VALUES('$sitio','$tipo_sitio','$activo')";
 $resultadoSitio = $conn->query($querySitio);
 
 if($resultadoSitio){

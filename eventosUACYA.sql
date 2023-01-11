@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
--- https://www.phpmyadmin.net/
+-- version 4.5.2
+-- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 09-01-2023 a las 23:13:07
--- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.28
+-- Tiempo de generación: 11-01-2023 a las 06:19:14
+-- Versión del servidor: 10.1.16-MariaDB
+-- Versión de PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -149,7 +148,7 @@ INSERT INTO `registro` (`id`, `asistente`, `evento`, `asistencia`, `fecha_regist
 (35, 31, 18, 1, '2023-01-04 14:24:52', '00450489_LEVJ810924HZSXLS04'),
 (36, 31, 19, 1, '2023-01-04 14:27:28', '00450489_LEVJ810924HZSXLS04'),
 (37, 31, 22, 1, '2023-01-09 10:03:42', '00450489_LEVJ810924HZSXLS04'),
-(38, 32, 22, 1, '2023-01-09 10:41:01', '0009_LEVJ810924HZSXLS04');
+(41, 32, 22, 1, '2023-01-10 21:31:40', '0009_LEVJ810924HZSXLS04');
 
 -- --------------------------------------------------------
 
@@ -211,6 +210,7 @@ INSERT INTO `semestre` (`id`, `semestre`) VALUES
 CREATE TABLE `sitio` (
   `id` int(11) NOT NULL,
   `sitio` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `tipo_sitio` int(11) NOT NULL COMMENT '1 -Biblioteca 2- CC',
   `activo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -218,12 +218,15 @@ CREATE TABLE `sitio` (
 -- Volcado de datos para la tabla `sitio`
 --
 
-INSERT INTO `sitio` (`id`, `sitio`, `activo`) VALUES
-(1, 'Biblioteca', 0),
-(2, 'Centro de Cómputo', 1),
-(4, 'Sitio 2', 0),
-(5, 'sitio 3', 1),
-(6, 'sitio 4', 1);
+INSERT INTO `sitio` (`id`, `sitio`, `tipo_sitio`, `activo`) VALUES
+(1, 'Biblioteca', 1, 1),
+(2, 'Centro de Cómputo', 2, 1),
+(4, 'Sitio 2', 3, 1),
+(5, 'sitio 3', 3, 1),
+(6, 'sitio 4', 3, 1),
+(15, 'ANFECA', 1, 1),
+(16, 'ANFECA 2', 2, 1),
+(17, 'ANFECA 3', 3, 1);
 
 -- --------------------------------------------------------
 
@@ -323,56 +326,46 @@ ALTER TABLE `usr`
 --
 ALTER TABLE `asistentes`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
-
 --
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
 --
 -- AUTO_INCREMENT de la tabla `programa`
 --
 ALTER TABLE `programa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 --
 -- AUTO_INCREMENT de la tabla `sangre`
 --
 ALTER TABLE `sangre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
 -- AUTO_INCREMENT de la tabla `semestre`
 --
 ALTER TABLE `semestre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
 --
 -- AUTO_INCREMENT de la tabla `sitio`
 --
 ALTER TABLE `sitio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- AUTO_INCREMENT de la tabla `unidad_academica`
 --
 ALTER TABLE `unidad_academica`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
 --
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
