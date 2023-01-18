@@ -55,7 +55,7 @@ $x = 0;
 
             echo'
             
-            <td><a href="prcd/constancia_pdf.php?id='.$rowEventos['id'].'"><i class="bi bi-filetype-pdf"></i></a></td>
+            <td><a href="constanciaPDF.php?id='.$rowEventos['id'].'&nombre='.$rowEventos['nombre'].'&apellidos='.$rowEventos['apellidos'].'&idevento='.$rowEventos['evento'].'"><i class="bi bi-filetype-pdf" target="_blank"></i></a></td>
         </tr>
         ';
     }
