@@ -55,7 +55,7 @@ $x = 0;
 
             echo'
             
-            <td><a href="constanciaPDF.php?id='.$rowEventos['id'].'&nombre='.$rowEventos['nombre'].'&apellidos='.$rowEventos['apellidos'].'&idevento='.$rowEventos['evento'].'"><i class="bi bi-filetype-pdf" target="_blank"></i></a></td>
+            <td><a href="constanciaPDF.php?id='.$rowEventos['id'].'&nombre='.$rowEventos['nombre'].'&apellidos='.$rowEventos['apellidos'].'&idevento='.$rowEventos['evento'].'" target="_blank"><i class="bi bi-filetype-pdf"></i></a></td>
         </tr>
         ';
     }
