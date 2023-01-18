@@ -115,7 +115,7 @@
 
         <div class="text-end">
           <!-- <button type="button" class="btn btn-outline-light me-2">Login</button> -->
-          <button type="button" class="btn btn-warning">Salir</button>
+          <a href="prcd/sort.php" type="button" class="btn btn-warning">Salir</a>
         </div>
       </div>
     </div>
