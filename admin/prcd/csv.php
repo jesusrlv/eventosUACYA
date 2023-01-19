@@ -4,10 +4,8 @@
 
     date_default_timezone_set('America/Mexico_City');
                   setlocale(LC_TIME, 'es_MX.UTF-8');
-$id = $_POST['id'];
-
-//                   if (isset($_POST['submit']))
-// {
+                  
+    $id = $_POST['id'];
  
     // Allowed mime types
     $fileMimes = array(
