@@ -135,7 +135,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                <a href="excel_inventario_fechas.php?fecha=<?php echo $fechaBusqueda ?>" class="btn btn-outline-success"><i class="bi bi-file-earmark-excel-fill"></i> Cargar listado</a>
+                <a href="#" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#documentoExcel"><i class="bi bi-file-earmark-excel-fill"></i> Cargar listado</a>
                 <a href="#" class="btn btn-outline-danger" id="link"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a>
             </div>
         </div>
@@ -175,6 +175,31 @@
 
   </body>
 </html>
+
+<!-- Modal -->
+<div class="modal fade" id="documentoExcel" tabindex="-1" aria-labelledby="documentoExcel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Cargar lista en excel</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p class="text-center"><small><strong>Cargar archivo con alumnos, el formato del archivo debe ser .csv</strong></small></p>
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-file-earmark-excel"></i></span>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <script>
     $(document).ready(function () {
