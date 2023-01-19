@@ -186,9 +186,10 @@
       </div>
       <div class="modal-body">
         <p class="text-center"><small><strong>Cargar archivo con alumnos, el formato del archivo debe ser .csv</strong></small></p>
-        <form action="">
+        <form action="prcd/csv.php" method="POST">
+        <input type="text" hidden id="idCsv" name="idCsv">
         <div class="input-group mb-3">
-          <input type="file" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+          <input type="file" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" name="csv">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-file-earmark-excel"></i></span>
         </div>
 
@@ -226,6 +227,7 @@
           $("#myTable").html(data);
           var id = document.getElementById('evento').value;
           $("#link").attr('href','constanciaPDF_masivas.php?id='+id);
+          $("#idCsv").attr('value',+id);
           $("#link").attr('target','_blank');
 
       }               

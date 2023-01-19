@@ -1,11 +1,13 @@
 <?php    
     session_start();
-    include('qconn/qc.php');
+    include('qc.php');
 
     date_default_timezone_set('America/Mexico_City');
                   setlocale(LC_TIME, 'es_MX.UTF-8');
-                  
-    $id = $_POST['id'];
+
+    $id = $_POST['id']; //evento
+    $tipo_asistente = 1;
+    $unidad_academica = 1;
  
     // Allowed mime types
     $fileMimes = array(
@@ -38,11 +40,13 @@
             {
                 // Get row data
                 $nombre = $getData[0];
-                $apellido_p = $getData[1];
-                $apellido_m = $getData[2];
-                $celular = $getData[3];
-                $tipo_invitado = $getData[4];
-                $id_evento = $getData[5];
+                $apellidos = $getData[1];
+                $curp = $getData[2];
+                $tipo_sangre = $getData[3];
+                $semestre = $getData[4];
+                $grupo = $getData[5];
+                $carrera = $getData[6];
+                $numero_control = $getData[7];
  
                 // If user already exists in the database with the same email
                 // $query = "SELECT id FROM invitados WHERE id_evento = '" . $getData[5] . "'";
@@ -55,20 +59,30 @@
                 // }
                 // else
                 // {
-                     mysqli_query($conn, "INSERT INTO invitados (nombre, apellido_p, apellido_m, celular, tipo_invitado, id_evento) VALUES ('" . $nombre . "', '" . $apellido_p . "', '" . $apellido_m . "', '" . $celular . "', '" . $tipo_invitado . "', '" . $id_evento . "')");
+                     mysqli_query($conn, "INSERT INTO asistentes (nombre, apellidos, curp, tipo_sangre, semestre, grupo, carrera, numero_control, tipo_asistente, unidad_academica) VALUES ('" . $nombre . "', '" . $apellidos . "', '" . $curp . "', '" . $tipo_sangre . "', '" . $semestre . "', '" . $grupo . "', '" . $carrera . "', '" . $numero_control . "', '" . $tipo_asistente . "', '" . $unidad_academica . "')");
  
                 // }
             }
  
             // Close opened CSV file
             fclose($csvFile);
+            echo "
+        <script>
+        alert('Agregados correctamente');
+        </script>
+        ";
  
-            header("Location: ../home_events.php?id=$id");
+            header("Location: ../lista_Asistentes.php");
          
     }
     else
     {
-        echo "Please select valid file";
+        echo "
+        <script>
+        alert('Selecciona un archivo válido');
+        </script>
+        ";
+        header("Location: ../lista_Asistentes.php");
     }
 // }
 ?>
