@@ -57,7 +57,7 @@ if($resultadoAsistentes){
         text: 'Se dio de alta el asistente',
         confirmButtonColor: '#3085d6',
         footer: 'UACYA UAZ'
-    }).then(function(){window.location='../lista_asistentes.php';});</script>";
+    }).then(function(){window.location='../alta_asistentes.php';});</script>";
         }
 else{
     echo 'No se registró ningún cambio';

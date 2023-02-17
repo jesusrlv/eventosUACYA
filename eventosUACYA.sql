@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 11-01-2023 a las 07:59:26
+-- Tiempo de generación: 17-02-2023 a las 02:52:02
 -- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 5.5.38
 
@@ -56,7 +56,9 @@ INSERT INTO `asistentes` (`id`, `nombre`, `tipo_asistente`, `apellidos`, `curp`,
 (33, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'C', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
 (34, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'C', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
 (35, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'A', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
-(36, 'Pedro', 0, 'Bermúdez 2', 'LEVJ810924HZSXLS04', 7, 9, 'B', 1, 1, 10, NULL, '00010_LEVJ810924HZSXLS04');
+(36, 'Pedro', 0, 'Bermúdez 2', 'LEVJ810924HZSXLS04', 7, 9, 'B', 1, 1, 10, NULL, '00010_LEVJ810924HZSXLS04'),
+(37, 'Pato patricio', 0, 'Pato', 'BAPA821212MJCRNN04', 1, 6, 'D', 1, 2, 450489, NULL, '00450489_BAPA821212MJCRNN04'),
+(38, 'Pato patricio 2', 0, 'Pato', 'SAOJ050223MTLLRCA4', 4, 8, 'A', 1, 5, 450487, NULL, '00450487_SAOJ050223MTLLRCA4');
 
 -- --------------------------------------------------------
 
@@ -326,7 +328,7 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `asistentes`
 --
 ALTER TABLE `asistentes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT de la tabla `eventos`
 --
