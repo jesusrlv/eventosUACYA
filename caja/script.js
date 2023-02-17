@@ -92,7 +92,7 @@
                                 icon: 'success',
                                 title: 'Usuario correcto',
                                 text: 'Credenciales correctas',
-                                footer: 'INJUVENTUD</a>',
+                                footer: 'UACYA | UAZ',
                                 timer: 2000,
                               timerProgressBar: true,
                               didOpen: () => {
