@@ -92,6 +92,24 @@ session_start();
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      /* On screens that are 992px wide or less, go from four columns to two columns */
+      /* tablets, celular horizontal y otros dispositivos */
+      @media screen and (max-width: 2000px) {
+        #transition{
+          height: 60rem;
+        }
+        
+      }
+      /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
+      /* CELULAR */
+      @media screen and (max-width: 600px) {
+        #transition{
+          height: 36rem;
+         
+        }
+          
+      }
     </style>
 
     
@@ -135,9 +153,9 @@ session_start();
       <h1 class="mt-2 display-1 text-bold" style="font-family: 'Titillium Web', sans-serif;">Sistema de eventos<br>UACYA</h1>
       <p class="h3 text-bold text-secondary">Universidad Autónoma de Zacatecas</p>
       <hr>
-        <div class="row mt-5 g-4">
+        <div class="row mt-1 g-4">
           <div class="col-md-6">
-            <div class="card mx-auto shadow-sm card-block" style="width: 36rem; height:18rem" id="transition">
+            <div class="card mx-auto shadow-sm card-block" style="width: 100%; height:27rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                 <h5 style="font-size:63px"><i class="bi bi-calendar-event-fill"></i></h5>
                 <h5 class="card-title">Agregar evento</h5>
@@ -147,7 +165,7 @@ session_start();
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card mx-auto shadow-sm card-block" style="width: 36rem; height:18rem" id="transition">
+            <div class="card mx-auto shadow-sm card-block" style="width: 100%; height:27rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                 <h5 style="font-size:63px"><i class="bi bi-buildings-fill"></i></h5>
                 <h5 class="card-title">Agregar sitio de visita</h5>
@@ -158,9 +176,9 @@ session_start();
           </div>
           
         </div>
-        <div class="row mt-5 g-4">
+        <div class="row mt-1 g-4">
           <div class="col-md-6">
-            <div class="card mx-auto shadow-sm align-items-center" style="width: 36rem; height:18rem" id="transition">
+            <div class="card mx-auto shadow-sm align-items-center" style="width: 100%; height:27rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                   <h5 style="font-size:63px"><i class="bi bi-people-fill"></i></h5>
                   <h5 class="card-title">Pre-Registro de asistentes</h5>
@@ -170,7 +188,7 @@ session_start();
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card mx-auto shadow-sm" style="width: 36rem; height:18rem" id="transition">
+            <div class="card mx-auto shadow-sm" style="width: 100%; height:27rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                 <h5 style="font-size:63px"><i class="bi bi-list-check"></i></h5>
                 <h5 class="card-title">Ver eventos cargados</h5>
@@ -180,9 +198,9 @@ session_start();
             </div>
           </div>
         </div>
-        <div class="row mt-5 g-4">
+        <div class="row mt-1 g-4">
           <div class="col-md-6">
-            <div class="card mx-auto shadow-sm" style="width: 36rem; height:18rem" id="transition">
+            <div class="card mx-auto shadow-sm" style="width: 100%; height:27rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                 <h5 style="font-size:63px"><i class="bi bi-list-check"></i></h5>
                   <h5 class="card-title">Listado de asistentes</h5>
@@ -192,7 +210,7 @@ session_start();
             </div>
           </div>
           <div class="col-md-6">
-            <div class="card mx-auto shadow-sm" style="width: 36rem; height:18rem" id="transition">
+            <div class="card mx-auto shadow-sm" style="width: 100%; height:27rem" id="transition">
               <div class="card-body align-items-center d-flex flex-column justify-content-center">
                 <h5 style="font-size:63px"><i class="bi bi-list-columns-reverse"></i></h5>
                   <h5 class="card-title">Catálogos</h5>
