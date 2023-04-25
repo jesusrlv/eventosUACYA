@@ -300,10 +300,10 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
       <div class="accordion-body">
+      <form action="query/query_csv.php" method="post" enctype="multipart/form-data">
         <div class="input-group mb-3">
-          <form action="query/query_csv.php" method="post" enctype="multipart/form-data">
           <input class="form-control" type="file" id="formFile" name="csv">
-          <button class="btn btn-primary" type="submit" for="formFile"><i class="bi bi-file-earmark-arrow-up-fill"></i> Cargar archivo</button>
+          <button class="btn btn-primary" type="submit"><i class="bi bi-file-earmark-arrow-up-fill"></i> Cargar archivo</button>
           </form>
         </div>
       </div>
