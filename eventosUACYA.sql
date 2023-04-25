@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
--- http://www.phpmyadmin.net
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 17-02-2023 a las 02:52:02
--- Versión del servidor: 10.1.16-MariaDB
--- Versión de PHP: 5.5.38
+-- Tiempo de generación: 25-04-2023 a las 17:21:12
+-- Versión del servidor: 10.4.21-MariaDB
+-- Versión de PHP: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,37 +29,47 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `asistentes` (
   `id` int(11) NOT NULL,
-  `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `tipo_asistente` int(11) NOT NULL,
-  `apellidos` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `curp` varchar(18) COLLATE utf8_unicode_ci NOT NULL,
-  `tipo_sangre` int(11) NOT NULL,
+  `apellidos` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `apellido_m` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `curp` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `tipo_sangre` int(11) DEFAULT NULL,
   `semestre` int(11) DEFAULT NULL,
   `grupo` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `unidad_academica` int(11) NOT NULL,
-  `carrera` int(11) NOT NULL COMMENT 'Programa',
-  `numero_control` int(11) NOT NULL COMMENT 'Matrícula',
-  `evento` int(11) DEFAULT NULL,
-  `idQr` varchar(30) COLLATE utf8_unicode_ci NOT NULL
+  `unidad_academica` int(11) DEFAULT NULL,
+  `carrera` varchar(70) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Programa',
+  `numero_control` varchar(30) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Matrícula',
+  `idQr` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `asistentes`
 --
 
-INSERT INTO `asistentes` (`id`, `nombre`, `tipo_asistente`, `apellidos`, `curp`, `tipo_sangre`, `semestre`, `grupo`, `unidad_academica`, `carrera`, `numero_control`, `evento`, `idQr`) VALUES
-(1, 'rodolfo', 0, 'leaños', '', 0, 9, 'A', 3, 5, 450489, 10, ''),
-(2, 'JesusRLV', 0, 'Leaños Villegas', '', 7, 9, 'B', 1, 5, 450489, 12, ''),
-(29, 'Jesús Rodolfo', 0, 'Leaños Villegas', '', 7, 9, 'C', 1, 5, 450489, NULL, ''),
-(30, 'Jesús Rodolfo', 0, 'Leaños Villegas', '', 7, 9, 'A', 1, 5, 450489, NULL, '00450489_LEVJ810924HZSXLS03'),
-(31, 'JesusRLV', 0, 'Leaños Villegas', 'LEVJ810924HZSXLS04', 7, 9, 'A', 1, 5, 450489, NULL, '00450489_LEVJ810924HZSXLS04'),
-(32, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'B', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
-(33, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'C', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
-(34, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'C', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
-(35, 'Pedro', 0, 'Bermúdez', 'LEVJ810924HZSXLS04', 7, 9, 'A', 1, 1, 9, NULL, '0009_LEVJ810924HZSXLS04'),
-(36, 'Pedro', 0, 'Bermúdez 2', 'LEVJ810924HZSXLS04', 7, 9, 'B', 1, 1, 10, NULL, '00010_LEVJ810924HZSXLS04'),
-(37, 'Pato patricio', 0, 'Pato', 'BAPA821212MJCRNN04', 1, 6, 'D', 1, 2, 450489, NULL, '00450489_BAPA821212MJCRNN04'),
-(38, 'Pato patricio 2', 0, 'Pato', 'SAOJ050223MTLLRCA4', 4, 8, 'A', 1, 5, 450487, NULL, '00450487_SAOJ050223MTLLRCA4');
+INSERT INTO `asistentes` (`id`, `nombre`, `tipo_asistente`, `apellidos`, `apellido_m`, `curp`, `tipo_sangre`, `semestre`, `grupo`, `unidad_academica`, `carrera`, `numero_control`, `idQr`) VALUES
+(1, 'rodolfo', 0, 'leaños', '0', '', 0, 9, 'A', 3, '5', '450489', ''),
+(2, 'JesusRLV', 0, 'Leaños Villegas', '0', '', 7, 9, 'B', 1, '5', '450489', ''),
+(29, 'Jesús Rodolfo', 0, 'Leaños Villegas', '0', '', 7, 9, 'C', 1, '5', '450489', ''),
+(30, 'Jesús Rodolfo', 0, 'Leaños Villegas', '0', '', 7, 9, 'A', 1, '5', '450489', '00450489_LEVJ810924HZSXLS03'),
+(31, 'JesusRLV', 0, 'Leaños Villegas', '0', 'LEVJ810924HZSXLS04', 7, 9, 'A', 1, '5', '450489', '00450489_LEVJ810924HZSXLS04'),
+(32, 'Pedro', 0, 'Bermúdez', '0', 'LEVJ810924HZSXLS04', 7, 9, 'B', 1, '1', '9', '0009_LEVJ810924HZSXLS04'),
+(33, 'Pedro', 0, 'Bermúdez', '0', 'LEVJ810924HZSXLS04', 7, 9, 'C', 1, '1', '9', '0009_LEVJ810924HZSXLS04'),
+(34, 'Pedro', 0, 'Bermúdez', '0', 'LEVJ810924HZSXLS04', 7, 9, 'C', 1, '1', '9', '0009_LEVJ810924HZSXLS04'),
+(35, 'Pedro', 0, 'Bermúdez', '0', 'LEVJ810924HZSXLS04', 7, 9, 'A', 1, '1', '9', '0009_LEVJ810924HZSXLS04'),
+(36, 'Pedro', 0, 'Bermúdez 2', '0', 'LEVJ810924HZSXLS04', 7, 9, 'B', 1, '1', '10', '00010_LEVJ810924HZSXLS04'),
+(37, 'Jesus', 1, 'Alumnos 32', '0', 'SAOJ050223MTLLRCA4', 7, 9, 'D', 1, '5', '00450489', '00450489_SAOJ050223MTLLRCA4'),
+(38, 'Jesus', 1, 'Alumnos 32', '0', 'SAOJ050223MTLLRCA4', 7, 9, 'D', 1, '5', '00450489', '00450489_SAOJ050223MTLLRCA4'),
+(39, 'Jesus', 1, 'Alumnos 32', '0', 'SAOJ050223MTLLRCA4', 7, 9, 'D', 1, '5', '00450489', '00450489_SAOJ050223MTLLRCA4'),
+(40, 'Jesus', 1, 'Alumnos 32', '0', 'SAOJ050223MTLLRCA4', 8, 1, 'D', 1, '5', '4556676655', '4556676655_SAOJ050223MTLLRCA4.png'),
+(41, 'MARCO ANTONIO', 1, 'CANCINO ', 'ANCHEYTA', 'CAAM791207HCSNNR07', NULL, NULL, NULL, NULL, 'DOCTORADO EN IMPUESTOS                                                ', '42205574', NULL),
+(42, 'CELBA', 1, 'CASTILLO', 'CHAIREZ', 'CACC561125MZSSHL08', NULL, NULL, NULL, NULL, 'DOCTORADO EN IMPUESTOS                                                ', '39200547', NULL),
+(43, 'JORGE CARLOS', 1, 'DE LA BRENA', 'WIEDFELDT', 'BEWJ740122HDFRDR09', NULL, NULL, NULL, NULL, 'DOCTORADO EN IMPUESTOS                                                ', '42205713', NULL),
+(44, 'SALVADOR', 1, 'DEL HOYO', 'SOTO', 'HOSS721204HZSYTL06', NULL, NULL, NULL, NULL, 'DOCTORADO EN IMPUESTOS                                                ', '21205404', NULL),
+(45, 'JUAN', 1, 'ESPINOZA', 'GARCIA', 'EIGJ850106HVZSRN07', NULL, NULL, NULL, NULL, 'DOCTORADO EN IMPUESTOS                                                ', '42205714', NULL),
+(46, 'NORBERTO', 1, 'ESTRADA', 'GUTIERREZ', 'EAGN650606HTSSTR09', NULL, NULL, NULL, NULL, 'DOCTORADO EN IMPUESTOS                                                ', '42207726', NULL),
+(47, 'MONICA ISELA', 1, 'GALINDO ', 'COSME', 'GACM680902MDFLSN08', NULL, NULL, NULL, NULL, 'DOCTORADO EN IMPUESTOS                                                ', '42205965', NULL),
+(48, 'JESUS FIDEL', 1, 'HERNANDEZ', 'RODRIGUEZ', 'HERJ661015HDFRDS08', NULL, NULL, NULL, NULL, 'DOCTORADO EN IMPUESTOS                                                ', '42205966', NULL);
 
 -- --------------------------------------------------------
 
@@ -101,7 +112,9 @@ INSERT INTO `eventos` (`id`, `nombre`, `capacidad`, `fecha`, `lugar`, `activo`) 
 (19, 'Evento ENE 2023 3', 21, '2023-01-04', 'Anfeca', 1),
 (20, '', 0, '0000-00-00', '', 1),
 (21, '', 0, '0000-00-00', '', 1),
-(22, 'Simpsium', 30, '2023-01-01', 'ANFECA', 1);
+(22, 'Simpsium', 30, '2023-01-01', 'ANFECA', 1),
+(23, 'Evento prueba 1', 60, '2023-02-15', 'Auditorio FCA', 1),
+(24, 'Simposium', 90, '2023-02-16', 'Fernando Calderón', 1);
 
 -- --------------------------------------------------------
 
@@ -151,7 +164,9 @@ INSERT INTO `registro` (`id`, `asistente`, `evento`, `asistencia`, `fecha_regist
 (35, 31, 18, 1, '2023-01-04 14:24:52', '00450489_LEVJ810924HZSXLS04'),
 (36, 31, 19, 1, '2023-01-04 14:27:28', '00450489_LEVJ810924HZSXLS04'),
 (37, 31, 22, 1, '2023-01-09 10:03:42', '00450489_LEVJ810924HZSXLS04'),
-(41, 32, 22, 1, '2023-01-10 21:31:40', '0009_LEVJ810924HZSXLS04');
+(41, 32, 22, 1, '2023-01-10 21:31:40', '0009_LEVJ810924HZSXLS04'),
+(42, 32, 23, 1, '2023-02-15 18:10:46', '0009_LEVJ810924HZSXLS04'),
+(43, 32, 24, 1, '2023-02-16 17:38:49', '0009_LEVJ810924HZSXLS04');
 
 -- --------------------------------------------------------
 
@@ -263,6 +278,13 @@ CREATE TABLE `usr` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
+-- Volcado de datos para la tabla `usr`
+--
+
+INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`) VALUES
+(1, 'admin', 123456789, 1);
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -328,47 +350,57 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `asistentes`
 --
 ALTER TABLE `asistentes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+
 --
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+
 --
 -- AUTO_INCREMENT de la tabla `programa`
 --
 ALTER TABLE `programa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+
 --
 -- AUTO_INCREMENT de la tabla `sangre`
 --
 ALTER TABLE `sangre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
 -- AUTO_INCREMENT de la tabla `semestre`
 --
 ALTER TABLE `semestre`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
 -- AUTO_INCREMENT de la tabla `sitio`
 --
 ALTER TABLE `sitio`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
 --
 -- AUTO_INCREMENT de la tabla `unidad_academica`
 --
 ALTER TABLE `unidad_academica`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
 -- AUTO_INCREMENT de la tabla `usr`
 --
 ALTER TABLE `usr`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
