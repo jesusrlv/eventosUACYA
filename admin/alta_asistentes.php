@@ -312,7 +312,7 @@
   <div class="accordion-item">
     <h2 class="accordion-header">
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-      <i class="bi bi-clipboard-plus-fill me-1"></i> Buscar asistente
+      <i class="bi bi-search me-1"></i> Buscar asistente
       </button>
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
