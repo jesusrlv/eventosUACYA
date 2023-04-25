@@ -15,6 +15,9 @@
     date_default_timezone_set('America/Mexico_City');
                   setlocale(LC_TIME, 'es_MX.UTF-8');
     $fecha_qr = strftime("%Y-%m-%d,%H:%M:%S");
+    $repetidos = 0;
+    $Norepetidos = 0;
+
     // $id = $_POST['id'];
  
     // Allowed mime types
@@ -89,15 +92,24 @@
                 
                 $tipo_asistente = 1;
 
+                $consulta = "SELECT * FROM asistentes WHERE curp = '$curp'";
+                $resultadoConsulta = $conn->query($consulta);
+                $filas = $resultadoConsulta->num_rows;
                 // If user already exists in the database with the same email
                 // $query = "SELECT id FROM invitados WHERE id_evento = '" . $getData[5] . "'";
 
+                if($filas == 0){
                 // $check = mysqli_query($conn, $query);
-
+                    $Norepetidos++;
                     mysqli_query($conn, "INSERT INTO asistentes (numero_control, apellidos, apellido_m, nombre, carrera, curp, tipo_asistente) VALUES ('" . $no_control . "', '" . $apellido_p . "', '" . $apellido_m . "', '" . $nombre . "', '" . $carrera . "', '" . $curp . "', '". $tipo_asistente ."')");
 
                     $error = $conn->error;
                     echo $error;
+                }
+                else{
+                    $repetidos++;
+
+                }
             }
 
             // Close opened CSV file
@@ -111,14 +123,11 @@
                     title: 'Alumnos agregados',
                     imageHeight: 200,
                     imageAlt: '',
-                    text: 'Se agregó la lista masiva',
+                    text: 'Se agregaron ".$Norepetidos." y se descartaron ".$repetidos."',
                     confirmButtonColor: '#3085d6',
                     footer: 'UACYA'
                 }).then(function(){window.location='../alta_asistentes.php';});</script>";
 
-                
-
-            
         
     }
     else
