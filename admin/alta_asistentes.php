@@ -111,8 +111,11 @@
   <div class="b-example-divider">
   </div>
 
-    <div class="container-fluid w-75 h-100 mt-5 mb-5 p-5">
+    <div class="container-fluid w-75 h-100 mt-5 mb-1 p-5">
     <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-people-fill"></i> Pre-carga de asistentes</h3>
+
+    
+    
         <div class="row justify-content-center">
             <div class="col-12 border rounded p-4">
             <h3 class="mb-4 border-bottom">Datos de asistente</h3>
@@ -272,6 +275,74 @@
       </form>
             <div class="col-0"></div>
         </div>
+    </div>
+
+    <div class="container-fluid w-75 h-100 mt-1 mb-5 p-5">
+      <!-- accordion -->
+    <div class="accordion" id="accordionExample">
+  <!-- <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <i class="bi bi-clipboard-plus-fill me-1"></i> Agregar asistente
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+      </div>
+    </div>
+  </div> -->
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+      <i class="bi bi-clipboard-plus-fill me-1"></i> Carga de archivo masivo
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="input-group mb-3">
+          <form action="query/query_csv.php" method="post" enctype="multipart/form-data">
+          <input class="form-control" type="file" id="formFile" name="csv">
+          <button class="btn btn-primary" type="submit" for="formFile"><i class="bi bi-file-earmark-arrow-up-fill"></i> Cargar archivo</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      <i class="bi bi-clipboard-plus-fill me-1"></i> Buscar asistente
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
+          <input type="text" class="form-control" placeholder="Asistente" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Matrícula</th>
+      <th scope="col">Apellido Paterno</th>
+      <th scope="col">Apellido Materno</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Carrera</th>
+      <th scope="col">CURP</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
+
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- accordion -->
     </div>
   
 </main>
