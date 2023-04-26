@@ -1,9 +1,20 @@
 <html>
     <header>
     <meta charset="utf-8">
+        <link rel="icon" type="image/png" href="../../assets/brand/img/ico.ico"/>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="../QR/ajax_generate_code.js"></script>
+        <!-- font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;600&display=swap" rel="stylesheet">
+        <!-- font -->
     <header>
+        <style>
+            body{
+                font-family: 'Titillium Web', sans-serif;
+            }
+        </style>
 <body>
     
 <?php    
@@ -108,6 +119,9 @@
                 }
                 else{
                     $repetidos++;
+                    echo '
+                    <p>'.$repetidos.'.- Se repite el asistente '.$nombre.' '.$apellido_p.' '.$apellido_m.' // '.$no_control.' // '.$curp.', no se agregó al sistema.<p>
+                    ';
 
                 }
             }
@@ -120,9 +134,10 @@
                 echo "<script type=\"text/javascript\">
                 Swal.fire({
                     icon: 'success',
-                    title: 'Alumnos agregados',
+                    imageUrl: '../../assets/brand/img/somos_fca_halcon_azul_15.png',
                     imageHeight: 200,
-                    imageAlt: '',
+                    imageAlt: 'UACYA UAZ',
+                    title: 'Asistentes agregados',
                     text: 'Se agregaron ".$Norepetidos." y se descartaron ".$repetidos."',
                     confirmButtonColor: '#3085d6',
                     footer: 'UACYA'
