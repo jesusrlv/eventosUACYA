@@ -20,7 +20,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <script src="lista_asistentes.js"></script>
+    <script src="script.js"></script>
 
     <style>
       .bd-placeholder-img {
@@ -319,24 +322,25 @@
       <div class="accordion-body">
         <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-          <input type="text" class="form-control" placeholder="Asistente" aria-label="Username" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" placeholder="Asistente" aria-label="Username" aria-describedby="basic-addon1" id="busquedaAdmin1" oninput="busquedaAdmin()">
         </div>
         <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Matrícula</th>
-      <th scope="col">Apellido Paterno</th>
-      <th scope="col">Apellido Materno</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Carrera</th>
-      <th scope="col">CURP</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-  </tbody>
-</table>
+          <thead>
+            <tr class="text-center">
+              <th scope="col">#</th>
+              <th scope="col">Matrícula</th>
+              <th scope="col">Apellido Paterno</th>
+              <th scope="col">Apellido Materno</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Carrera</th>
+              <th scope="col">CURP</th>
+              <th scope="col">Acción</th>
+            </tr>
+          </thead>
+          <tbody id="txtHint" class="text-center">
+            
+          </tbody>
+        </table>
 
       </div>
     </div>
