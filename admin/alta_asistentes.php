@@ -408,12 +408,19 @@
     document.getElementById('qrcode').innerHTML = "";
 
     var qrcode = new QRCode("qrcode",{
+      logo: "../assets/brand/img/logo.png",
       text: texto,
       width: 350,
       height: 350,
       colorDark : "#000000",
       colorLight : "#ffffff",
-      correctLevel : QRCode.CorrectLevel.H
+      correctLevel : QRCode.CorrectLevel.H,
+      // QRCode.CorrectLevel.L | QRCode.CorrectLevel.M | QRCode.CorrectLevel.H | correctLevel : QRCode.CorrectLevel.H
+      
+      logoWidth: 100,
+      logoHeight: 100,
+      logoBackgroundColor: '#ffffff',
+      logoBackgroundTransparent: false
     });
   }
 
