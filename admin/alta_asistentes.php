@@ -22,7 +22,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
@@ -32,6 +32,9 @@
     <script src="prcd/QR/ajax_generate_code.js"></script>
 
     <style>
+      #qrcode img{
+        margin:auto;
+      }
       .accordion-button:not(.collapsed) {
           color: white;
           background-color: #000e42;
@@ -369,7 +372,52 @@
     </footer>
   </div>
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="../assets/dist/js/bootstrap.bundle.min.js"></script> -->
 
   </body>
 </html>
+
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Qr seleccionado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <strong>Matrícula:</strong> <span id="matriculaQR2"></span>
+                <hr>
+                QR
+                <div class="justify-content-center" id="qrcode"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src=
+"https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+<script>
+  function ModalQr(matricula){
+    console.log(matricula);
+    let texto = matricula.toString();
+    document.getElementById('matriculaQR2').innerHTML = matricula;
+    document.getElementById('qrcode').innerHTML = "";
+
+    var qrcode = new QRCode("qrcode",{
+      text: texto,
+      width: 350,
+      height: 350,
+      colorDark : "#000000",
+      colorLight : "#ffffff",
+      correctLevel : QRCode.CorrectLevel.H
+    });
+  }
+
+</script>
+
+<!-- https://www.geeksforgeeks.org/how-to-make-a-qr-code-generator-using-qrcode-js/ -->
+
