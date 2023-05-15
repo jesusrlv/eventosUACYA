@@ -17,6 +17,7 @@ $filaVar = $resultadoVariable->num_rows;
     $x=0;
         while($rowVar = $resultadoVariable->fetch_assoc()){
             $x++;
+            $concatenado = $rowVar['curp'].'_'.$rowVar['numero_control'];
             echo'
             <tr>
                 <td>'.$x.'</td>
@@ -27,7 +28,14 @@ $filaVar = $resultadoVariable->num_rows;
                 <td>'.$rowVar['carrera'].'</td>
                 <td>'.$rowVar['curp'].'</td>
                 <td><i class="bi bi-pencil-square"></i></td>
-                <td><a href="#" style="text-decoration:none" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="ModalQr('.$rowVar['numero_control'].')"><i class="bi bi-qr-code-scan h3"></i></a></td>
+                <td>';
+                ?>
+
+                <a href="#" style="text-decoration:none" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="ModalQr('<?php echo $concatenado ?>')"><i class="bi bi-qr-code-scan h3"></i></a>
+
+                <?php
+                echo'
+                </td>
             </tr>
 
         ';
@@ -42,3 +50,4 @@ $filaVar = $resultadoVariable->num_rows;
         ';
     }
 }
+?>

@@ -388,7 +388,7 @@
             <div class="modal-body">
                 <strong>Matrícula:</strong> <span id="matriculaQR2"></span>
                 <hr>
-                QR
+                <strong>QR</strong>
                 <div class="justify-content-center" id="qrcode"></div>
             </div>
             <div class="modal-footer">
@@ -401,14 +401,16 @@
 "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
     </script>
 <script>
-  function ModalQr(matricula){
-    console.log(matricula);
-    let texto = matricula.toString();
-    document.getElementById('matriculaQR2').innerHTML = matricula;
+  function ModalQr(concatenado){
+    console.log(concatenado);
+    // console.log(curp);
+    var texto = concatenado.toString();
+    document.getElementById('matriculaQR2').innerHTML = concatenado;
     document.getElementById('qrcode').innerHTML = "";
+    console.log(texto);
 
     var qrcode = new QRCode("qrcode",{
-      logo: "../assets/brand/img/logo.png",
+      logo: "logo.png",
       text: texto,
       width: 350,
       height: 350,
@@ -416,9 +418,8 @@
       colorLight : "#ffffff",
       correctLevel : QRCode.CorrectLevel.H,
       // QRCode.CorrectLevel.L | QRCode.CorrectLevel.M | QRCode.CorrectLevel.H | correctLevel : QRCode.CorrectLevel.H
-      
-      logoWidth: 100,
-      logoHeight: 100,
+      logoWidth: undefined,
+      logoHeight: undefined,
       logoBackgroundColor: '#ffffff',
       logoBackgroundTransparent: false
     });
