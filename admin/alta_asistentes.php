@@ -408,30 +408,32 @@
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
-                <input type="text" class="form-control" placeholder="Matrícula" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Matrícula" aria-label="Username" aria-describedby="basic-addon1" id="matriculaE">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Apellido paterno" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Apellido paterno" aria-label="Username" aria-describedby="basic-addon1" id="apellido_pE">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Apellido materno" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Apellido materno" aria-label="Username" aria-describedby="basic-addon1" id="apellido_mE">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
-                <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" id="nombreE">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-bounding-box"></i></span>
-                <input type="text" class="form-control" placeholder="Carrera" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="Carrera" aria-label="Username" aria-describedby="basic-addon1" id="carreraE">
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-spellcheck"></i></span>
-                <input type="text" class="form-control" placeholder="CURP" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" class="form-control" placeholder="CURP" aria-label="Username" aria-describedby="basic-addon1" id="curp">
+                <input type="text" class="form-control" placeholder="concatenado" aria-label="Username" aria-describedby="basic-addon1" id="concatenadoE" READONLY>
               </div>
             </div>
             <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
             </div>
         </div>
@@ -476,7 +478,28 @@
         dataType: "JSON",
         cache: false,
           success: function(data) {
+            var jsonData = JSON.parse(JSON.stringify(data));
+
+            var nombre = jsonData.nombre;
             
+            var apellido_paterno = jsonData.nombre;
+            var apellido_materno = jsonData.apellido_materno;
+            var apellido_paterno = jsonData.apellido_paterno;
+            var carrera = jsonData.carrera;
+            var curp = jsonData.curp;
+            var matricula = jsonData.matricula;
+            var concatenado = jsonData.concatenado;
+            var error = jsonData.error;
+            console.log(error);
+            console.log(matricula);
+
+            document.getElementById("nombreE").value = nombre;
+            document.getElementById("apellido_pE").value = apellido_paterno;
+            document.getElementById("apellido_mE").value = apellido_materno;
+            document.getElementById("carreraE").value = carrera;
+            document.getElementById("curpE").value = curp;
+            document.getElementById("matriculaE").value = matricula;
+            document.getElementById("concatenadoE").value = concatenado;
              
           }               
         });
