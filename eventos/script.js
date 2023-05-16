@@ -31,12 +31,13 @@
                     c:c,
                     evento:evento
                   },
-                  dataType: "html",
+                  dataType: "json",
                   async:true,
                   cache: false,
                     success: function(response)
                     {
-                        var jsonData = JSON.parse(response);
+                        // var jsonData = JSON.parse(response);
+                        var jsonData = JSON.parse(JSON.stringify(response));
          
                         // user is logged in successfully in the back-end
                         // let's redirect
@@ -44,8 +45,9 @@
                         {
                           let timerInterval
                           Swal.fire({
-                            title: 'Asistente ya estaba registrado',
-                            html: 'Este asistente ya estaba registrado previamente<br>TEXTO ADICIONAL',
+                            icon: 'warning',
+                            title: 'No se realizó el registro',
+                            html: 'Asistente previamente registrado registrado previamente<br>Ya existe el registro a este evento',
                             timer: 2000,
                             timerProgressBar: true,
                             didOpen: () => {
@@ -118,7 +120,7 @@
                             let timerInterval
                             Swal.fire({
                                 icon: 'error',
-                                title: 'NO EXISTE REGISTRO',
+                                title: 'QR NO VÁLIDO',
                                 text: 'Credenciales incorrectas',
                                 footer: 'UACYA | UAZ',
                                 timer: 2000,

@@ -31,7 +31,7 @@
             </p>
             <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
               <strong class="d-block text-gray-dark">Semestre:</strong>
-              '.$rowSemestre['semestre'].'
+              '.$rowQuery['semestre'].'
             </p>
             <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
               <strong class="d-block text-gray-dark">Grupo:</strong>
@@ -39,7 +39,7 @@
             </p>
             <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
               <strong class="d-block text-gray-dark">Carrera:</strong>
-              '.$rowCarrera['programa'].'
+              '.$rowQuery['carrera'].'
             </p>
             <p class="pb-3 mt-3 mb-0 small lh-sm border-bottom">
               <strong class="d-block text-gray-dark">Número de control:</strong>

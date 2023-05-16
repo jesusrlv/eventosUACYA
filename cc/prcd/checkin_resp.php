@@ -10,15 +10,6 @@
         $evento = $_POST['evento'];
         $cadena = $_POST['c'];
 
-        $sqlValidacion = "SELECT * FROM asistentes WHERE idQr = '$cadena'";
-        $resultadoSqlValidacion = $conn->query($sqlValidacion);
-        $numRowsV = $resultadoSqlValidacion->num_rows;
-
-        if($numRowsV == 0){
-            echo json_encode(array('success' => 3));
-        }
-        else{
-
         $sql = "SELECT * FROM registro WHERE idQr = '$cadena' AND evento = '$evento'";
         $resultadoSql = $conn->query($sql);
         $numRows = $resultadoSql->num_rows;
@@ -42,7 +33,6 @@
                 echo json_encode(array('success' => 1));
             }
         }
-    } // fin else valicacion
     }
     else{
         echo json_encode(array('success' => 3));

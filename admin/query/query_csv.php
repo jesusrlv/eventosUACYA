@@ -100,6 +100,12 @@
                 $nombre = $getData[3];
                 $carrera = $getData[4];
                 $curp = $getData[5];
+                $concatenado = $curp.'_'.$no_control;
+
+                $unidad_academica = "Unidad Académica de Contaduría y Administración";
+                $tipo_sangre = "Genérico";
+                $semestre = "Genérico";
+                $grupo = "Genérico";
                 
                 $tipo_asistente = 1;
 
@@ -112,7 +118,7 @@
                 if($filas == 0){
                 // $check = mysqli_query($conn, $query);
                     $Norepetidos++;
-                    mysqli_query($conn, "INSERT INTO asistentes (numero_control, apellidos, apellido_m, nombre, carrera, curp, tipo_asistente) VALUES ('" . $no_control . "', '" . $apellido_p . "', '" . $apellido_m . "', '" . $nombre . "', '" . $carrera . "', '" . $curp . "', '". $tipo_asistente ."')");
+                    mysqli_query($conn, "INSERT INTO asistentes (numero_control, apellidos, apellido_m, nombre, carrera, curp, tipo_asistente, idQr, tipo_sangre, semestre, grupo, unidad_academica) VALUES ('" . $no_control . "', '" . $apellido_p . "', '" . $apellido_m . "', '" . $nombre . "', '" . $carrera . "', '" . $curp . "', '". $tipo_asistente ."', '".$concatenado."', '".$tipo_sangre."', '".$semestre."', '".$grupo."', '".$unidad_academica."')");
 
                     $error = $conn->error;
                     echo $error;

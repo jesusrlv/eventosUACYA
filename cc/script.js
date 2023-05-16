@@ -31,21 +31,24 @@
                     c:c,
                     evento:evento
                   },
-                  dataType: "html",
+                  dataType: "JSON",
                   async:true,
                   cache: false,
                     success: function(response)
                     {
-                        var jsonData = JSON.parse(response);
+                        // var jsonData = JSON.parse(response);
+                        var jsonData = JSON.parse(JSON.stringify(response));
          
                         // user is logged in successfully in the back-end
                         // let's redirect
+
                         if (jsonData.success == "0")
                         {
                           let timerInterval
                           Swal.fire({
-                            title: 'Asistente ya estaba registrado',
-                            html: 'Este asistente ya estaba registrado previamente<br>TEXTO ADICIONAL',
+                            icon: 'warning',
+                            title: 'No se realizó el registro',
+                            html: 'Asistente previamente registrado registrado previamente<br>Ya existe el registro a este evento',
                             timer: 2000,
                             timerProgressBar: true,
                             didOpen: () => {
@@ -89,11 +92,54 @@
                             // location.href = 'my_profile.php';
                             let timerInterval
                             Swal.fire({
-                                icon: 'success',
-                                title: 'Usuario correcto',
-                                text: 'Credenciales correctas',
-                                footer: 'INJUVENTUD</a>',
-                                timer: 2000,
+                              icon: 'success',
+                              title: 'Alta de registro correcta<br>Bienvenid@',
+                              timer: 2000,
+                              timerProgressBar: true,
+                              didOpen: () => {
+                                Swal.showLoading()
+                                const b = Swal.getHtmlContainer().querySelector('b')
+                                timerInterval = setInterval(() => {
+                                  b.textContent = Swal.getTimerLeft()
+                                }, 100)
+                              },
+                              willClose: () => {
+                                clearInterval(timerInterval)
+                              }
+                            }).then((result) => {
+                              /* Read more about handling dismissals below */
+                              if (result.dismiss === Swal.DismissReason.timer) {
+                                console.log('Cerrara el contador de tiempo')
+                              }
+                            });
+                        }
+                        else if (jsonData.success == "2")
+                        {
+                            // html
+                            document.getElementById('checkDiv').innerHTML="";
+                            $.ajax({
+                              type:"POST",
+                              url:"prcd/datos_checkin.php",
+                              data:{
+                                c:c,
+                                evento:evento
+                              },
+                              dataType: "html",
+                              async:true,
+                              cache: false,
+                                success: function(response)
+                                {
+                                  $("#checkDiv").html(response);
+                                }
+                              });  
+                            // html
+
+                            // location.href = 'my_profile.php';
+                            let timerInterval
+                            Swal.fire({
+                              icon: 'info',
+                              title: 'Registro actualizado<br>Salida registrada',
+                              timer: 2000,
                               timerProgressBar: true,
                               didOpen: () => {
                                 Swal.showLoading()
@@ -118,7 +164,7 @@
                             let timerInterval
                             Swal.fire({
                                 icon: 'error',
-                                title: 'NO EXISTE REGISTRO',
+                                title: 'QR NO VÁLIDO',
                                 text: 'Credenciales incorrectas',
                                 footer: 'UACYA | UAZ',
                                 timer: 2000,

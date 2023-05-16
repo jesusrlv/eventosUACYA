@@ -47,7 +47,7 @@
                 $grupo = $getData[5];
                 $carrera = $getData[6];
                 $numero_control = $getData[7];
- 
+                $concatenado = $curp.'_'.$numero_control;
                 // If user already exists in the database with the same email
                 // $query = "SELECT id FROM invitados WHERE id_evento = '" . $getData[5] . "'";
  
@@ -59,7 +59,7 @@
                 // }
                 // else
                 // {
-                     mysqli_query($conn, "INSERT INTO asistentes (nombre, apellidos, curp, tipo_sangre, semestre, grupo, carrera, numero_control, tipo_asistente, unidad_academica) VALUES ('" . $nombre . "', '" . $apellidos . "', '" . $curp . "', '" . $tipo_sangre . "', '" . $semestre . "', '" . $grupo . "', '" . $carrera . "', '" . $numero_control . "', '" . $tipo_asistente . "', '" . $unidad_academica . "')");
+                     mysqli_query($conn, "INSERT INTO asistentes (nombre, apellidos, curp, tipo_sangre, semestre, grupo, carrera, numero_control, tipo_asistente, unidad_academica, idQr) VALUES ('" . $nombre . "', '" . $apellidos . "', '" . $curp . "', '" . $tipo_sangre . "', '" . $semestre . "', '" . $grupo . "', '" . $carrera . "', '" . $numero_control . "', '" . $tipo_asistente . "', '" . $unidad_academica . "', '" . $concatenado . "')");
  
                 // }
             }

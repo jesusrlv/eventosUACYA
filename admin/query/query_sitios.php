@@ -3,7 +3,7 @@ include('prcd/qc.php');
 
 // query sitios
 if (isset($idEventos)){
-$sqlSitios2 = "SELECT * FROM sitio ORDER BY id ASC ";
+$sqlSitios2 = "SELECT * FROM sitio WHERE id = '$idEventos' ORDER BY id ASC ";
 $resultadoSitio2 = $conn->query($sqlSitios2);
 }
 else{
