@@ -34,7 +34,7 @@ $x = 0;
 
             
             echo'
-            <td><small>'.$rowEventos['programa'].'</small></td>'
+            <td><small>'.$rowEventos['carrera'].'</small></td>'
             ;
             echo'
             <td><small>'.$rowEventos['fecha_registro'].'</small></td>'

@@ -27,7 +27,14 @@ $filaVar = $resultadoVariable->num_rows;
                 <td>'.$rowVar['nombre'].'</td>
                 <td>'.$rowVar['carrera'].'</td>
                 <td>'.$rowVar['curp'].'</td>
-                <td><i class="bi bi-pencil-square"></i></td>
+                <td>';
+                ?>
+
+                <a href="#" style="text-decoration:none" data-bs-toggle="modal" data-bs-target="#editarModal" onclick="ModalEditar('<?php echo $concatenado ?>')"><i class="bi bi-pencil-square"></i></a>
+
+                <?php
+                echo'
+                </td>
                 <td>';
                 ?>
 

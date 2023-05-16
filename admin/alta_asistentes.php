@@ -397,6 +397,46 @@
         </div>
     </div>
 </div>
+ <!-- Modal editar -->
+ <div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-pencil-square"></i> Editar datos</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
+                <input type="text" class="form-control" placeholder="Matrícula" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
+                <input type="text" class="form-control" placeholder="Apellido paterno" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
+                <input type="text" class="form-control" placeholder="Apellido materno" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
+                <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-bounding-box"></i></span>
+                <input type="text" class="form-control" placeholder="Carrera" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-spellcheck"></i></span>
+                <input type="text" class="form-control" placeholder="CURP" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script src=
 "https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
     </script>
@@ -423,6 +463,23 @@
       logoBackgroundColor: '#ffffff',
       logoBackgroundTransparent: false
     });
+  }
+
+  function ModalEditar(idQr){
+    var id = idQr;
+    $.ajax({
+        type:"POST",
+        url:"query/query_datos.php",
+        data:{
+          id:id
+        },
+        dataType: "JSON",
+        cache: false,
+          success: function(data) {
+            
+             
+          }               
+        });
   }
 
 </script>
