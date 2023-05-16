@@ -17,37 +17,24 @@ $x = 0;
             <td><small>'.$x.'</small></td>
             <td><small>'.$rowEventos['apellidos'].'</small></td>
             <td><small>'.$rowEventos['nombre'].'</small></td>';
-            $sangre = $rowEventos['tipo_sangre'];
-            $sqlSangre = "SELECT * FROM sangre WHERE id = $sangre";
-            $resultadoSangre = $conn->query($sqlSangre);
-            $rowSangre = $resultadoSangre->fetch_assoc();
+           
             echo'
-            <td><small>'.$rowSangre['tipo_sangre'].'</small></td>';
+            <td><small>'.$rowEventos['tipo_sangre'].'</small></td>';
 
-            $semestre = $rowEventos['semestre'];
-            $sqlSemestre = "SELECT * FROM semestre WHERE id = $semestre";
-            $resultadoSemestre = $conn->query($sqlSemestre);
-            $rowSemestre = $resultadoSemestre->fetch_assoc();
             echo'
-            <td><small>'.$rowSemestre['semestre'].'</small></td>';
+            <td><small>'.$rowEventos['semestre'].'</small></td>';
 
             echo'<td><small>'.$rowEventos['grupo'].'</small></td>';
 
-            $unidad_academica = $rowEventos['unidad_academica'];
-            $sqlUnidad_academica = "SELECT * FROM unidad_academica WHERE id = $unidad_academica";
-            $resultadoUnidad_academica = $conn->query($sqlUnidad_academica);
-            $rowUnidad_academica = $resultadoUnidad_academica->fetch_assoc();
+       
             echo'
-            <td><small>'.$rowUnidad_academica['unidad_academica'].'</small></td>';
+            <td><small>'.$rowEventos['unidad_academica'].'</small></td>';
 
             echo'<td><small>'.$rowEventos['numero_control'].'</small></td>';
 
-            $carrera = $rowEventos['carrera'];
-            $sqlPrograma = "SELECT * FROM programa WHERE id = $carrera";
-            $resultadoPrograma = $conn->query($sqlPrograma);
-            $rowPrograma = $resultadoPrograma->fetch_assoc();
+          
             echo'
-            <td><small>'.$rowPrograma['programa'].'</small></td>'
+            <td><small>'.$rowEventos['carrera'].'</small></td>'
             ;
             echo'
             <td><small>'.$rowEventos['fecha_registro'].'</small></td>'

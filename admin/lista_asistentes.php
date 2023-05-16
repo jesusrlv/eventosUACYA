@@ -135,7 +135,7 @@
                 </div>
             </div>
             <div class="col text-end">
-                <a href="#" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#documentoExcel"><i class="bi bi-file-earmark-excel-fill"></i> Cargar listado</a>
+                <!-- <a href="#" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#documentoExcel"><i class="bi bi-file-earmark-excel-fill"></i> Cargar listado</a> -->
                 <a href="#" class="btn btn-outline-danger" id="link"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a>
             </div>
         </div>
@@ -222,6 +222,7 @@
       data:{
         evento:evento
       },
+      dataType: "html",
       cache: false,
         success: function(data) {
           $("#myTable").html(data);
