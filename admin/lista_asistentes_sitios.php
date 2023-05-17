@@ -113,14 +113,14 @@
     <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-people-fill"></i> Lista de asistentes (sitios)</h3>
         <div class="input-group mb-3 w-50">
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
-            <select class="form-select" aria-label="Default select example" onchange="cambioEvento()" id="evento">
-                <option selected>Nombre del evento</option>
+            <select class="form-select" aria-label="Default select example" onchange="cambioSitio()" id="sitio">
+                <option selected>Nombre del sitio</option>
                 <?php
-                include('query/query_eventos.php');
+                include('query/query_sitios.php');
                 
-                while($rowEvento = $resultadoEvento->fetch_assoc()){
+                while($rowEvento = $resultadoSitio->fetch_assoc()){
                   echo'
-                  <option value="'.$rowEvento['id'].'">'.$rowEvento['nombre'].'</option>
+                  <option value="'.$rowEvento['id'].'">'.$rowEvento['sitio'].'</option>
                   ';
                 }
                 ?>
@@ -214,19 +214,19 @@
         });
     });
 
-    function cambioEvento(){
-      var evento = document.getElementById('evento').value;
+    function cambioSitio(){
+      var sitio = document.getElementById('sitio').value;
       $.ajax({
       type:"POST",
-      url:"query/query_asistentes.php",
+      url:"query/query_asistentes_sitios.php",
       data:{
-        evento:evento
+        sitio:sitio
       },
       dataType: "html",
       cache: false,
         success: function(data) {
           $("#myTable").html(data);
-          var id = document.getElementById('evento').value;
+          var id = document.getElementById('sitio').value;
           $("#link").attr('href','constanciaPDF_masivas.php?id='+id);
           $("#idCsv").attr('value',+id);
           $("#link").attr('target','_blank');
