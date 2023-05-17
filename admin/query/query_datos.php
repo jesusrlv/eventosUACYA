@@ -1,5 +1,5 @@
 <?php
-    include('prcd/qc.php');
+    include('../prcd/qc.php');
 
     $id = $_POST['id'];
 

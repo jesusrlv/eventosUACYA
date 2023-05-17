@@ -428,8 +428,11 @@
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-spellcheck"></i></span>
-                <input type="text" class="form-control" placeholder="CURP" aria-label="Username" aria-describedby="basic-addon1" id="curp">
-                <input type="text" class="form-control" placeholder="concatenado" aria-label="Username" aria-describedby="basic-addon1" id="concatenadoE" READONLY>
+                <input type="text" class="form-control" placeholder="CURP" aria-label="Username" aria-describedby="basic-addon1" id="curpE">
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="bi bi-spellcheck"></i></span>
+                <input type="text" class="form-control" placeholder="concatenado" aria-label="Username" aria-describedby="basic-addon1" id="concatenadoE" DISABLED>
               </div>
             </div>
             <div class="modal-footer">
@@ -467,31 +470,31 @@
     });
   }
 
+</script>
+<script>
   function ModalEditar(idQr){
     var id = idQr;
+    console.log(id);
     $.ajax({
         type:"POST",
         url:"query/query_datos.php",
         data:{
           id:id
         },
-        dataType: "JSON",
-        cache: false,
+        dataType: "json",
           success: function(data) {
             var jsonData = JSON.parse(JSON.stringify(data));
 
             var nombre = jsonData.nombre;
-            
-            var apellido_paterno = jsonData.nombre;
-            var apellido_materno = jsonData.apellido_materno;
             var apellido_paterno = jsonData.apellido_paterno;
+            var apellido_materno = jsonData.apellido_materno;
             var carrera = jsonData.carrera;
             var curp = jsonData.curp;
             var matricula = jsonData.matricula;
             var concatenado = jsonData.concatenado;
-            var error = jsonData.error;
-            console.log(error);
-            console.log(matricula);
+            // var error = jsonData.error;
+            console.log(nombre);
+            // console.log(matricula);
 
             document.getElementById("nombreE").value = nombre;
             document.getElementById("apellido_pE").value = apellido_paterno;
@@ -504,7 +507,6 @@
           }               
         });
   }
-
 </script>
 
 <!-- https://www.geeksforgeeks.org/how-to-make-a-qr-code-generator-using-qrcode-js/ -->
