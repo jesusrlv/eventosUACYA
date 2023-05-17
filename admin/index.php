@@ -170,7 +170,7 @@ session_start();
                 <h5 style="font-size:63px"><i class="bi bi-buildings-fill"></i></h5>
                 <h5 class="card-title">Agregar sitio de visita</h5>
                 <p class="card-text">Se agrega sitio de visita como la biblioteca o el centro de cómputo.</p>
-                <a href="alta_sitio.php" class="card-link" style="text-decoration:none;"><i class="bi bi-plus-circle-fill"></i> Agregar sitio</a>
+                <p><a href="alta_sitio.php" class="card-link" style="text-decoration:none;"><i class="bi bi-plus-circle-fill"></i> Agregar sitio</a><a href="lista_asistentes_sitios.php" class="card-link" style="text-decoration:none;"><i class="bi bi-journal-text"></i> Reporte de sitio</a> </p>
               </div>
             </div>
           </div>
