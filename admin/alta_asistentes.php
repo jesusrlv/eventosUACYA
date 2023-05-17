@@ -281,13 +281,13 @@
   </div>
 
   <?php
-                  include('query/query_eventos.php');
+                  // include('query/query_eventos.php');
                   
-                  while($rowEvento = $resultadoEvento->fetch_assoc()){
-                    echo'
-                    <option value="'.$rowEvento['id'].'">'.$rowEvento['nombre'].'</option>
-                    ';
-                  }
+                  // while($rowEvento = $resultadoEvento->fetch_assoc()){
+                  //   echo'
+                  //   <option value="'.$rowEvento['id'].'">'.$rowEvento['nombre'].'</option>
+                  //   ';
+                  // }
                   ?>
  </div><!-- row -->
           <hr>
@@ -473,9 +473,10 @@
   }
 
 </script>
+
 <script>
   function ModalEditar(idQr){
-    var id = idQr;
+    let id = idQr.toString();
             // document.getElementById("nombreE").value = "";
             // document.getElementById("apellido_pE").value = "";
             // document.getElementById("apellido_mE").value = "";
@@ -483,7 +484,7 @@
             // document.getElementById("curpE").value = "";
             // document.getElementById("matriculaE").value = "";
             // document.getElementById("concatenadoE").value = "";
-    console.log(id);
+    // console.log(id);
     $.ajax({
         type:"POST",
         url:"query/query_datos.php",
@@ -491,28 +492,34 @@
           id:id
         },
         dataType: "json",
-          success: function(data) {
-            var jsonData = JSON.parse(JSON.stringify(data));
+          success: function(response) {
+            var jsonData = JSON.parse(JSON.stringify(response));
+            // var jsonData = JSON.parse(response);
+            if(jsonData.estatus == 1){
+              var nombre = jsonData.nombre;
+              var apellido_paterno = jsonData.apellido_paterno;
+              var apellido_materno = jsonData.apellido_materno;
+              var carrera = jsonData.carrera;
+              var curp = jsonData.curp;
+              var matricula = jsonData.matricula;
+              var concatenado = jsonData.concatenado;
+              // var error = jsonData.error;
+              // console.log(nombre);
+              // console.log(matricula);
 
-            var nombre = jsonData.nombre;
-            var apellido_paterno = jsonData.apellido_paterno;
-            var apellido_materno = jsonData.apellido_materno;
-            var carrera = jsonData.carrera;
-            var curp = jsonData.curp;
-            var matricula = jsonData.matricula;
-            var concatenado = jsonData.concatenado;
-            // var error = jsonData.error;
-            console.log(nombre);
-            // console.log(matricula);
+              document.getElementById("nombreE").value = nombre;
+              document.getElementById("apellido_pE").value = apellido_paterno;
+              document.getElementById("apellido_mE").value = apellido_materno;
+              document.getElementById("carreraE").value = carrera;
+              document.getElementById("curpE").value = curp;
+              document.getElementById("matriculaE").value = matricula;
+              document.getElementById("concatenadoE").value = concatenado;
 
-            document.getElementById("nombreE").value = nombre;
-            document.getElementById("apellido_pE").value = apellido_paterno;
-            document.getElementById("apellido_mE").value = apellido_materno;
-            document.getElementById("carreraE").value = carrera;
-            document.getElementById("curpE").value = curp;
-            document.getElementById("matriculaE").value = matricula;
-            document.getElementById("concatenadoE").value = concatenado;
-             
+            }
+            else if(jsonData.estatus == 0){
+              console.log(jsonData.error)
+            }
+
           }               
         });
   }

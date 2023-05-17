@@ -14,9 +14,10 @@
     $nombre = $rowSql['nombre'];
     $carrera = $rowSql['carrera'];
     $concatenado = $rowSql['idQr'];
-
+    if($resultadoSql){
     echo json_encode(
         array(
+            'estatus'=>1,
             'matricula'=>$matricula,
             'apellido_paterno'=>$apellido_paterno,
             'apellido_materno'=>$apellido_materno,
@@ -26,5 +27,14 @@
             'nombre'=>$nombre,
             'concatenado'=>$concatenado
         ));
+    }
+    else{
+        $error = $conn->error;
+        echo json_encode(
+            array(
+                'estatus'=>0,
+                'error'=>$error
+            ));
+    }
 
 ?>

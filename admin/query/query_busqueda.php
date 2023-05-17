@@ -17,7 +17,7 @@ $filaVar = $resultadoVariable->num_rows;
     $x=0;
         while($rowVar = $resultadoVariable->fetch_assoc()){
             $x++;
-            $concatenado = $rowVar['curp'].'_'.$rowVar['numero_control'];
+            $concatenado = $rowVar['idQr'];
             echo'
             <tr>
                 <td>'.$x.'</td>
