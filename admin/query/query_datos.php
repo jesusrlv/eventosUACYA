@@ -13,9 +13,8 @@
     $curp = $rowSql['curp'];
     $nombre = $rowSql['nombre'];
     $carrera = $rowSql['carrera'];
-    $concatenado = $curp.'_'.$matricula;
+    $concatenado = $rowSql['idQr'];
 
-    $error = $conn ->error;
     echo json_encode(
         array(
             'matricula'=>$matricula,
@@ -25,8 +24,7 @@
             'carrera'=>$carrera,
             'curp'=>$curp,
             'nombre'=>$nombre,
-            'concatenado'=>$concatenado,
-            'error'=>$error
-    ));
+            'concatenado'=>$concatenado
+        ));
 
 ?>

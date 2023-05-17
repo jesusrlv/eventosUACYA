@@ -405,40 +405,42 @@
                 <h1 class="modal-title fs-5" id="exampleModalLabel"><i class="bi bi-pencil-square"></i> Editar datos</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+            <form action="prcd/proceso_editar_asistente.php" method="POST">
             <div class="modal-body">
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
-                <input type="text" class="form-control" placeholder="Matrícula" aria-label="Username" aria-describedby="basic-addon1" id="matriculaE">
+                <input type="text" class="form-control" placeholder="Matrícula" aria-label="Username" aria-describedby="basic-addon1" id="matriculaE" name="matriculaE" required>
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Apellido paterno" aria-label="Username" aria-describedby="basic-addon1" id="apellido_pE">
+                <input type="text" class="form-control" placeholder="Apellido paterno" aria-label="Username" aria-describedby="basic-addon1" id="apellido_pE" name="apellido_pE" required>
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
-                <input type="text" class="form-control" placeholder="Apellido materno" aria-label="Username" aria-describedby="basic-addon1" id="apellido_mE">
+                <input type="text" class="form-control" placeholder="Apellido materno" aria-label="Username" aria-describedby="basic-addon1" id="apellido_mE" name="apellido_mE" required>
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
-                <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" id="nombreE">
+                <input type="text" class="form-control" placeholder="Nombre" aria-label="Username" aria-describedby="basic-addon1" id="nombreE" name="nombreE" required>
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-bounding-box"></i></span>
-                <input type="text" class="form-control" placeholder="Carrera" aria-label="Username" aria-describedby="basic-addon1" id="carreraE">
+                <input type="text" class="form-control" placeholder="Carrera" aria-label="Username" aria-describedby="basic-addon1" id="carreraE" name="carreraE" required>
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-spellcheck"></i></span>
-                <input type="text" class="form-control" placeholder="CURP" aria-label="Username" aria-describedby="basic-addon1" id="curpE">
+                <input type="text" class="form-control" placeholder="CURP" aria-label="Username" aria-describedby="basic-addon1" id="curpE" name="curpE" required>
               </div>
               <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-spellcheck"></i></span>
-                <input type="text" class="form-control" placeholder="concatenado" aria-label="Username" aria-describedby="basic-addon1" id="concatenadoE" DISABLED>
+                <input type="text" class="form-control" placeholder="concatenado" aria-label="Username" aria-describedby="basic-addon1" id="concatenadoE" name="concatenadoE" >
               </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Guardar</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Editar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
@@ -474,6 +476,13 @@
 <script>
   function ModalEditar(idQr){
     var id = idQr;
+            // document.getElementById("nombreE").value = "";
+            // document.getElementById("apellido_pE").value = "";
+            // document.getElementById("apellido_mE").value = "";
+            // document.getElementById("carreraE").value = "";
+            // document.getElementById("curpE").value = "";
+            // document.getElementById("matriculaE").value = "";
+            // document.getElementById("concatenadoE").value = "";
     console.log(id);
     $.ajax({
         type:"POST",
