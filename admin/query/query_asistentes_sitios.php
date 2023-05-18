@@ -13,36 +13,36 @@ $x = 0;
         echo'
         <tr class="text-center">
             <td><small>'.$x.'</small></td>
-            <td><small>'.$rowEventos['apellidos'].'</small></td>
-            <td><small>'.$rowEventos['nombre'].'</small></td>';
+            <td><small>'.$rowsitio['apellidos'].'</small></td>
+            <td><small>'.$rowsitio['nombre'].'</small></td>';
           
             echo'
-            <td><small>'.$rowEventos['tipo_sangre'].'</small></td>';
+            <td><small>'.$rowsitio['tipo_sangre'].'</small></td>';
 
-            $semestre = $rowEventos['semestre'];
+            $semestre = $rowsitio['semestre'];
             
             echo'
-            <td><small>'.$rowEventos['semestre'].'</small></td>';
+            <td><small>'.$rowsitio['semestre'].'</small></td>';
 
-            echo'<td><small>'.$rowEventos['grupo'].'</small></td>';
+            echo'<td><small>'.$rowsitio['grupo'].'</small></td>';
 
            
             echo'
-            <td><small>'.$rowEventos['unidad_academica'].'</small></td>';
+            <td><small>'.$rowsitio['unidad_academica'].'</small></td>';
 
-            echo'<td><small>'.$rowEventos['numero_control'].'</small></td>';
+            echo'<td><small>'.$rowsitio['numero_control'].'</small></td>';
 
             
             echo'
-            <td><small>'.$rowEventos['carrera'].'</small></td>'
+            <td><small>'.$rowsitio['carrera'].'</small></td>'
             ;
             echo'
-            <td><small>'.$rowEventos['fecha_registro'].'</small></td>'
+            <td><small>'.$rowsitio['fecha_registro'].'</small></td>'
             ;
 
             echo'
             
-            <td><a href="constanciaPDF.php?id='.$rowEventos['id'].'&nombre='.$rowEventos['nombre'].'&apellidos='.$rowEventos['apellidos'].'&idevento='.$rowEventos['evento'].'" target="_blank"><i class="bi bi-filetype-pdf"></i></a></td>
+            <td><a href="constanciaPDF.php?id='.$rowsitio['id'].'&nombre='.$rowsitio['nombre'].'&apellidos='.$rowsitio['apellidos'].'&idevento='.$rowsitio['sitio'].'" target="_blank"><i class="bi bi-filetype-pdf"></i></a></td>
         </tr>
         ';
     }

@@ -118,9 +118,9 @@
                 <?php
                 include('query/query_sitios.php');
                 
-                while($rowEvento = $resultadoSitio->fetch_assoc()){
+                while($rowSitio = $resultadoSitio->fetch_assoc()){
                   echo'
-                  <option value="'.$rowEvento['id'].'">'.$rowEvento['sitio'].'</option>
+                  <option value="'.$rowSitio['id'].'">'.$rowSitio['sitio'].'</option>
                   ';
                 }
                 ?>
