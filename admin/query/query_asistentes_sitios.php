@@ -37,12 +37,13 @@ $x = 0;
             <td><small>'.$rowsitio['carrera'].'</small></td>'
             ;
             echo'
-            <td><small>'.$rowsitio['fecha_registro'].'</small></td>'
+            <td><small>'.$rowsitio['fecha_registro'].'</small></td>
+            <td><small>'.$rowsitio['fecha_salida'].'</small></td>
+            '
             ;
 
             echo'
             
-            <td><a href="constanciaPDF.php?id='.$rowsitio['id'].'&nombre='.$rowsitio['nombre'].'&apellidos='.$rowsitio['apellidos'].'&idevento='.$rowsitio['sitio'].'" target="_blank"><i class="bi bi-filetype-pdf"></i></a></td>
         </tr>
         ';
     }

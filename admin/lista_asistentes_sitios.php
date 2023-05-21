@@ -21,6 +21,7 @@
     <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 
     <style>
@@ -127,6 +128,50 @@
             </select>
         </div>
         <hr>
+        <h3 class="mb-3"><i class="bi bi-calendar-event-fill"></i> Informe preliminar</h3>
+        <div class="row">
+          <div class="col">
+             <!-- card para imprimir día actual -->
+            <div class="card text-bg-warning mb-3 ms-auto" style="max-width: 18rem; max-height:100rem;">
+              <!-- <div class="card-header">Header</div> -->
+              <div class="card-body">
+                <h4 class="card-title">Número de visitas</h4>
+                <small class="card-title">Día actual</small>
+                <hr class="w-25">
+                <p class="card-text h1  text-center">36</p>
+              </div>
+            </div>
+          </div><!-- fin col -->
+          <div class="col">
+            <!-- card para imprimir día actual -->
+            <div class="card text-bg-primary mb-3 me-auto ms-auto" style="max-width: 18rem; max-height:100rem;">
+            <!-- <div class="card-header">Header</div> -->
+              <div class="card-body">
+              <h4 class="card-title">Número de visitas</h4>
+                    <small class="card-title">Mes actual</small>
+                <hr class="w-25">
+                <p class="card-text h1  text-center">36</p>
+              </div>
+            </div>
+          </div><!-- fin col -->
+          <div class="col">
+            <!-- card para imprimir día actual -->
+            <div class="card mb-3 me-auto text-light" style="max-width: 18rem; max-height:100rem; background-color:#000e42;">
+            <!-- <div class="card-header">Header</div> -->
+              <div class="card-body">
+              <h4 class="card-title">Número de visitas</h4>
+                    <small class="card-title">Año actual</small>
+                <hr class="w-25">
+                <p class="card-text h1 text-center">36</p>
+              </div>
+            </div>
+          </div><!-- fin col -->
+
+    </div>
+
+        <hr>
+        <h3 class="mb-3"><i class="bi bi-calendar-event-fill"></i> Reportes</h3>
+
         <div class="row">
             <div class="col">
                 <div class="input-group mb-4 w-100">
@@ -136,9 +181,10 @@
             </div>
             <div class="col text-end">
                 <!-- <a href="#" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#documentoExcel"><i class="bi bi-file-earmark-excel-fill"></i> Cargar listado</a> -->
-                <a href="#" class="btn btn-outline-danger" id="link"><i class="bi bi-file-earmark-pdf-fill"></i> Constancias PDF</a>
+                <a href="#" class="btn btn-outline-success" id="link"><i class="bi bi-file-earmark-excel-fill"></i> Reporte Excel</a>
             </div>
         </div>
+        
 
     <table class="table table-hover table-sm">
         <thead class="table-dark text-center">
@@ -152,14 +198,16 @@
             <th scope="col">Unidad académica</th>
             <th scope="col">Matrícula</th>
             <th scope="col">Programa</th>
-            <th scope="col">Fecha/Hora</th>
-            <th scope="col">Constancia (PDF)</th>
+            <th scope="col">Ingreso</th>
+            <th scope="col">Salida</th>
             </tr>
         </thead>
         <tbody id="myTable">
             
         </tbody>
     </table>
+
+    
   
 </main>
 <div class="container">
