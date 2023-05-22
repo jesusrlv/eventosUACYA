@@ -6,40 +6,30 @@
     setlocale(LC_TIME, 'es_MX.UTF-8');
     $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
 
+    $sitio = $_POST['sitio'];
+
     $annio = substr($fecha_sistema, 0, 4);
     $mes = substr($fecha_sistema, 5, 2);
     $dia = DAY(CURRENT_DATE);
 
     // por año
-    $annio = "SELECT * FROM registro_sitios WHERE YEAR(fecha_registro) = $annio";
+    $annio = "SELECT * FROM registro_sitios WHERE YEAR(fecha_registro) = $annio AND sitio = '$sitio'";
     $resultadoAnnio = $conn->query($annio);
     $rowsAnnio = $resultadoAnnio->num_rows;
 
     // por mes
-    $mesSql = "SELECT * FROM registro_sitios WHERE YEAR(fecha_registro) = $mes";
+    $mesSql = "SELECT * FROM registro_sitios WHERE MONTH(fecha_registro) = $mes AND sitio = '$sitio";
     $resultadomes = $conn->query($mesSql);
     $rowsmes = $resultadomes->num_rows;
 
     // por día
-    $diaSql = "SELECT * FROM registro_sitios WHERE YEAR(fecha_registro) = $dia";
+    $diaSql = "SELECT * FROM registro_sitios WHERE DAY(fecha_registro) = $dia AND sitio = '$sitio";
     $resultadodia = $conn->query($diaSql);
     $rowsdia = $resultadodia->num_rows;
-
-
-    //mes y año actual venta Admin
-    $sql = "SELECT * FROM venta_gral WHERE YEAR(fecha_venta) = YEAR(CURRENT_DATE()) 
-    AND MONTH(fecha_venta)  = MONTH(CURRENT_DATE()) AND vendedor = '$id_sess' ORDER BY id DESC";
-    $resultado_sql = $conn->query($sql);
-
-    //por fecha
-    if(isset($_POST['fecha'])){
-        $fechaBusqueda = $_POST['fecha'];
-        $annio = substr($fechaBusqueda, 0, 4);
-        $mes = substr($fechaBusqueda, 5, 2); 
-        $sqlBusqueda = "SELECT * FROM venta_gral WHERE YEAR(fecha_venta) = $annio 
-        AND MONTH(fecha_venta)  = $mes AND vendedor = '$id_sess' ORDER BY id DESC";
-        $resultadoBusqueda = $conn->query($sqlBusqueda);
-    }
-
+        echo json_encode (array(
+            'dia'=>$rowsdia,
+            'mes'=>$rowsmes,
+            'annio'=>$rowsAnnio
+        ));
 
 ?>

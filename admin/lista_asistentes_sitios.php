@@ -114,7 +114,7 @@
     <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-people-fill"></i> Lista de asistentes (sitios)</h3>
         <div class="input-group mb-3 w-50">
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
-            <select class="form-select" aria-label="Default select example" onchange="cambioSitio()" id="sitio">
+            <select class="form-select" aria-label="Default select example" onchange="cambioSitio(); contarSitio();" id="sitio">
                 <option selected>Nombre del sitio</option>
                 <?php
                 include('query/query_sitios.php');
@@ -138,7 +138,10 @@
                 <h4 class="card-title">Número de visitas</h4>
                 <small class="card-title">Día actual</small>
                 <hr class="w-25">
-                <p class="card-text h1  text-center">36</p>
+                <p class="card-text h1 text-center">
+                  <!-- <span><label for="" id="diaCont"></label></span> -->
+                  <input type="text" id="diaCont">
+                </p>
               </div>
             </div>
           </div><!-- fin col -->
@@ -150,7 +153,9 @@
               <h4 class="card-title">Número de visitas</h4>
                     <small class="card-title">Mes actual</small>
                 <hr class="w-25">
-                <p class="card-text h1  text-center">36</p>
+                <p class="card-text h1 text-center">
+                <span id="mesCont"></span>
+                </p>
               </div>
             </div>
           </div><!-- fin col -->
@@ -162,7 +167,9 @@
               <h4 class="card-title">Número de visitas</h4>
                     <small class="card-title">Año actual</small>
                 <hr class="w-25">
-                <p class="card-text h1 text-center">36</p>
+                <p class="card-text h1 text-center">
+                <h3 id="annioCont"></h3>
+                </p>
               </div>
             </div>
           </div><!-- fin col -->
@@ -278,6 +285,34 @@
           $("#link").attr('href','constanciaPDF_masivas.php?id='+id);
           $("#idCsv").attr('value',+id);
           $("#link").attr('target','_blank');
+
+      }               
+    });
+    }
+
+    function contarSitio(){
+      var sitio = document.getElementById('sitio').value;
+      $.ajax({
+      type:"POST",
+      url:"query/query_registro_sitios.php",
+      data:{
+        sitio:sitio
+      },
+      dataType: "JSON",
+      cache: false,
+        success: function(data) {
+          // $("#myTable").html(data);
+          var jsonData = JSON.parse(JSON.stringify(data));
+
+          var dia = jsonData.dia;
+          var mes = jsonData.mes;
+          var annio = jsonData.annio;
+
+          // console.log(jsonData.error);
+
+          document.getElementById('diaCont').value = dia;
+          document.getElementById('mesCont').value = mes;
+          document.getElementById('annioCont').value = annio;
 
       }               
     });
