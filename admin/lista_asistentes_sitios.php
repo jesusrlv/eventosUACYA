@@ -114,7 +114,7 @@
     <h3 class="mt-4 mb-3 text-secondary"><i class="bi bi-people-fill"></i> Lista de asistentes (sitios)</h3>
         <div class="input-group mb-3 w-50">
             <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
-            <select class="form-select" aria-label="Default select example" onchange="cambioSitio(); contarSitio();" id="sitio">
+            <select class="form-select" aria-label="Default select example" onchange="contarSitio()" id="sitio">
                 <option selected>Nombre del sitio</option>
                 <?php
                 include('query/query_sitios.php');
@@ -139,7 +139,7 @@
                 <small class="card-title">Día actual</small>
                 <hr class="w-25">
                 <p class="card-text h1 text-center">
-                  <!-- <span><label for="" id="diaCont"></label></span> -->
+                  <span><label for="" id="diaCont"></label></span>
                   <input type="text" id="diaCont">
                 </p>
               </div>
@@ -270,6 +270,7 @@
     });
 
     function cambioSitio(){
+      contarSitio();
       var sitio = document.getElementById('sitio').value;
       $.ajax({
       type:"POST",
@@ -292,30 +293,39 @@
 
     function contarSitio(){
       var sitio = document.getElementById('sitio').value;
+      console.log(sitio);
       $.ajax({
-      type:"POST",
-      url:"query/query_registro_sitios.php",
-      data:{
-        sitio:sitio
-      },
-      dataType: "JSON",
-      cache: false,
-        success: function(data) {
-          // $("#myTable").html(data);
-          var jsonData = JSON.parse(JSON.stringify(data));
+        type:"POST",
+        url:"query/query_registro_sitios.php",
+        data:{
+          sitio:sitio
+        },
+        dataType: "JSON",
+        cache: false,
+        success: function(response){
+    
+          var jsonData = JSON.parse(JSON.stringify(response));
+            // var dia = jsonData.dia;
+            // var mes = jsonData.mes;
+            // var annio = jsonData.annio;
 
-          var dia = jsonData.dia;
-          var mes = jsonData.mes;
-          var annio = jsonData.annio;
+            console.log(jsonData.dia);
+          if(jsonData.estatus = 1){
+            
+            document.getElementById('diaCont').innerHTML = dia;
+            document.getElementById('mesCont').innerHTML = mes;
+            document.getElementById('annioCont').innerText = annio;
+            // diaCont
+            // mesCont
+            // annioCont
+          }
+          else if(jsonData.estatus=0){
+            console.log(jsonData.error);
 
-          // console.log(jsonData.error);
+          }
 
-          document.getElementById('diaCont').value = dia;
-          document.getElementById('mesCont').value = mes;
-          document.getElementById('annioCont').value = annio;
-
-      }               
-    });
+        }               
+      });
     }
   </script>
   
