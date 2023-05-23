@@ -286,12 +286,15 @@
     function cambioSitio(){
       var DateInicial = document.getElementById('DateInicial').value;
       var DateFinal = document.getElementById('DateFinal').value;
+      var sitio = document.getElementById('sitio').value;
+
       $.ajax({
       type:"POST",
       url:"query/query_asistentes_sitios.php",
       data:{
         DateInicial:DateInicial,
-        DateFinal:DateFinal
+        DateFinal:DateFinal,
+        sitio:sitio
       },
       dataType: "html",
       cache: false,

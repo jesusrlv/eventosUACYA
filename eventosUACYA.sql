@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-05-2023 a las 18:22:32
+-- Tiempo de generación: 23-05-2023 a las 09:12:45
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -33,14 +33,14 @@ CREATE TABLE `asistentes` (
   `tipo_asistente` int(11) NOT NULL,
   `apellidos` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `apellido_m` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `curp` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `curp` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `tipo_sangre` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `semestre` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `grupo` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `grupo` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `unidad_academica` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `carrera` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Programa',
-  `numero_control` varchar(30) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Matrícula',
-  `idQr` varchar(150) COLLATE utf8_unicode_ci DEFAULT NULL
+  `numero_control` varchar(50) COLLATE utf8_unicode_ci NOT NULL COMMENT 'Matrícula',
+  `idQr` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -48,14 +48,14 @@ CREATE TABLE `asistentes` (
 --
 
 INSERT INTO `asistentes` (`id`, `nombre`, `tipo_asistente`, `apellidos`, `apellido_m`, `curp`, `tipo_sangre`, `semestre`, `grupo`, `unidad_academica`, `carrera`, `numero_control`, `idQr`) VALUES
-(97, 'MARCO ANTONIO', 1, 'CANCINO ', 'ANCHEYTA', 'CAAM791207HCSNNR07', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205574', 'CAAM791207HCSNNR07_42205574'),
+(97, 'MARCO ANTONIO', 1, 'CANCINO ', 'ANCHEYTA', 'CAAM791207HCSNNR07', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '422055742', 'CAAM791207HCSNNR07_42205574'),
 (98, 'CELBA', 1, 'CASTILLO', 'CHAIREZ', 'CACC561125MZSSHL08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '39200547', 'CACC561125MZSSHL08_39200547'),
-(99, 'JORGE CARLOS', 1, 'DE LA BRENA', 'WIEDFELDT', 'BEWJ740122HDFRDR09', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205713', 'BEWJ740122HDFRDR09_42205713'),
+(99, 'JORGE CARLOS', 1, 'DE LA BRENA', 'WIEDFELDT', 'BEWJ740122HDFRDR09', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '422057132', 'BEWJ740122HDFRDR09_42205713'),
 (100, 'SALVADOR', 1, 'DEL HOYO', 'SOTO', 'HOSS721204HZSYTL06', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '21205404', 'HOSS721204HZSYTL06_21205404'),
 (101, 'JUAN', 1, 'ESPINOZA', 'GARCIA', 'EIGJ850106HVZSRN07', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205714', 'EIGJ850106HVZSRN07_42205714'),
 (102, 'NORBERTO', 1, 'ESTRADA', 'GUTIERREZ', 'EAGN650606HTSSTR09', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42207726', 'EAGN650606HTSSTR09_42207726'),
-(103, 'MONICA ISELA', 1, 'GALINDO ', 'COSME', 'GACM680902MDFLSN08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205965', 'GACM680902MDFLSN08_42205965'),
-(104, 'JESUS FIDEL', 1, 'HERNANDEZ', 'RODRIGUEZ', 'HERJ661015HDFRDS08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205966', 'HERJ661015HDFRDS08_42205966');
+(103, 'MONICA ISELA', 1, 'GALINDO ', 'COSME', 'GACM680902MDFLSN08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '422059652', 'GACM680902MDFLSN08_42205965'),
+(104, 'JESUS FIDEL', 1, 'HERNANDEZ', 'RODRIGUEZ', 'HERJ661015HDFRDS08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '422059662', 'HERJ661015HDFRDS08_42205966');
 
 -- --------------------------------------------------------
 
@@ -102,6 +102,19 @@ INSERT INTO `eventos` (`id`, `nombre`, `capacidad`, `fecha`, `lugar`, `activo`) 
 (23, 'Evento prueba 1', 60, '2023-02-15', 'Auditorio FCA', 1),
 (24, 'Simposium', 90, '2023-02-16', 'Fernando Calderón', 1),
 (25, 'Evento 1', 100, '2023-05-15', 'ANFECA', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pagos`
+--
+
+CREATE TABLE `pagos` (
+  `id` int(11) NOT NULL,
+  `id_asistente` int(11) NOT NULL,
+  `id_evento` int(11) NOT NULL,
+  `fecha` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -187,9 +200,9 @@ INSERT INTO `registro_sitios` (`id`, `asistente`, `sitio`, `asistencia`, `fecha_
 (41, 32, 22, 1, '2023-01-10 21:31:40', '0000-00-00 00:00:00', '0009_LEVJ810924HZSXLS04'),
 (42, 32, 23, 1, '2023-02-15 18:10:46', '0000-00-00 00:00:00', '0009_LEVJ810924HZSXLS04'),
 (43, 32, 24, 1, '2023-02-16 17:38:49', '0000-00-00 00:00:00', '0009_LEVJ810924HZSXLS04'),
-(56, 103, 25, 1, '2023-05-16 00:16:18', '0000-00-00 00:00:00', 'GACM680902MDFLSN08_42205965'),
-(75, 99, 17, 1, '2023-05-16 03:05:17', NULL, 'BEWJ740122HDFRDR09_42205713'),
-(76, 99, 17, 1, '2023-05-16 03:06:22', NULL, 'BEWJ740122HDFRDR09_42205713');
+(56, 103, 25, 1, '2023-05-16 00:16:18', '1900-01-16 00:46:41', 'GACM680902MDFLSN08_42205965'),
+(75, 99, 17, 1, '2023-05-16 03:05:17', '2023-05-18 00:46:02', 'BEWJ740122HDFRDR09_42205713'),
+(76, 99, 17, 1, '2023-05-16 03:06:22', '2023-05-19 00:00:00', 'BEWJ740122HDFRDR09_42205713');
 
 -- --------------------------------------------------------
 
@@ -324,6 +337,12 @@ ALTER TABLE `eventos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `pagos`
+--
+ALTER TABLE `pagos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `programa`
 --
 ALTER TABLE `programa`
@@ -386,6 +405,12 @@ ALTER TABLE `asistentes`
 --
 ALTER TABLE `eventos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT de la tabla `pagos`
+--
+ALTER TABLE `pagos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `programa`

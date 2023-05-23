@@ -153,6 +153,7 @@
             <th scope="col">Cantidad</th>
             <th scope="col">Lugar</th>
             <th scope="col">Fecha</th>
+            <th scope="col">Lista pagos</th>
             <th scope="col">Lista asistentes</th>
             <th scope="col">Acción</th>
             </tr>
@@ -170,12 +171,21 @@
           echo'
           <tr>
             <td>'.$x.'</td>
+
             <td><a href="#" data-bs-toggle="modal" data-bs-target="#editarEvento'.$rowEvento['id'].'"><span class="badge text-bg-light"><i class="bi bi-pencil-square"></i></span></a></td>
+
             <td>'.$rowEvento['nombre'].'</td>
+            
             <td>'.$rowEvento['capacidad'].'</td>
+
             <td><span class="badge text-bg-light"><i class="bi bi-geo-fill text-primary"></i> '.$rowEvento['lugar'].'</span></td>
+
             <td><span class="badge text-bg-light"><i class="bi bi-calendar-event-fill text-danger"></i> '.$rowEvento['fecha'].'</span></td>
+
+            <td class=""><a href="lista_pagos_asistentes.php?evento='.$rowEvento['id'].'"><span class="badge text-bg-light">Lista <i class="bi bi-list-check"></i></span></a></td>
+
             <td class=""><a href="lista_individual_asistentes.php?evento='.$rowEvento['id'].'"><span class="badge text-bg-light">Lista <i class="bi bi-list-check"></i></span></a></td>
+
             <td class=""><a href="#" data-bs-toggle="modal" data-bs-target="#editarEstatus'.$rowEvento['id'].'"><span class="badge text-bg-light">Baja <i class="bi bi-caret-down-fill text-danger"></i></span></a></td>
           </tr>
           ';
