@@ -128,7 +128,7 @@
             </select>
         </div>
         <hr>
-        <h3 class="mb-3"><i class="bi bi-calendar-event-fill"></i> Informe preliminar</h3>
+        <h3 class="mb-3 mt-3"><i class="bi bi-calendar-event-fill"></i> Informe preliminar</h3>
         <div class="row">
           <div class="col">
              <!-- card para imprimir día actual -->
@@ -175,9 +175,24 @@
 
     </div>
 
-        <hr>
-        <h3 class="mb-3"><i class="bi bi-calendar-event-fill"></i> Reportes</h3>
-
+        
+        <h3 class="mb-3 mt-3"><i class="bi bi-calendar-event-fill"></i> Fechas de búsqueda</h3>
+        
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-4 w-100">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-event-fill"></i></span>
+                    <input type="date" class="form-control" placeholder="Fecha inicial" aria-label="Filter" aria-describedby="basic-addon1" id="DateInicial">
+                </div>
+            </div>
+            <div class="col text-end">
+            <div class="input-group mb-4 w-100">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar-event-fill"></i></span>
+                    <input type="date" class="form-control" placeholder="Fecha final" aria-label="Filter" aria-describedby="basic-addon1" id="DateFinal" onchange="cambioSitio()">
+                </div>
+            </div>
+        </div>
+        
         <div class="row">
             <div class="col">
                 <div class="input-group mb-4 w-100">
@@ -268,27 +283,28 @@
         });
     });
 
-    // function cambioSitio(){
-    //   contarSitio();
-    //   var sitio = document.getElementById('sitio').value;
-    //   $.ajax({
-    //   type:"POST",
-    //   url:"query/query_asistentes_sitios.php",
-    //   data:{
-    //     sitio:sitio
-    //   },
-    //   dataType: "html",
-    //   cache: false,
-    //     success: function(data) {
-    //       $("#myTable").html(data);
-    //       var id = document.getElementById('sitio').value;
-    //       $("#link").attr('href','constanciaPDF_masivas.php?id='+id);
-    //       $("#idCsv").attr('value',+id);
-    //       $("#link").attr('target','_blank');
+    function cambioSitio(){
+      var DateInicial = document.getElementById('DateInicial').value;
+      var DateFinal = document.getElementById('DateFinal').value;
+      $.ajax({
+      type:"POST",
+      url:"query/query_asistentes_sitios.php",
+      data:{
+        DateInicial:DateInicial,
+        DateFinal:DateFinal
+      },
+      dataType: "html",
+      cache: false,
+        success: function(data) {
+          $("#myTable").html(data);
+          // var id = document.getElementById('sitio').value;
+          // $("#link").attr('href','constanciaPDF_masivas.php?id='+id);
+          // $("#idCsv").attr('value',+id);
+          // $("#link").attr('target','_blank');
 
-    //   }               
-    // });
-    // }
+      }               
+    });
+    }
 
   </script>
 
