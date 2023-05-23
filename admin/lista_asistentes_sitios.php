@@ -135,12 +135,11 @@
             <div class="card text-bg-warning mb-3 ms-auto" style="max-width: 18rem; max-height:100rem;">
               <!-- <div class="card-header">Header</div> -->
               <div class="card-body">
-                <h4 class="card-title">Número de visitas</h4>
-                <small class="card-title">Día actual</small>
+                <h4 class="card-title">Día actual</h4>
+                <small class="card-title"># visitas</small>
                 <hr class="w-25">
                 <p class="card-text h1 text-center">
-                  <span><label for="" id="diaCont"></label></span>
-                  <input type="text" id="diaCont">
+                  <span id="diaCont"></span>
                 </p>
               </div>
             </div>
@@ -150,8 +149,8 @@
             <div class="card text-bg-primary mb-3 me-auto ms-auto" style="max-width: 18rem; max-height:100rem;">
             <!-- <div class="card-header">Header</div> -->
               <div class="card-body">
-              <h4 class="card-title">Número de visitas</h4>
-                    <small class="card-title">Mes actual</small>
+              <h4 class="card-title">Mes actual</h4>
+                    <small class="card-title"># visitas</small>
                 <hr class="w-25">
                 <p class="card-text h1 text-center">
                 <span id="mesCont"></span>
@@ -164,11 +163,11 @@
             <div class="card mb-3 me-auto text-light" style="max-width: 18rem; max-height:100rem; background-color:#000e42;">
             <!-- <div class="card-header">Header</div> -->
               <div class="card-body">
-              <h4 class="card-title">Número de visitas</h4>
-                    <small class="card-title">Año actual</small>
+              <h4 class="card-title">Año actual</h4>
+                    <small class="card-title"># visitas</small>
                 <hr class="w-25">
                 <p class="card-text h1 text-center">
-                <h3 id="annioCont"></h3>
+                <span id="annioCont"></span>
                 </p>
               </div>
             </div>
@@ -269,62 +268,59 @@
         });
     });
 
-    function cambioSitio(){
-      contarSitio();
-      var sitio = document.getElementById('sitio').value;
-      $.ajax({
-      type:"POST",
-      url:"query/query_asistentes_sitios.php",
-      data:{
-        sitio:sitio
-      },
-      dataType: "html",
-      cache: false,
-        success: function(data) {
-          $("#myTable").html(data);
-          var id = document.getElementById('sitio').value;
-          $("#link").attr('href','constanciaPDF_masivas.php?id='+id);
-          $("#idCsv").attr('value',+id);
-          $("#link").attr('target','_blank');
+    // function cambioSitio(){
+    //   contarSitio();
+    //   var sitio = document.getElementById('sitio').value;
+    //   $.ajax({
+    //   type:"POST",
+    //   url:"query/query_asistentes_sitios.php",
+    //   data:{
+    //     sitio:sitio
+    //   },
+    //   dataType: "html",
+    //   cache: false,
+    //     success: function(data) {
+    //       $("#myTable").html(data);
+    //       var id = document.getElementById('sitio').value;
+    //       $("#link").attr('href','constanciaPDF_masivas.php?id='+id);
+    //       $("#idCsv").attr('value',+id);
+    //       $("#link").attr('target','_blank');
 
-      }               
-    });
-    }
+    //   }               
+    // });
+    // }
 
+  </script>
+
+  <script>
     function contarSitio(){
       var sitio = document.getElementById('sitio').value;
-      console.log(sitio);
+      // console.log(sitio);
       $.ajax({
         type:"POST",
         url:"query/query_registro_sitios.php",
         data:{
           sitio:sitio
         },
-        dataType: "JSON",
-        cache: false,
-        success: function(response){
+        dataType:"json",
+        success:function(data){
     
-          var jsonData = JSON.parse(JSON.stringify(response));
-            // var dia = jsonData.dia;
-            // var mes = jsonData.mes;
-            // var annio = jsonData.annio;
-
-            console.log(jsonData.dia);
-          if(jsonData.estatus = 1){
+          var jsonData = JSON.parse(JSON.stringify(data));
+          // var jsonData = JSON.parse(data);
+            var dia = jsonData.dia;
+            var mes = jsonData.mes;
+            var annio = jsonData.annio;
             
             document.getElementById('diaCont').innerHTML = dia;
             document.getElementById('mesCont').innerHTML = mes;
-            document.getElementById('annioCont').innerText = annio;
+            document.getElementById('annioCont').innerHTML = annio;
+            
             // diaCont
             // mesCont
             // annioCont
-          }
-          else if(jsonData.estatus=0){
-            console.log(jsonData.error);
-
-          }
-
-        }               
+        }     
+        
+          
       });
     }
   </script>
