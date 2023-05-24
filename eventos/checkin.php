@@ -172,7 +172,7 @@
               <video id="preview" class="w-100 h-100" style="max-height:810px" hidden></video>  
           </div>
           <p hidden><input type="text" id="textQR" onchange="checkIn()"></p>
-          <p hidden><input type="text" id="evento" value="<? echo $idEventos ?>"></p>
+          <p hidden><input type="text" id="evento" value="<?php echo $idEventos ?>"></p>
 
       </div>
 
