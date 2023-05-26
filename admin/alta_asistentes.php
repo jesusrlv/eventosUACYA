@@ -444,34 +444,47 @@
         </div>
     </div>
 </div>
-<script src=
-"https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
-    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
   function ModalQr(concatenado){
-    console.log(concatenado);
-    // console.log(curp);
     var texto = concatenado.toString();
     document.getElementById('matriculaQR2').innerHTML = concatenado;
     document.getElementById('qrcode').innerHTML = "";
-    console.log(texto);
+// aquí
 
-    var qrcode = new QRCode("qrcode",{
-      logo: "logo.png",
+var qrcode = new QRCode(document.getElementById("qrcode"), {
       text: texto,
-      width: 350,
-      height: 350,
-      colorDark : "#000000",
-      colorLight : "#ffffff",
-      correctLevel : QRCode.CorrectLevel.H,
-      // QRCode.CorrectLevel.L | QRCode.CorrectLevel.M | QRCode.CorrectLevel.H | correctLevel : QRCode.CorrectLevel.H
-      logoWidth: undefined,
-      logoHeight: undefined,
-      logoBackgroundColor: '#ffffff',
-      logoBackgroundTransparent: false
+      width: 300,
+      height: 300,
+      correctLevel: QRCode.CorrectLevel.H
     });
+
+    // Obtener el elemento canvas generado por QRCode.js
+    var canvas = document.querySelector("#codigo-qr canvas");
+
+    // Crear un nuevo elemento de imagen para el logo
+    var logo = new Image();
+    logo.src = "imagen.png";
+
+    // Esperar a que el logo se cargue antes de dibujarlo en el canvas
+    logo.onload = function() {
+      // Calcular la posición del logo en el centro del código QR
+      var logoSize = qrcode._htOption.width * 0.2; // Tamaño relativo del logo (20%)
+      var xPos = (canvas.width - logoSize) / 2;
+      var yPos = (canvas.height - logoSize) / 2;
+
+      // Dibujar el logo en el canvas
+      var ctx = canvas.getContext("2d");
+      ctx.drawImage(logo, xPos, yPos, logoSize, logoSize);
+    };
+
+    console.log();
+
   }
 
+    
+  
 </script>
 
 <script>
