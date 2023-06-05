@@ -19,7 +19,7 @@
         }
         else{
 
-            $sql = "SELECT * FROM registro_sitios WHERE idQr = '$cadena' AND evento = '$evento'";
+            $sql = "SELECT * FROM registro_sitios WHERE idQr = '$cadena' AND sitio = '$evento'";
             $resultadoSql = $conn->query($sql);
             $numRows = $resultadoSql->num_rows;
 

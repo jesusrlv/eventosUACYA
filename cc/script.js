@@ -42,7 +42,7 @@
                         // user is logged in successfully in the back-end
                         // let's redirect
 
-                        if (jsonData.success == "0")
+                        if (jsonData.success = 0)
                         {
                           let timerInterval
                           Swal.fire({
@@ -68,7 +68,7 @@
                             }
                           })
                         }
-                        else if (jsonData.success == "1")
+                        else if (jsonData.success = 1)
                         {
                             // html
                             document.getElementById('checkDiv').innerHTML="";
@@ -113,7 +113,7 @@
                               }
                             });
                         }
-                        else if (jsonData.success == "2")
+                        else if (jsonData.success = 2)
                         {
                             // html
                             document.getElementById('checkDiv').innerHTML="";
@@ -158,7 +158,7 @@
                               }
                             });
                         }
-                        else if (jsonData.success == "3")
+                        else if (jsonData.success = "3")
                         {
                             // location.href = 'my_profile.php';
                             let timerInterval
