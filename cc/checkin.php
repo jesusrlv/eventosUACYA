@@ -95,6 +95,8 @@
     
     <!-- Custom styles for this template -->
     <link href="headers.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+
   </head>
   <body onunload="cerrarPagina()">
 <main class="mb-0">
@@ -130,7 +132,9 @@
       <div class="col-4 border-end p-5 align-self-center" style="background-color:#f8f9fa;">
         <div class="container p-5 border rounded bg-white shadow-sm" style="font-family: 'Poppins', sans-serif;">
           <!-- <p style="font-size:300px" class="text-center border-bottom"><i class="bi bi-person-circle"></i></p> -->
-          <p style="font-size:300px" class="text-center border-bottom"><img src="../assets/brand/img/somos_fca_halcon_azul_15.png" alt="" width="300px"></p>
+          <p style="font-size:300px" class="text-center border-bottom">
+            <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" alt="" width="300px" id="logo_lateral">
+          </p>
 
           <div id="checkDiv">
             <p class="pb-3 mb-0 small lh-sm border-bottom">

@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <!-- <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
+    <link rel="stylesheet" src="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script src="lista_asistentes.js"></script>
