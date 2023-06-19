@@ -128,7 +128,7 @@
 
   <div class="container-fluid w-100 h-100" style="width:100%">
     <div class="row mb-0 border-bottom">
-      <div class="col-4 border-end p-5 align-self-center" style="background-color:#f8f9fa;">
+      <div class="col-sm-4 border-end p-5 align-self-center" style="background-color:#f8f9fa;">
         <div class="container p-5 border rounded bg-white shadow-sm" style="font-family: 'Poppins', sans-serif;">
           <!-- <p style="font-size:300px" class="text-center border-bottom"><i class="bi bi-person-circle"></i></p> -->
           <p style="font-size:300px" class="text-center border-bottom">
@@ -166,7 +166,11 @@
       
       <div class="col-8 border-start align-self-center justify-content-center">
         <p class="mt-5"><button class="btn btn-primary" onclick="abrirCamara()"><i class="bi bi-qr-code"></i> Leer QR</button> <button class="btn btn-danger"  id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button></p>
-        <div class="card w-100" style="height:900px">
+        <select name="cameraCanje" class="form-select">
+          <option value="1"><i class="bi bi-camera-video-fill"></i> Frontal Cam</option>
+          <option value="2"><i class="bi bi-camera-video"></i> Back Cam</option>
+        </select>
+        <div class="card w-100" style="height:400px">
           <div class="card-header bg-primary text-light">
           <i class="bi bi-camera-fill"></i> Cámara de registro de asistentes
           </div>
