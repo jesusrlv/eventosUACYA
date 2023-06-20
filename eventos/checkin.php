@@ -128,8 +128,8 @@
 
   <div class="container-fluid w-100 h-100" style="width:100%">
     <div class="row mb-0 border-bottom">
-      <div class="col-sm-4 border-end p-5 align-self-center" style="background-color:#f8f9fa;">
-        <div class="container p-5 border rounded bg-white shadow-sm" style="font-family: 'Poppins', sans-serif;">
+      <div class="col-sm-4 border-end p-2 align-self-center" style="background-color:#f8f9fa;">
+        <div class="container p-2 border rounded bg-white shadow-sm" style="font-family: 'Poppins', sans-serif;">
           <!-- <p style="font-size:300px" class="text-center border-bottom"><i class="bi bi-person-circle"></i></p> -->
           <p style="font-size:300px" class="text-center border-bottom">
             <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" alt="" width="300px" id="logo_lateral">
@@ -159,7 +159,7 @@
           </div>
 
         </div>
-        <div class="container p-5" style="font-family: 'Poppins', sans-serif;">
+        <div class="container p-2" style="font-family: 'Poppins', sans-serif;">
           
         </div>
       </div>
