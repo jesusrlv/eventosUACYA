@@ -164,7 +164,7 @@
         </div>
       </div>
       
-      <div class="col-8 border-start align-self-center justify-content-center">
+      <div class="col-sm-8 border-start align-self-center justify-content-center">
         <p class="mt-5"><button class="btn btn-primary" onclick="abrirCamara()"><i class="bi bi-qr-code"></i> Leer QR</button> <button class="btn btn-danger"  id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button></p>
         <select name="cameraCanje" class="form-select">
           <option value="1"><i class="bi bi-camera-video-fill"></i> Frontal Cam</option>
