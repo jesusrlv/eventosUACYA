@@ -167,7 +167,7 @@
       <div class="col-sm-8 border-start align-self-center justify-content-center">
         <p class="mt-1">
           <button class="btn btn-primary" onclick="abrirCamara()"><i class="bi bi-qr-code"></i> Leer QR</button> 
-          <button class="btn btn-danger"  id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button>
+          <button class="btn btn-danger" id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button>
         </p>
         <select name="cameraCanje" class="form-select">
           <option value="1"><i class="bi bi-camera-video-fill"></i> Frontal Cam</option>
@@ -178,8 +178,8 @@
           <i class="bi bi-camera-fill"></i> Cámara de registro de asistentes
           </div>
             <div class="card-body text-center">
-              <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" style="max-width: 400px;"  alt="" id="imagenFCA">
-              <video id="preview"  style="max-height:410px" hidden></video>  
+              <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" style="max-width: 410px;"  alt="" id="imagenFCA">
+              <video id="preview"  style="max-height:400px" hidden></video>  
           </div>
           <p hidden><input type="text" id="textQR" onchange="checkIn()"></p>
           <p hidden><input type="text" id="evento" value="<?php echo $idEventos ?>"></p>
