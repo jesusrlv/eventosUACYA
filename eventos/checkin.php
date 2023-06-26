@@ -193,7 +193,7 @@
           </div>
             <div class="card-body text-center">
               <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" style="max-width: 410px;"  alt="" id="imagenFCA">
-              <video id="preview"  style="max-height:400px" hidden></video>  
+              <video id="preview"  style="height:100%;width:100%" hidden></video>  
           </div>
           <p hidden><input type="text" id="textQR" onchange="checkIn()"></p>
           <p hidden><input type="text" id="evento" value="<?php echo $idEventos ?>"></p>
