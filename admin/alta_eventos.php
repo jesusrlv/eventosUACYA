@@ -113,7 +113,7 @@
 
     <div class="row justify-content-center">
       <form action="prcd/proceso_alta_evento.php" method="POST">
-        <div class="col-sm-12 border rounded p-4">
+        <div class="col-md-12 border rounded p-4">
             <h3 class="mb-4 border-bottom">Datos del evento</h3>
             <div class="input-group mb-3 w-50">
                 <span class="input-group-text" id="basic-addon1"><i class="bi bi-calendar2-plus-fill"></i></span>

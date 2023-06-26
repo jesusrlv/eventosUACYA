@@ -149,7 +149,7 @@
 <form action="prcd/proceso_alta_asistentes.php" method="POST">
 
 <div class="row">
-  <div class="col-sm-12 mb-3">
+  <div class="col-md-12 mb-3">
     <p class="h5">Tipo de asistente</p>
     <div class="form-check">
       <input class="form-check-input" type="radio" name="tipo_asistente" id="radio1" value="1" onchange="valorTipoAsistente()">
@@ -177,27 +177,27 @@
     </div>
   </div>
 
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-plus-fill"></i></span>
           <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1" name="nombre" id="nombre" required disabled>
       </div>
     </div>
 
-    <div class="col-sm-3">
+    <div class="col-md-3">
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
           <input type="text" class="form-control" placeholder="Apellidos paterno" aria-label="Apellidos" aria-describedby="basic-addon1" name="apellidos" id="apellidos" required disabled>
       </div>
     </div>
-    <div class="col-sm-3">
+    <div class="col-md-3">
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
           <input type="text" class="form-control" placeholder="Apellidos materno" aria-label="Apellidos" aria-describedby="basic-addon1" name="apellido_m" id="apellido_m" required disabled>
       </div>
     </div>
 
-    <div class="col-sm-6">
+    <div class="col-md-6">
       <div class="input-group mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-people-fill"></i></span>
           <input type="text" class="form-control" placeholder="CURP" aria-label="CURP" aria-describedby="basic-addon1" name="curp" id="curp" onkeyup="javascript:this.value=this.value.toUpperCase();" onblur="validarInput(this);" required disabled>
@@ -206,7 +206,7 @@
       <div style="margin-top:-12px" class="form-text text-danger" id="CURPNovalida" hidden>CURP no válida.</div>
     </div>
   
-  <div class="col-sm-6">
+  <div class="col-md-6">
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"><i class="bi bi-bandaid-fill"></i></span>
         <select class="form-select" aria-label="Default select example" name="tipo_sangre" id="tipo_sangre" required disabled>
@@ -223,7 +223,7 @@
   </div>
 
 
-  <div class="col-sm-6">
+  <div class="col-md-6">
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ol"></i></span>
         <select class="form-select" aria-label="Default select example" name="semestre" id="semestre" required disabled>
@@ -241,7 +241,7 @@
     </div>
   </div>
 
-  <div class="col-sm-6">
+  <div class="col-md-6">
     <div class="input-group mb-3">
       <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
       <select class="form-select" aria-label="Default select example" name="unidad_academica" id="unidad_academica" required disabled>
@@ -258,14 +258,14 @@
     </div>
   </div>
 
-  <div class="col-sm-6">
+  <div class="col-md-6">
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"><i class="bi bi-123"></i></span>
         <input type="text" class="form-control" placeholder="Número de matrícula" aria-label="Número de matrícula" aria-describedby="basic-addon1" name="num_control" id="num_control" required disabled>
     </div>
   </div>
 
-  <div class="col-sm-6">
+  <div class="col-md-6">
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"><i class="bi bi-list-ul"></i></span>
         <select class="form-select" aria-label="Default select example" name="carrera" id="carrera" required disabled>
@@ -335,25 +335,26 @@
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
           <input type="text" class="form-control" placeholder="Escribe los datos del asistente" aria-label="Username" aria-describedby="basic-addon1" id="busquedaAdmin1" oninput="busquedaAdmin()">
         </div>
-        <table class="table">
-          <thead>
-            <tr class="text-center">
-              <th scope="col">#</th>
-              <th scope="col">Matrícula</th>
-              <th scope="col">Apellido Paterno</th>
-              <th scope="col">Apellido Materno</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Carrera</th>
-              <th scope="col">CURP</th>
-              <th scope="col">Acción</th>
-              <th scope="col">QR</th>
-            </tr>
-          </thead>
-          <tbody id="txtHint" class="text-center">
-            
-          </tbody>
-        </table>
-
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr class="text-center">
+                <th scope="col">#</th>
+                <th scope="col">Matrícula</th>
+                <th scope="col">Apellido Paterno</th>
+                <th scope="col">Apellido Materno</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Carrera</th>
+                <th scope="col">CURP</th>
+                <th scope="col">Acción</th>
+                <th scope="col">QR</th>
+              </tr>
+            </thead>
+            <tbody id="txtHint" class="text-center">
+              
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
