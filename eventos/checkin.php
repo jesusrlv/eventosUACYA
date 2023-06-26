@@ -164,15 +164,29 @@
         </div>
       </div>
       
-      <div class="col-sm-8 border-start align-self-center justify-content-center">
-        <p class="mt-1">
+      <div class="col-sm-8 col-md-8 border-start align-self-center justify-content-center">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <p>
+              <button class="btn btn-primary w-50" onclick="abrirCamara()"><i class="bi bi-qr-code"></i> Leer QR</button> 
+              <button class="btn btn-danger" id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button>
+            </p>
+          </div>
+          <div class="col-sm-6">
+            <select name="cameraCanje" class="form-select">
+              <option value="1"><i class="bi bi-camera-video-fill"></i> Frontal Cam</option>
+              <option value="2"><i class="bi bi-camera-video"></i> Back Cam</option>
+            </select>
+          </div>
+        </div>
+        <!-- <p class="mt-1">
           <button class="btn btn-primary" onclick="abrirCamara()"><i class="bi bi-qr-code"></i> Leer QR</button> 
           <button class="btn btn-danger" id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button>
         </p>
         <select name="cameraCanje" class="form-select">
           <option value="1"><i class="bi bi-camera-video-fill"></i> Frontal Cam</option>
           <option value="2"><i class="bi bi-camera-video"></i> Back Cam</option>
-        </select>
+        </select> -->
         <div class="card w-100" style="height:700px">
           <div class="card-header bg-primary text-light">
           <i class="bi bi-camera-fill"></i> Cámara de registro de asistentes
