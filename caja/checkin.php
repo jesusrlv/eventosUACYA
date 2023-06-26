@@ -121,14 +121,14 @@
     </div>
   </header>
 
-  <div class="b-example-divider">
+  <div class="b-example-divider text-center">
     <h4 class="text-secondary ms-5 mt-2 mb-4">NOMBRE DEL EVENTO: <span class="text-dark"><strong><?php echo $rowEventos['nombre'] ?></strong></span></h4>
   </div>
 
-  <div class="container-fluid w-100 h-100" style="width:100%">
+  <div class="container w-100 h-100" style="width:100%">
     <div class="row mb-0 border-bottom">
-      <div class="col-4 border-end p-5 align-self-center" style="background-color:#f8f9fa;">
-        <div class="container p-5 border rounded bg-white shadow-sm" style="font-family: 'Poppins', sans-serif;">
+      <div class="col-sm-4 border-end p-2 align-self-center" style="background-color:#f8f9fa;">
+        <div class="container p-2 border rounded bg-white shadow-sm" style="font-family: 'Poppins', sans-serif;">
           <!-- <p style="font-size:300px" class="text-center border-bottom"><i class="bi bi-person-circle"></i></p> -->
           <p style="font-size:300px" class="text-center border-bottom"><img src="../assets/brand/img/somos_fca_halcon_azul_15.png" alt="" width="300px"></p>
 
@@ -156,20 +156,20 @@
           </div>
 
         </div>
-        <div class="container p-5" style="font-family: 'Poppins', sans-serif;">
+        <div class="container p-2" style="font-family: 'Poppins', sans-serif;">
           
         </div>
       </div>
       
-      <div class="col-8 border-start align-self-center justify-content-center">
-        <p class="mt-5"><button class="btn btn-primary" onclick="abrirCamara()"><i class="bi bi-qr-code"></i> Leer QR</button> <button class="btn btn-danger"  id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button></p>
-        <div class="card w-100" style="height:900px">
+      <div class="col-sm-8 border-start align-self-center justify-content-center">
+        <p class="mt-1"><button class="btn btn-primary" onclick="abrirCamara()"><i class="bi bi-qr-code"></i> Leer QR</button> <button class="btn btn-danger"  id="botonCerrar"><i class="bi bi-qr-code"></i> Cerrar QR</button></p>
+        <div class="card w-100" style="height:700px">
           <div class="card-header bg-primary text-light">
           <i class="bi bi-camera-fill"></i> Cámara de registro de asistentes
           </div>
             <div class="card-body text-center">
-              <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" style="max-width: 800px;"  alt="" id="imagenFCA">
-              <video id="preview" class="w-100 h-100" style="max-height:810px" hidden></video>  
+              <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" style="max-width: 410px;"  alt="" id="imagenFCA">
+              <video id="preview" style="max-height:400px" hidden></video>  
           </div>
           <p hidden><input type="text" id="textQR" onchange="checkIn()"></p>
           <p hidden><input type="text" id="evento" value="<? echo $idEventos ?>"></p>
