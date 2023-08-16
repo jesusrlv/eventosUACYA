@@ -98,7 +98,10 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-body-primary bg-primary" data-bs-theme="dark">     
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">UACYA</a>
+            <a class="navbar-brand" href="#">
+              <img src="../assets/brand/img/logo.png" alt="Bootstrap" width="auto" height="24">
+              
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -120,14 +123,28 @@
   <main>
     <div class="container py-4">
       <header class="pb-3 mb-4 border-bottom">
-        <a href="#" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+        <a class="d-flex align-items-center text-body-emphasis text-decoration-none">
           
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-          </svg>
-          <span class="fs-4">Perfil de alumnos | UACYA</span>
         </a>
+        <div class="row">
+          <div class="col-9">
+            <h3><span class="text-secondary">Perfil de alumnos</span></h3>
+          </div>
+          <div class="col-3">
+            <div class="dropdown text-end">
+              <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small">
+                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Perfil</a></li>
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editarDatos"><i class="bi bi-gear"></i> Configuración</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-qr-code-scan"></i> Código UACYA</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-door-open"></i> Salir</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </header>
   
       <div class="p-5 mb-4 bg-body-tertiary rounded-3">
@@ -186,7 +203,7 @@
         </div>
         <div class="col-md-6">
           <div class="h-100 p-5 bg-body-tertiary border rounded-3">
-            <h2><i class="bi bi-qr-code"></i> QR alumno UACYA</h2>
+            <h2><i class="bi bi-qr-code"></i> Código UACYA</h2>
             <p class="text-center"><img src="qr_fca.png" alt="" width="50%"></p>
             <!-- <button class="btn btn-outline-secondary" type="button">Example button</button> -->
           </div>
@@ -200,3 +217,34 @@
   </main>
 
   </html>
+
+  <!-- zona de modals -->
+
+  <!-- Modal -->
+<div class="modal fade" id="editarDatos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"><i class="bi bi-gear"></i> Configuración</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Cambiar contraseña</h6>
+        <div class="input-group mb-3 mt-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-journal-code"></i></span>
+          <input type="text" class="form-control" placeholder="Contraseña anterior" aria-label="Username" aria-describedby="basic-addon1" disabled>
+          <button class="btn btn-primary"><i class="bi bi-eye-fill"></i></button>
+        </div>
+        <div class="input-group mb-3 mt-3">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-journal-code"></i></span>
+          <input type="text" class="form-control" placeholder="Cambiar contraseña" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Cambiar contraseña</button>
+      </div>
+    </div>
+  </div>
+</div>
