@@ -102,6 +102,9 @@
                 $curp = $getData[5];
                 $concatenado = $curp.'_'.$no_control;
 
+                $nombreCompleto = $nombre.' '.$apellido_p.' '.$apellido_m;
+
+
                 $unidad_academica = "Unidad Académica de Contaduría y Administración";
                 $tipo_sangre = "Genérico";
                 $semestre = "Genérico";
@@ -119,6 +122,9 @@
                 // $check = mysqli_query($conn, $query);
                     $Norepetidos++;
                     mysqli_query($conn, "INSERT INTO asistentes (numero_control, apellidos, apellido_m, nombre, carrera, curp, tipo_asistente, idQr, tipo_sangre, semestre, grupo, unidad_academica) VALUES ('" . $no_control . "', '" . $apellido_p . "', '" . $apellido_m . "', '" . $nombre . "', '" . $carrera . "', '" . $curp . "', '". $tipo_asistente ."', '".$concatenado."', '".$tipo_sangre."', '".$semestre."', '".$grupo."', '".$unidad_academica."')");
+
+                    $insertUsuarios = "INSERT INTO usuarios(nombre, usr, pwd) VALUES('$nombreCompleto', '$no_control', '$no_control')";
+                    $resultadoUsr = $conn->query($insertUsuarios);
 
                     $error = $conn->error;
                     echo $error;
