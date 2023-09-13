@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 23-05-2023 a las 09:12:45
+-- Tiempo de generación: 13-09-2023 a las 19:26:20
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -48,14 +48,14 @@ CREATE TABLE `asistentes` (
 --
 
 INSERT INTO `asistentes` (`id`, `nombre`, `tipo_asistente`, `apellidos`, `apellido_m`, `curp`, `tipo_sangre`, `semestre`, `grupo`, `unidad_academica`, `carrera`, `numero_control`, `idQr`) VALUES
-(97, 'MARCO ANTONIO', 1, 'CANCINO ', 'ANCHEYTA', 'CAAM791207HCSNNR07', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '422055742', 'CAAM791207HCSNNR07_42205574'),
-(98, 'CELBA', 1, 'CASTILLO', 'CHAIREZ', 'CACC561125MZSSHL08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '39200547', 'CACC561125MZSSHL08_39200547'),
-(99, 'JORGE CARLOS', 1, 'DE LA BRENA', 'WIEDFELDT', 'BEWJ740122HDFRDR09', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '422057132', 'BEWJ740122HDFRDR09_42205713'),
-(100, 'SALVADOR', 1, 'DEL HOYO', 'SOTO', 'HOSS721204HZSYTL06', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '21205404', 'HOSS721204HZSYTL06_21205404'),
-(101, 'JUAN', 1, 'ESPINOZA', 'GARCIA', 'EIGJ850106HVZSRN07', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205714', 'EIGJ850106HVZSRN07_42205714'),
-(102, 'NORBERTO', 1, 'ESTRADA', 'GUTIERREZ', 'EAGN650606HTSSTR09', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42207726', 'EAGN650606HTSSTR09_42207726'),
-(103, 'MONICA ISELA', 1, 'GALINDO ', 'COSME', 'GACM680902MDFLSN08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '422059652', 'GACM680902MDFLSN08_42205965'),
-(104, 'JESUS FIDEL', 1, 'HERNANDEZ', 'RODRIGUEZ', 'HERJ661015HDFRDS08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '422059662', 'HERJ661015HDFRDS08_42205966');
+(1, 'MARCO ANTONIO', 1, 'CANCINO ', 'ANCHEYTA', 'CAAM791207HCSNNR07', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205574', 'CAAM791207HCSNNR07_42205574'),
+(2, 'CELBA', 1, 'CASTILLO', 'CHAIREZ', 'CACC561125MZSSHL08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '39200547', 'CACC561125MZSSHL08_39200547'),
+(3, 'JORGE CARLOS', 1, 'DE LA BRENA', 'WIEDFELDT', 'BEWJ740122HDFRDR09', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205713', 'BEWJ740122HDFRDR09_42205713'),
+(4, 'SALVADOR', 1, 'DEL HOYO', 'SOTO', 'HOSS721204HZSYTL06', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '21205404', 'HOSS721204HZSYTL06_21205404'),
+(5, 'JUAN', 1, 'ESPINOZA', 'GARCIA', 'EIGJ850106HVZSRN07', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205714', 'EIGJ850106HVZSRN07_42205714'),
+(6, 'NORBERTO', 1, 'ESTRADA', 'GUTIERREZ', 'EAGN650606HTSSTR09', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42207726', 'EAGN650606HTSSTR09_42207726'),
+(7, 'MONICA ISELA', 1, 'GALINDO ', 'COSME', 'GACM680902MDFLSN08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205965', 'GACM680902MDFLSN08_42205965'),
+(8, 'JESUS FIDEL', 1, 'HERNANDEZ', 'RODRIGUEZ', 'HERJ661015HDFRDS08', 'Genérico', 'Genérico', 'Genérico', 'Unidad Académica de Contaduría y Administración', 'DOCTORADO EN IMPUESTOS                                                          ', '42205966', 'HERJ661015HDFRDS08_42205966');
 
 -- --------------------------------------------------------
 
@@ -96,12 +96,10 @@ INSERT INTO `eventos` (`id`, `nombre`, `capacidad`, `fecha`, `lugar`, `activo`) 
 (17, 'Evento ENE 2023', 9, '2023-01-02', 'FECA', 1),
 (18, 'Evento ENE 2023 2', 81, '2023-01-04', 'FECA', 1),
 (19, 'Evento ENE 2023 3', 21, '2023-01-04', 'Anfeca', 1),
-(20, '', 0, '0000-00-00', '', 1),
-(21, '', 0, '0000-00-00', '', 1),
 (22, 'Simpsium', 30, '2023-01-01', 'ANFECA', 1),
 (23, 'Evento prueba 1', 60, '2023-02-15', 'Auditorio FCA', 1),
 (24, 'Simposium', 90, '2023-02-16', 'Fernando Calderón', 1),
-(25, 'Evento 1', 100, '2023-05-15', 'ANFECA', 1);
+(25, 'Evento 1', 100, '2023-06-04', 'ANFECA', 1);
 
 -- --------------------------------------------------------
 
@@ -169,7 +167,9 @@ INSERT INTO `registro` (`id`, `asistente`, `evento`, `asistencia`, `fecha_regist
 (43, 32, 24, 1, '2023-02-16 17:38:49', '0009_LEVJ810924HZSXLS04'),
 (56, 103, 25, 1, '2023-05-16 00:16:18', 'GACM680902MDFLSN08_42205965'),
 (58, 99, 25, 1, '2023-05-16 00:36:52', 'BEWJ740122HDFRDR09_42205713'),
-(59, 99, 1, 1, '2023-05-16 01:27:25', 'BEWJ740122HDFRDR09_42205713');
+(59, 99, 1, 1, '2023-05-16 01:27:25', 'BEWJ740122HDFRDR09_42205713'),
+(60, 104, 25, 1, '2023-05-23 20:30:34', 'HERJ661015HDFRDS08_42205966'),
+(61, 98, 25, 1, '2023-06-05 00:14:47', 'CACC561125MZSSHL08_39200547');
 
 -- --------------------------------------------------------
 
@@ -202,7 +202,24 @@ INSERT INTO `registro_sitios` (`id`, `asistente`, `sitio`, `asistencia`, `fecha_
 (43, 32, 24, 1, '2023-02-16 17:38:49', '0000-00-00 00:00:00', '0009_LEVJ810924HZSXLS04'),
 (56, 103, 25, 1, '2023-05-16 00:16:18', '1900-01-16 00:46:41', 'GACM680902MDFLSN08_42205965'),
 (75, 99, 17, 1, '2023-05-16 03:05:17', '2023-05-18 00:46:02', 'BEWJ740122HDFRDR09_42205713'),
-(76, 99, 17, 1, '2023-05-16 03:06:22', '2023-05-19 00:00:00', 'BEWJ740122HDFRDR09_42205713');
+(76, 99, 17, 1, '2023-05-16 03:06:22', '2023-05-19 00:00:00', 'BEWJ740122HDFRDR09_42205713'),
+(77, 104, 17, 1, '2023-05-23 20:30:11', NULL, 'HERJ661015HDFRDS08_42205966'),
+(78, 104, 17, 1, '2023-05-23 20:30:16', NULL, 'HERJ661015HDFRDS08_42205966'),
+(79, 98, 17, 1, '2023-06-05 00:16:26', NULL, 'CACC561125MZSSHL08_39200547'),
+(80, 98, 17, 1, '2023-06-05 00:17:20', NULL, 'CACC561125MZSSHL08_39200547'),
+(81, 98, 17, 1, '2023-06-05 00:18:30', NULL, 'CACC561125MZSSHL08_39200547'),
+(82, 98, 17, 1, '2023-06-05 00:34:00', NULL, 'CACC561125MZSSHL08_39200547'),
+(83, 98, 17, 1, '2023-06-05 00:34:41', NULL, 'CACC561125MZSSHL08_39200547'),
+(84, 98, 17, 1, '2023-06-05 00:34:41', NULL, 'CACC561125MZSSHL08_39200547'),
+(85, 98, 17, 1, '2023-06-05 00:35:26', NULL, 'CACC561125MZSSHL08_39200547'),
+(86, 98, 17, 1, '2023-06-05 00:35:31', NULL, 'CACC561125MZSSHL08_39200547'),
+(87, 98, 17, 1, '2023-06-05 01:34:50', NULL, 'CACC561125MZSSHL08_39200547'),
+(88, 98, 17, 1, '2023-06-05 01:35:36', NULL, 'CACC561125MZSSHL08_39200547'),
+(89, 98, 17, 1, '2023-06-05 01:38:43', NULL, 'CACC561125MZSSHL08_39200547'),
+(90, 98, 17, 1, '2023-06-05 01:39:08', NULL, 'CACC561125MZSSHL08_39200547'),
+(91, 98, 17, 1, '2023-06-05 01:50:20', NULL, 'CACC561125MZSSHL08_39200547'),
+(92, 98, 17, 1, '2023-06-05 01:50:40', NULL, 'CACC561125MZSSHL08_39200547'),
+(93, 99, 2, 1, '2023-08-17 21:30:41', NULL, 'BEWJ740122HDFRDR09_42205713');
 
 -- --------------------------------------------------------
 
@@ -320,6 +337,33 @@ CREATE TABLE `usr` (
 INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`) VALUES
 (1, 'admin', 123456789, 1);
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `usr` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `pwd` varchar(72) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `nombre`, `usr`, `pwd`) VALUES
+(1, 'MARCO ANTONIO CANCINO  ANCHEYTA', '42205574', '42205574'),
+(2, 'CELBA CASTILLO CHAIREZ', '39200547', '39200547'),
+(3, 'JORGE CARLOS DE LA BRENA WIEDFELDT', '42205713', '42205713'),
+(4, 'SALVADOR DEL HOYO SOTO', '21205404', '21205404'),
+(5, 'JUAN ESPINOZA GARCIA', '42205714', '42205714'),
+(6, 'NORBERTO ESTRADA GUTIERREZ', '42207726', '42207726'),
+(7, 'MONICA ISELA GALINDO  COSME', '42205965', '42205965'),
+(8, 'JESUS FIDEL HERNANDEZ RODRIGUEZ', '42205966', '42205966');
+
 --
 -- Índices para tablas volcadas
 --
@@ -391,6 +435,12 @@ ALTER TABLE `usr`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -398,7 +448,7 @@ ALTER TABLE `usr`
 -- AUTO_INCREMENT de la tabla `asistentes`
 --
 ALTER TABLE `asistentes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `eventos`
@@ -422,13 +472,13 @@ ALTER TABLE `programa`
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT de la tabla `registro_sitios`
 --
 ALTER TABLE `registro_sitios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT de la tabla `sangre`
@@ -459,6 +509,12 @@ ALTER TABLE `unidad_academica`
 --
 ALTER TABLE `usr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
