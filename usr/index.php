@@ -133,7 +133,7 @@
         </a>
         <div class="row">
           <div class="col-9">
-            <h3><span class="text-secondary">Perfil de alumnos</span></h3>
+            <h3><span class="text-secondary"><i class="bi bi-person-circle"></i> Perfil de alumnos</span></h3>
           </div>
           <div class="col-3">
             <div class="dropdown text-end">
@@ -142,8 +142,10 @@
               </a>
               <ul class="dropdown-menu text-small">
                 <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Perfil</a></li>
-                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editarDatos"><i class="bi bi-gear"></i> Configuración</a></li>
                 <li><a class="dropdown-item" href="#"><i class="bi bi-qr-code-scan"></i> Código UACYA</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-newspaper"></i> Task UACYA</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editarDatos"><i class="bi bi-gear"></i> Configuración</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#"><i class="bi bi-door-open"></i> Salir</a></li>
               </ul>
@@ -165,11 +167,12 @@
             <div class="col-5">
                 <div class="container-fluid py-5">
                     <h1 class="h3 fw-bold">Nombre:</h1>
-                    <p class="col-md-12 fs-5"><?php echo $rowSQL['nombre']. $rowSQL['apellidos'].  ?></p>
-                    <h1 class="h3 fw-bold">Programa:</h1>
-                    <p class="col-md-8 fs-5">Contabilidad</p>
-                    <h1 class="h3 fw-bold">Mátricula:</h1>
-                    <p class="col-md-8 fs-5">00450489</p>
+                    <p class="col-md-12 fs-5"><?php echo $rowSQL['nombre'].' '. $rowSQL['apellidos'] ?></p>
+                    <h1 class="h3 fw-bold">Programa: </h1>
+                    <p class="col-md-8 fs-5"><?php echo $rowSQL['carrera'] ?></p>
+                    <h1 class="h3 fw-bold">Matrícula:</h1>
+                    <p class="col-md-8 fs-5"><?php echo $rowSQL['numero_control'] ?></p>
+                    <input type="text" id="" value="<?php echo $rowSQL['numero_control'] ?>" hidden>
                     <!-- <button class="btn btn-primary btn-lg" type="button">Example button</button> -->
                 </div>
             </div>
@@ -180,7 +183,7 @@
       <div class="row align-items-md-stretch g-2">
         <div class="col-md-6">
           <div class="h-100 p-5 text-bg-dark rounded-3">
-            <h2><i class="bi bi-newspaper"></i> Task de eventos UACYA</h2>
+            <h2><i class="bi bi-newspaper"></i> Task UACYA</h2>
             <p>
                 <div class="alert alert-light border-warning" role="alert">
                     <span class="h5 text-dark fw-bold">Anuncio 1</span> 
@@ -202,14 +205,30 @@
                         <small class="text-secondary">Este es el anuncio número 3.</small>
                 </div>
             </p>
+            <p>
+                <div class="alert alert-light border-warning" role="alert">
+                    <span class="h5 text-dark fw-bold">Anuncio 4</span> 
+                        <br>
+                        <small class="text-secondary">Este es el anuncio número 4.</small>
+                </div>
+            </p>
+            <p>
+                <div class="alert alert-light border-warning" role="alert">
+                    <span class="h5 text-dark fw-bold">Anuncio 5</span> 
+                        <br>
+                        <small class="text-secondary">Este es el anuncio número 5.</small>
+                </div>
+            </p>
             
-            <button class="btn btn-outline-warning" type="button">Ver todos los eventos</button>
+            <button class="btn btn-outline-warning" type="button"><i class="bi bi-newspaper"></i> Revisar Task</button>
           </div>
         </div>
         <div class="col-md-6">
           <div class="h-100 p-5 bg-body-tertiary border rounded-3">
             <h2><i class="bi bi-qr-code"></i> Código UACYA</h2>
-            <p class="text-center"><img src="qr_fca.png" alt="" width="50%"></p>
+            <p class="text-center" id="qrcode">
+                <!-- <img src="qr_fca.png" alt="" width="100%"> -->
+            </p>
             <!-- <button class="btn btn-outline-secondary" type="button">Example button</button> -->
           </div>
         </div>
@@ -290,3 +309,45 @@
     </div>
   </div>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+  function ModalQr(concatenado){
+    var texto = concatenado.toString();
+    document.getElementById('matriculaQR2').innerHTML = concatenado;
+    document.getElementById('qrcode').innerHTML = "";
+// aquí
+
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+      text: texto,
+      width: 300,
+      height: 300,
+      correctLevel: QRCode.CorrectLevel.H
+    });
+
+    // Obtener el elemento canvas generado por QRCode.js
+    var canvas = document.querySelector("#codigo-qr canvas");
+
+    // Crear un nuevo elemento de imagen para el logo
+    var logo = new Image();
+    logo.src = "imagen.png";
+
+    // Esperar a que el logo se cargue antes de dibujarlo en el canvas
+    logo.onload = function() {
+      // Calcular la posición del logo en el centro del código QR
+      var logoSize = qrcode._htOption.width * 0.2; // Tamaño relativo del logo (20%)
+      var xPos = (canvas.width - logoSize) / 2;
+      var yPos = (canvas.height - logoSize) / 2;
+
+      // Dibujar el logo en el canvas
+      var ctx = canvas.getContext("2d");
+      ctx.drawImage(logo, xPos, yPos, logoSize, logoSize);
+    };
+
+    console.log();
+
+  }
+
+    
+  
+</script>
