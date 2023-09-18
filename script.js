@@ -63,6 +63,16 @@
                         footer: 'UACYA UAZ'
                     }).then(function(){window.location='./centro_computo/';});
                 }
+                else if (jsonData.success == "6")
+                {
+                    // location.href = 'my_profile.php';
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Alumno UACYA',
+                        text: 'Credenciales correctas',
+                        footer: 'UACYA UAZ'
+                    }).then(function(){window.location='./usr/';});
+                }
                 else
                 {
                     // alert('Invalid Credentials!');

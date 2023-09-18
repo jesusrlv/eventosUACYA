@@ -1,10 +1,11 @@
 <?php
+session_start();
 require('../admin/prcd/qc.php');
 if (isset($_POST['usr']) && isset($_POST['pwd'])) {
    
     $id = $_POST['usr'];
     $pwd = $_POST['pwd'];
-    $sql = "SELECT * FROM usr WHERE usr = '$id' AND pwd ='$pwd'";
+    $sql = "SELECT * FROM usuarios WHERE usr = '$id' AND pwd ='$pwd'";
     $resultado_sql = $conn->query($sql);
     if($row_sql=mysqli_fetch_array($resultado_sql)){
         
@@ -22,6 +23,10 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
         }
         else if($row_sql['perfil'] == 5){
             echo json_encode(array('success' => 5));
+        }
+        else if($row_sql['perfil'] == 6){
+            $_SESSION['usr'] = $row_sql['usr'];
+            echo json_encode(array('success' => 6));
         }
     } 
         else{
