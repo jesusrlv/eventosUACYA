@@ -106,8 +106,16 @@ function registrarVisitas(){
             var jsonData = JSON.parse(response);
             var success = jsonData.success;
 
-            if(success == 1){
+            if(success == 0){
                 
+            }
+
+            else if(success == 1){
+
+            }
+
+            if(success == 2){
+
             }
         }
     });
