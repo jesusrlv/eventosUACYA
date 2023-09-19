@@ -101,7 +101,8 @@
           z-index: 1500;
         }
       </style>
-                          <input type="text" id="concatenado" value="<?php echo $rowSQL['numero_control'] ?>" hidden>
+            <input type="text" id="concatenado" value="<?php echo $rowSQL['numero_control'] ?>" hidden>
+            <input type="text" id="pwd" value="<?php echo $rowSQL['pwd'] ?>" hidden>
 
   </head>
 
@@ -264,9 +265,10 @@
           </p>
         </div>
         <h6>Cambiar contraseña</h6>
+        <form action="chPwd.php" method="post"></form>
         <div class="input-group mb-3 mt-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-journal-code"></i></span>
-          <input type="password" id="newPass" class="form-control" placeholder="Contraseña anterior" aria-label="Username" aria-describedby="basic-addon1" value="123456789" disabled>
+          <input type="password" id="newPass" class="form-control" placeholder="Contraseña anterior" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $rowSQL2['pwd'] ?>" disabled>
           <button class="btn btn-primary" id="btnPwd" onclick="verPwd()"><i class="bi bi-eye-fill" id="eyePwd"></i></button>
         </div>
         <div class="input-group mb-3 mt-3">
