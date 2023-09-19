@@ -265,7 +265,7 @@
           </p>
         </div>
         <h6>Cambiar contraseña</h6>
-        <form action="chPwd.php" method="post"></form>
+        <form action="chPwd.php" method="post">
         <div class="input-group mb-3 mt-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-journal-code"></i></span>
           <input type="password" id="newPass" class="form-control" placeholder="Contraseña anterior" aria-label="Username" aria-describedby="basic-addon1" value="<?php echo $rowSQL2['pwd'] ?>" disabled>
@@ -273,14 +273,16 @@
         </div>
         <div class="input-group mb-3 mt-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-journal-code"></i></span>
-          <input type="text" class="form-control" placeholder="Nueva contraseña" aria-label="Username" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" placeholder="Nueva contraseña" aria-label="Username" aria-describedby="basic-addon1" name="pwd" required>
+          <input type="text" class="form-control" placeholder="Nueva contraseña" aria-label="Username" aria-describedby="basic-addon1" name="id" value="<?php echo $rowSQL2['id'] ?>" hidden>
         </div>
         
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Cambiar contraseña</button>
+        <button type="submit" class="btn btn-primary">Cambiar contraseña</button>
       </div>
+      </form>
     </div>
   </div>
 </div>
