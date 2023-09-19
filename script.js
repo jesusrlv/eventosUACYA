@@ -88,3 +88,28 @@
        });
      });
 });
+
+// Registro de visitas
+
+function registrarVisitas(){
+    var nombre = document.getElementById('nombreVisitas').value;
+    var curp = document.getElementById('curpVisitas').value;
+    $.ajax({
+        type: "POST",
+        url: 'prcd/login.php',
+        data: {
+            nombre:nombre,
+            curp:curp
+        },
+        success: function(response)
+        {
+            var jsonData = JSON.parse(response);
+            var success = jsonData.success;
+
+            if(success == 1){
+                
+            }
+        }
+    });
+
+}
