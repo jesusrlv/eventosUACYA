@@ -90,13 +90,12 @@
 });
 
 // Registro de visitas
-
 function registrarVisitas(){
     var nombre = document.getElementById('nombreVisitas').value;
     var curp = document.getElementById('curpVisitas').value;
     $.ajax({
         type: "POST",
-        url: 'prcd/login.php',
+        url: 'prcd/acessosV.php',
         data: {
             nombre:nombre,
             curp:curp
@@ -107,7 +106,12 @@ function registrarVisitas(){
             var success = jsonData.success;
 
             if(success == 0){
-                
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registro exitoso',
+                    text: 'Usuario externo',
+                    footer: 'UACYA UAZ'
+                });
             }
 
             else if(success == 1){
