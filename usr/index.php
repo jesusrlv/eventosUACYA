@@ -26,6 +26,9 @@
     <script src="script.js"></script>
 
     <style>
+        #qrcode img{
+          width: 100%;
+        }
         .bd-placeholder-img {
           font-size: 1.125rem;
           text-anchor: middle;
@@ -98,9 +101,11 @@
           z-index: 1500;
         }
       </style>
+                          <input type="text" id="concatenado" value="<?php echo $rowSQL['numero_control'] ?>" hidden>
+
   </head>
 
-  <body>
+  <body onload="ModalQr()">
     <nav class="navbar navbar-expand-lg bg-body-primary bg-primary" data-bs-theme="dark">     
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -172,7 +177,6 @@
                     <p class="col-md-8 fs-5"><?php echo $rowSQL['carrera'] ?></p>
                     <h1 class="h3 fw-bold">Matrícula:</h1>
                     <p class="col-md-8 fs-5"><?php echo $rowSQL['numero_control'] ?></p>
-                    <input type="text" id="" value="<?php echo $rowSQL['numero_control'] ?>" hidden>
                     <!-- <button class="btn btn-primary btn-lg" type="button">Example button</button> -->
                 </div>
             </div>
@@ -312,17 +316,19 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-  function ModalQr(concatenado){
-    var texto = concatenado.toString();
-    document.getElementById('matriculaQR2').innerHTML = concatenado;
+  function ModalQr(){
+
+    // var texto = concatenado.toString();
+    var texto = document.getElementById('concatenado').value;
+    // document.getElementById('matriculaQR2').innerHTML = concatenado;
     document.getElementById('qrcode').innerHTML = "";
 // aquí
 
 var qrcode = new QRCode(document.getElementById("qrcode"), {
       text: texto,
-      width: 300,
-      height: 300,
-      correctLevel: QRCode.CorrectLevel.H
+      // width: 100%,
+      // height: 100%,
+      correctLevel: QRCode.CorrectLevel.Q
     });
 
     // Obtener el elemento canvas generado por QRCode.js
