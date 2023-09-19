@@ -122,7 +122,7 @@
                     <a class="nav-link active" aria-current="page" href="#"><i class="bi bi-house-fill"></i> Inicio</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="bi bi-door-open"></i> Salir</a>
+                    <a class="nav-link" href="prcd/sort.php"><i class="bi bi-door-open"></i> Salir</a>
                     </li>
                 </ul>   
             </div>
@@ -147,19 +147,19 @@
                 <img src="../assets/brand/img/somos_fca_halcon_azul_15.png" alt="mdo" width="32" height="32" class="rounded-circle">
               </a>
               <ul class="dropdown-menu text-small">
-                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Perfil</a></li>
-                <li><a class="dropdown-item" href="#"><i class="bi bi-qr-code-scan"></i> Código UACYA</a></li>
-                <li><a class="dropdown-item" href="#"><i class="bi bi-newspaper"></i> Task UACYA</a></li>
+                <li><a class="dropdown-item" href="#perfil"><i class="bi bi-person"></i> Perfil</a></li>
+                <li><a class="dropdown-item" href="#codigoUA"><i class="bi bi-qr-code-scan"></i> Código UACYA</a></li>
+                <li><a class="dropdown-item" href="#task"><i class="bi bi-newspaper"></i> Task UACYA</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#editarDatos"><i class="bi bi-gear"></i> Configuración</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#"><i class="bi bi-door-open"></i> Salir</a></li>
+                <li><a class="dropdown-item" href="prcd/sort.php"><i class="bi bi-door-open"></i> Salir</a></li>
               </ul>
             </div>
           </div>
         </div>
       </header>
-  
+      <span id="perfil"></span>
       <div class="p-5 mb-4 bg-body-tertiary rounded-3">
         <div class="row align-items-center">
             <div class="col-6 text-center">
@@ -184,7 +184,7 @@
         </div>
         
       </div>
-  
+      <span id="task"></span>
       <div class="row align-items-md-stretch g-2">
         <div class="col-md-6">
           <div class="h-100 p-5 text-bg-dark rounded-3">
@@ -229,6 +229,7 @@
           </div>
         </div>
         <div class="col-md-6">
+          <span id="codigoUA"></span>
           <div class="h-100 p-5 bg-body-tertiary border rounded-3">
             <h2><i class="bi bi-qr-code"></i> Código UACYA</h2>
             <p class="text-center" id="qrcode">
