@@ -9,7 +9,7 @@
             data: $(this).serialize(),
             success: function(response)
             {
-                var jsonData = JSON.parse(response);
+                var jsonData = JSON.parse(JSON.stringify(response));
  
                 // user is logged in successfully in the back-end
                 // let's redirect
@@ -102,10 +102,10 @@ function registrarVisitas(){
         },
         success: function(response)
         {
-            var jsonData = JSON.parse(response);
+            var jsonData = JSON.parse(JSON.stringify(response));
             var success = jsonData.success;
 
-            if(success == 0){
+            if(success = 0){
                 Swal.fire({
                     icon: 'success',
                     title: 'Registro exitoso',
@@ -114,7 +114,7 @@ function registrarVisitas(){
                 });
             }
 
-            else if(success == 1){
+            else if(success = 1){
                 Swal.fire({
                     icon: 'warning',
                     title: 'Registro anteriormente registrado',
@@ -123,9 +123,9 @@ function registrarVisitas(){
                 });
             }
 
-            if(success == 2){
+            else if(success = 2){
                 Swal.fire({
-                    icon: 'danger',
+                    icon: 'error',
                     title: 'Error al registrar',
                     text: 'Usuario externo',
                     footer: 'UACYA UAZ'

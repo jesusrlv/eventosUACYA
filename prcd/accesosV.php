@@ -10,11 +10,11 @@ if (isset($_POST['nombre']) && isset($_POST['curp'])) {
     $nombre = $_POST['nombre'];
     $curp = $_POST['curp'];
     
-    $sql = "SELECT * FROM visitas WHERE curp ='$curp' and fecha = '$fecha_sistema'";
+    $sql = "SELECT * FROM visitas WHERE curp = '$curp' AND fecha = '$fecha_sistema'";
     $resultado_sql = $conn->query($sql);
     $fila = $resultado_sql->num_rows;
 
-    if($fila = 0){
+    if($fila == 0){
         $sqlInsert = "INSERT INTO visitas (
             nombre, 
             curp,
@@ -29,14 +29,14 @@ if (isset($_POST['nombre']) && isset($_POST['curp'])) {
 
              if($resultadoInsert){
                 // cero es que agregará el campo a la db
-                 echo json_encode(array('success' =>0));
+                 echo json_encode(array('success' => 0));
              }
              else{
                 // error
-                echo json_encode(array('success' =>2));
+                echo json_encode(array('success' => 2));
              }
     } 
-        else if($fila > 0){
+        else if($fila >= 0){
             // uno significa que ya estaba agregado
             echo json_encode(array('success' => 1));
         }
