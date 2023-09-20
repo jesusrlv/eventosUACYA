@@ -95,7 +95,7 @@ function registrarVisitas(){
     var curp = document.getElementById('curpVisitas').value;
     $.ajax({
         type: "POST",
-        url: 'prcd/acessosV.php',
+        url: 'prcd/accesosV.php',
         data: {
             nombre:nombre,
             curp:curp
@@ -115,11 +115,21 @@ function registrarVisitas(){
             }
 
             else if(success == 1){
-
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Registro anteriormente registrado',
+                    text: 'Usuario externo',
+                    footer: 'UACYA UAZ'
+                });
             }
 
             if(success == 2){
-
+                Swal.fire({
+                    icon: 'danger',
+                    title: 'Error al registrar',
+                    text: 'Usuario externo',
+                    footer: 'UACYA UAZ'
+                });
             }
         }
     });

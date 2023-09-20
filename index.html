@@ -133,6 +133,7 @@
         <div class="alert alert-danger" role="alert">
           <h5 class="text-danger"><small>* Recuerda que tu QR será válido por 24hs.</small></h5>
         </div>
+        <form id="formExternos">
         <div class="input-group mt-2 mb-3">
           <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-add"></i></span>
           <input type="text" class="form-control" id="nombreVisitas" placeholder="Nombre" aria-label="Nombre" aria-describedby="basic-addon1">
@@ -146,8 +147,9 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary">Registrarse</button>
+        <button type="button" class="btn btn-primary" onclick="registrarVisitas()">Registrarse</button>
       </div>
+    </form>
     </div>
   </div>
 </div>
