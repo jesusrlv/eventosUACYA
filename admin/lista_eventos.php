@@ -160,7 +160,7 @@
         </thead>
         <tbody id="myTable">
           
-        <?
+        <?php
         
         include ('query/query_eventos.php');
         $filas_resultado = $resultadoEvento->num_rows;

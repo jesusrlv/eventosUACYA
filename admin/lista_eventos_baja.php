@@ -161,7 +161,7 @@
         </thead>
         <tbody id="myTable">
           
-        <?
+        <?php
         include ('query/query_eventos_baja.php');
         $filas_resultado = $resultadoEvento->num_rows;
         if($filas_resultado >= 1 ){

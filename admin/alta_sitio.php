@@ -152,7 +152,7 @@
                 </tr>
         </thead>
         <tbody>
-            <? 
+            <?php 
             $x = 0;
             include('query/query_sitios.php');
             while($rowSitio = $resultadoSitio->fetch_assoc()){

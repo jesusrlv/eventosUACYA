@@ -162,7 +162,7 @@
         </thead>
         <tbody id="myTable1">
           
-        <?
+        <?php
         
         include ('query/query_catalogos.php');
         $x = 0;
@@ -262,7 +262,7 @@
         </thead>
         <tbody id="myTable2">
           
-        <?
+        <?php
         
        
         $x = 0;
@@ -361,7 +361,7 @@
         </thead>
         <tbody id="myTable3">
           
-        <?
+        <?php
         
        
         $x = 0;
@@ -462,7 +462,7 @@
         </thead>
         <tbody id="myTable4">
           
-        <?
+        <?php
         
         
         $x = 0;
