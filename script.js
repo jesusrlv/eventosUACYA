@@ -10,10 +10,11 @@
             success: function(response)
             {
                 var jsonData = JSON.parse(JSON.stringify(response));
+                var success = jsonData.success;
  
                 // user is logged in successfully in the back-end
                 // let's redirect
-                if (jsonData.success = "1")
+                if (success = 1)
                 {
                     // location.href = 'my_profile.php';
                     Swal.fire({
@@ -23,7 +24,7 @@
                         footer: 'UACYA UAZ'
                     }).then(function(){window.location='./admin/';});
                 }
-                else if (jsonData.success = "2")
+                else if (success = 2)
                 {
                     // location.href = 'my_profile.php';
                     Swal.fire({
@@ -33,7 +34,7 @@
                         footer: 'UACYA UAZ'
                     }).then(function(){window.location='./eventos/';});
                 }
-                else if (jsonData.success = "3")
+                else if (success = 3)
                 {
                     // location.href = 'my_profile.php';
                     Swal.fire({
@@ -43,7 +44,7 @@
                         footer: 'UACYA UAZ'
                     }).then(function(){window.location='./caja/';});
                 }
-                else if (jsonData.success = "4")
+                else if (success = 4)
                 {
                     // location.href = 'my_profile.php';
                     Swal.fire({
@@ -53,7 +54,7 @@
                         footer: 'UACYA UAZ'
                     }).then(function(){window.location='./biblioteca/';});
                 }
-                else if (jsonData.success = "5")
+                else if (success = 5)
                 {
                     // location.href = 'my_profile.php';
                     Swal.fire({
@@ -63,7 +64,7 @@
                         footer: 'UACYA UAZ'
                     }).then(function(){window.location='./centro_computo/';});
                 }
-                else if (jsonData.success = "6")
+                else if (success = 6)
                 {
                     // location.href = 'my_profile.php';
                     Swal.fire({
